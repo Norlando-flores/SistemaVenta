@@ -586,7 +586,7 @@ namespace SisVentaDevExpress.Formularios
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDescripcion.Size = new System.Drawing.Size(515, 44);
+            this.txtDescripcion.Size = new System.Drawing.Size(515, 49);
             this.txtDescripcion.TabIndex = 7;
             // 
             // txtNombre
@@ -727,7 +727,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblDescripcion.Control = this.txtDescripcion;
             this.lblDescripcion.Location = new System.Drawing.Point(0, 123);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(642, 48);
+            this.lblDescripcion.Size = new System.Drawing.Size(642, 53);
             this.lblDescripcion.Text = "Descripcion:";
             this.lblDescripcion.TextSize = new System.Drawing.Size(120, 16);
             // 
@@ -742,9 +742,9 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 171);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 176);
             this.emptySpaceItem7.Name = "emptySpaceItem2";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(642, 23);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(642, 18);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem10
