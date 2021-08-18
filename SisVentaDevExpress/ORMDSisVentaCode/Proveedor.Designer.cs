@@ -49,7 +49,7 @@ namespace SisVentaDevExpress.Ventas
             set { SetPropertyValue<string>(nameof(Tipo_Documento), ref fTipo_Documento, value); }
         }
         string fNum_Documento;
-        [Size(11)]
+        [Size(25)]
         public string Num_Documento
         {
             get { return fNum_Documento; }
