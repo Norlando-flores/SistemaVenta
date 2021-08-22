@@ -56,11 +56,11 @@ namespace SisVentaDevExpress.Ventas
         }
         string fNum_Documento;
         [Size(30)]
-        public string Num_Documento
+       /* public string Num_Documento
         {
             get { return fNum_Documento; }
             set { SetPropertyValue<string>(nameof(Num_Documento), ref fNum_Documento, value); }
-        }
+        }*/
         string fDireccion;
         public string Direccion
         {
@@ -101,6 +101,13 @@ namespace SisVentaDevExpress.Ventas
         {
             get { return fContraseña; }
             set { SetPropertyValue<string>(nameof(Contraseña), ref fContraseña, value); }
+        }
+        string fCedula;
+        [Size(30)]
+        public string Cedula
+        {
+            get { return fCedula; }
+            set { SetPropertyValue<string>(nameof(Cedula), ref fCedula, value); }
         }
         [Association(@"IngresoReferencesTrabajador")]
         public XPCollection<Ingreso> Ingresoes { get { return GetCollection<Ingreso>(nameof(Ingresoes)); } }
