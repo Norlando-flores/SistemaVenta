@@ -928,7 +928,6 @@ namespace SisVentaDevExpress.Formularios
             this.Controls.Add(this.layoutControl1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frm_Cliente";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_Cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
