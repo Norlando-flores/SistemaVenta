@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\frm_acceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frm_acceso.Designer.cs">
+      <DependentUpon>frm_acceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frm_Articulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frm_acceso.resx">
+      <DependentUpon>frm_acceso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Articulos.resx">
       <DependentUpon>frm_Articulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tienda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Acceso.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

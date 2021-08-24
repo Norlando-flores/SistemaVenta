@@ -128,7 +128,7 @@ namespace SisVentaDevExpress.Formularios
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_Articulos formulario_Articulos = new frm_Articulos();
-            //formulario_Articulos.MdiParent = this;
+            formulario_Articulos.MdiParent = this;
             formulario_Articulos.Show();
             formulario_Articulos.WindowState = FormWindowState.Maximized;
         }

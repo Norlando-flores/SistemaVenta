@@ -38,6 +38,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblTotal = new System.Windows.Forms.Label();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.xpCollectionArticulos = new DevExpress.Xpo.XPCollection(this.components);
+            this.unitOfWorkArticulos = new DevExpress.Xpo.UnitOfWork(this.components);
             this.dataListado = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,7 +64,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
             this.sbxPresentacion = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.xpCollectionPresentacion = new DevExpress.Xpo.XPCollection(this.components);
-            this.unitOfWorkArticulos = new DevExpress.Xpo.UnitOfWork(this.components);
             this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.sbxCategoria = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.xpCollectionCategoria = new DevExpress.Xpo.XPCollection(this.components);
@@ -111,6 +111,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -129,7 +130,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sbxPresentacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionPresentacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbxCategoria.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionCategoria)).BeginInit();
@@ -238,10 +238,12 @@ namespace SisVentaDevExpress.Formularios
             this.gridControl2.TabIndex = 5;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dataListado});
+            this.gridControl2.DoubleClick += new System.EventHandler(this.btnEditar1_Click);
             // 
             // xpCollectionArticulos
             // 
             this.xpCollectionArticulos.ObjectType = typeof(SisVentaDevExpress.Ventas.Articulo);
+            this.xpCollectionArticulos.Session = this.unitOfWorkArticulos;
             // 
             // dataListado
             // 
@@ -699,6 +701,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblCodigo.Size = new System.Drawing.Size(642, 26);
             this.lblCodigo.Text = "Codigo:";
             this.lblCodigo.TextSize = new System.Drawing.Size(120, 16);
+            this.lblCodigo.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // lblNombre
             // 
@@ -954,6 +957,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -972,7 +976,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sbxPresentacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionPresentacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbxCategoria.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionCategoria)).EndInit();

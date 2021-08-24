@@ -83,6 +83,16 @@ namespace SisVentaDevExpress.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Acceso {
+            get {
+                object obj = ResourceManager.GetObject("Acceso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Almacen {
             get {
                 object obj = ResourceManager.GetObject("Almacen", resourceCulture);

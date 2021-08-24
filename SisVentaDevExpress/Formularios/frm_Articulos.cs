@@ -185,9 +185,9 @@ namespace SisVentaDevExpress.Formularios
                 else
                 {
                     Articulo articulo = articulo_editar;
-                    articulo.Codigo = txtCodigoVenta.Text;
-                    articulo.Nombre = txtNombre.Text;
-                    articulo.Descripcion = txtDescripcion.Text;
+                    articulo.Codigo = txtCodigoVenta.Text.ToString();
+                    articulo.Nombre = txtNombre.Text.ToString();
+                    articulo.Descripcion = txtDescripcion.Text.ToString();
                     articulo.IdCategoria = (Categoria)searchLookUpEdit1View.GetFocusedRow();
                     articulo.IdPresentacion = (Presentacion)searchLookUpEdit2View.GetFocusedRow();
                     articulo.Save();
@@ -200,12 +200,19 @@ namespace SisVentaDevExpress.Formularios
                     this.IsNuevo = false;
                     this.IsEditar = false;
                     this.Botones();
+                    errorIcon.Clear();
                     this.Limpiar();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                
+                //MessageBox.Show("Selecione Categoria y Presentacion", "Sistema de Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.sbxCategoria.Focus();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(sbxCategoria, "Seleccione la Categoria");
+                    errorIcon.SetError(sbxPresentacion, "Seleccione la Presentacion");
+                //MessageBox.Show(ex.Message + ex.StackTrace);
 
             }
         }
