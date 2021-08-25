@@ -32,22 +32,26 @@ namespace SisVentaDevExpress.Formularios
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblContraseña = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.btnIngresar = new System.Windows.Forms.Button();
+            this.cbMostrarContraseña = new System.Windows.Forms.CheckBox();
+            this.lblHora = new System.Windows.Forms.Label();
             this.btnsSalir = new System.Windows.Forms.Button();
+            this.btnIngresar = new System.Windows.Forms.Button();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.lblContraseña = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.cbMostrarContraseña = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.xpCollectionUsuario = new DevExpress.Xpo.XPCollection(this.components);
+            this.unitOfWorkAcceso = new DevExpress.Xpo.UnitOfWork(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCollectionUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkAcceso)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,40 +84,40 @@ namespace SisVentaDevExpress.Formularios
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acceso al Sistema";
             // 
-            // lblUsuario
+            // cbMostrarContraseña
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(29, 58);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(66, 16);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "Usuario:";
+            this.cbMostrarContraseña.AutoSize = true;
+            this.cbMostrarContraseña.Location = new System.Drawing.Point(357, 110);
+            this.cbMostrarContraseña.Name = "cbMostrarContraseña";
+            this.cbMostrarContraseña.Size = new System.Drawing.Size(144, 20);
+            this.cbMostrarContraseña.TabIndex = 7;
+            this.cbMostrarContraseña.Text = "Mostrar Contraseña";
+            this.cbMostrarContraseña.UseVisualStyleBackColor = true;
+            this.cbMostrarContraseña.CheckedChanged += new System.EventHandler(this.cbMostrarContraseña_CheckedChanged);
             // 
-            // lblContraseña
+            // lblHora
             // 
-            this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(29, 114);
-            this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(91, 16);
-            this.lblContraseña.TabIndex = 1;
-            this.lblContraseña.Text = "Contraseña:";
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(137, 22);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(57, 20);
+            this.lblHora.TabIndex = 6;
+            this.lblHora.Text = "label2";
             // 
-            // txtUsuario
+            // btnsSalir
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(137, 58);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(210, 22);
-            this.txtUsuario.TabIndex = 2;
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(137, 111);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(210, 22);
-            this.txtContraseña.TabIndex = 3;
+            this.btnsSalir.BackColor = System.Drawing.Color.Blue;
+            this.btnsSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsSalir.ForeColor = System.Drawing.Color.White;
+            this.btnsSalir.Location = new System.Drawing.Point(272, 168);
+            this.btnsSalir.Name = "btnsSalir";
+            this.btnsSalir.Size = new System.Drawing.Size(100, 33);
+            this.btnsSalir.TabIndex = 5;
+            this.btnsSalir.Text = "Salir";
+            this.btnsSalir.UseVisualStyleBackColor = false;
+            this.btnsSalir.Click += new System.EventHandler(this.btnsSalir_Click);
             // 
             // btnIngresar
             // 
@@ -129,19 +133,40 @@ namespace SisVentaDevExpress.Formularios
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // btnsSalir
+            // txtContraseña
             // 
-            this.btnsSalir.BackColor = System.Drawing.Color.Blue;
-            this.btnsSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsSalir.ForeColor = System.Drawing.Color.White;
-            this.btnsSalir.Location = new System.Drawing.Point(272, 168);
-            this.btnsSalir.Name = "btnsSalir";
-            this.btnsSalir.Size = new System.Drawing.Size(100, 33);
-            this.btnsSalir.TabIndex = 5;
-            this.btnsSalir.Text = "Salir";
-            this.btnsSalir.UseVisualStyleBackColor = false;
-            this.btnsSalir.Click += new System.EventHandler(this.btnsSalir_Click);
+            this.txtContraseña.Location = new System.Drawing.Point(137, 111);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.Size = new System.Drawing.Size(210, 22);
+            this.txtContraseña.TabIndex = 3;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(137, 58);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(210, 22);
+            this.txtUsuario.TabIndex = 2;
+            // 
+            // lblContraseña
+            // 
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraseña.Location = new System.Drawing.Point(29, 114);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(91, 16);
+            this.lblContraseña.TabIndex = 1;
+            this.lblContraseña.Text = "Contraseña:";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(29, 58);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(66, 16);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "Usuario:";
             // 
             // pictureBox3
             // 
@@ -170,33 +195,18 @@ namespace SisVentaDevExpress.Formularios
             this.pictureBox1.Size = new System.Drawing.Size(800, 96);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(137, 22);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(57, 20);
-            this.lblHora.TabIndex = 6;
-            this.lblHora.Text = "label2";
-            // 
-            // cbMostrarContraseña
-            // 
-            this.cbMostrarContraseña.AutoSize = true;
-            this.cbMostrarContraseña.Location = new System.Drawing.Point(357, 110);
-            this.cbMostrarContraseña.Name = "cbMostrarContraseña";
-            this.cbMostrarContraseña.Size = new System.Drawing.Size(144, 20);
-            this.cbMostrarContraseña.TabIndex = 7;
-            this.cbMostrarContraseña.Text = "Mostrar Contraseña";
-            this.cbMostrarContraseña.UseVisualStyleBackColor = true;
-            this.cbMostrarContraseña.CheckedChanged += new System.EventHandler(this.cbMostrarContraseña_CheckedChanged);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // xpCollectionUsuario
+            // 
+            this.xpCollectionUsuario.ObjectType = typeof(SisVentaDevExpress.Ventas.Trabajador);
+            this.xpCollectionUsuario.Session = this.unitOfWorkAcceso;
             // 
             // frm_acceso
             // 
@@ -218,6 +228,8 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCollectionUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkAcceso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,5 +251,7 @@ namespace SisVentaDevExpress.Formularios
         private System.Windows.Forms.CheckBox cbMostrarContraseña;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer timer1;
+        private DevExpress.Xpo.XPCollection xpCollectionUsuario;
+        private DevExpress.Xpo.UnitOfWork unitOfWorkAcceso;
     }
 }

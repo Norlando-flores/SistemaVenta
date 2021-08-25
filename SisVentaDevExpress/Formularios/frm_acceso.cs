@@ -7,19 +7,25 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 
 namespace SisVentaDevExpress.Formularios
 {
     public partial class frm_acceso : Form
     {
-        Trabajador trabajador = null;
         public frm_acceso()
         {
             InitializeComponent();
             lblHora.Text = DateTime.Now.ToString();
         }
-
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema de Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema de Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         private void cbMostrarContraseña_CheckedChanged(object sender, EventArgs e)
         {
             if (cbMostrarContraseña.Checked == true)
@@ -37,7 +43,7 @@ namespace SisVentaDevExpress.Formularios
 
         private void frm_acceso_Load(object sender, EventArgs e)
         {
-
+            xpCollectionUsuario.Reload();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -52,8 +58,27 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            //txtUsuario.Text = trabajador.Usuario;
-            MessageBox.Show("jola");
+            /*foreach (Trabajador u in xpCollectionUsuario)
+            { 
+                if(txtUsuario.Text.Equals(u.Usuario) && txtContraseña.Text.Equals(u.Contraseña))
+                {
+                    this.Visible = false;
+                    frm_Principal formularioPrincipal = new frm_Principal();
+                    formularioPrincipal.ShowDialog();
+                    this.Visible = true;
+                    this.txtContraseña.Text = string.Empty;
+                    this.txtContraseña.Focus();
+                    return;
+
+                }             
+            }
+            this.MensajeError("Usuario o contraseña incorrecta");*/
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

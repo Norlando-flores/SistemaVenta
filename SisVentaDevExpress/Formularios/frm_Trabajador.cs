@@ -122,8 +122,8 @@ namespace SisVentaDevExpress.Formularios
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message + ex.StackTrace);
-                MessageBox.Show("El dato esta Siendo Ocupado", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + ex.StackTrace);
+               // MessageBox.Show("El dato esta Siendo Ocupado", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             xpCollectiontrabajadores.Reload();
         }
