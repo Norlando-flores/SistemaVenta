@@ -1,4 +1,5 @@
 ﻿using System;
+using SisVentaDevExpress.Clases;
 using SisVentaDevExpress.Ventas;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SisVentaDevExpress.Formularios
 {
     public partial class frm_acceso : Form
     {
+        public string usuario= "Vendedor";
         public frm_acceso()
         {
             InitializeComponent();
@@ -59,17 +61,23 @@ namespace SisVentaDevExpress.Formularios
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             foreach (Trabajador u in xpCollectionUsuario)
-            { 
-                if(txtUsuario.Text.Equals(u.Usuario) && txtContraseña.Text.Equals(u.Contraseña))
+            {
+                DatosDeAcceso.acceso = u.Acceso;
+                DatosDeAcceso.acceso = u.Usuario;
+                DatosDeAcceso.acceso = u.Acceso;
+                if (txtUsuario.Text.Equals(u.Usuario) && txtContraseña.Text.Equals(u.Contraseña))
                 {
                     this.Visible = false;
                     frm_Principal formularioPrincipal = new frm_Principal();
+                    
                     formularioPrincipal.ShowDialog();
+                    
                     this.Visible = true;
                     xpCollectionUsuario.Reload();
                     this.txtContraseña.Text = string.Empty;
                     this.txtContraseña.Focus();
-                    return;
+                    
+                    return;                   
                 }             
             }
             this.MensajeError("Usuario o contraseña incorrecta");

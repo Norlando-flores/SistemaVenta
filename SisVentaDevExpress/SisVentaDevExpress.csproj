@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\DatosDeAcceso.cs" />
     <Compile Include="Formularios\frm_acceso.cs">
       <SubType>Form</SubType>
     </Compile>
