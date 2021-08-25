@@ -58,7 +58,7 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            /*foreach (Trabajador u in xpCollectionUsuario)
+            foreach (Trabajador u in xpCollectionUsuario)
             { 
                 if(txtUsuario.Text.Equals(u.Usuario) && txtContraseña.Text.Equals(u.Contraseña))
                 {
@@ -66,14 +66,14 @@ namespace SisVentaDevExpress.Formularios
                     frm_Principal formularioPrincipal = new frm_Principal();
                     formularioPrincipal.ShowDialog();
                     this.Visible = true;
+                    xpCollectionUsuario.Reload();
                     this.txtContraseña.Text = string.Empty;
                     this.txtContraseña.Focus();
                     return;
-
                 }             
             }
-            this.MensajeError("Usuario o contraseña incorrecta");*/
-
+            this.MensajeError("Usuario o contraseña incorrecta");
+            xpCollectionUsuario.Reload();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

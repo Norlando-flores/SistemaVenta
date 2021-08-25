@@ -112,8 +112,8 @@ namespace SisVentaDevExpress.Formularios
 
                 if (opcion == DialogResult.OK)
                 {
-                    Cliente cliente = (Cliente)dataListado.GetFocusedRow();
-                    cliente.Delete();
+                    Trabajador trabajador = (Trabajador)dataListado.GetFocusedRow();
+                    trabajador.Delete();
                     unitOfWorkTrabajadores.CommitChanges();
                     xpCollectiontrabajadores.Reload();
                     this.MensajeOk("Se elimino Correctamente el rejistro");
