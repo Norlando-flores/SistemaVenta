@@ -222,40 +222,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Almacen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Compra.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Venta.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Mantenimiento.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Consulta.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cancelar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tienda.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Acceso.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Login.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Trabajador.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Trabajador1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Trabajador2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
