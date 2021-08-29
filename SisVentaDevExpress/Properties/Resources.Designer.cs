@@ -133,6 +133,16 @@ namespace SisVentaDevExpress.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Login {
+            get {
+                object obj = ResourceManager.GetObject("Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mantenimiento {
             get {
                 object obj = ResourceManager.GetObject("Mantenimiento", resourceCulture);
@@ -146,6 +156,36 @@ namespace SisVentaDevExpress.Properties {
         internal static System.Drawing.Bitmap Tienda {
             get {
                 object obj = ResourceManager.GetObject("Tienda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trabajador {
+            get {
+                object obj = ResourceManager.GetObject("Trabajador", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trabajador1 {
+            get {
+                object obj = ResourceManager.GetObject("Trabajador1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trabajador2 {
+            get {
+                object obj = ResourceManager.GetObject("Trabajador2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

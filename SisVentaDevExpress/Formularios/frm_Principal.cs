@@ -222,6 +222,13 @@ namespace SisVentaDevExpress.Formularios
                 }
             }
         }
+
+        private void bolverAlLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_acceso a = new frm_acceso();
+            a.Show();
+            this.Close();
+        }
     }
 }
 

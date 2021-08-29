@@ -67,12 +67,13 @@ namespace SisVentaDevExpress.Formularios
                 DatosDeAcceso.acceso = u.Acceso;
                 if (txtUsuario.Text.Equals(u.Usuario) && txtContraseña.Text.Equals(u.Contraseña))
                 {
-                    this.Visible = false;
+                    //this.Visible = false;
                     frm_Principal formularioPrincipal = new frm_Principal();
-                    
-                    formularioPrincipal.ShowDialog();
-                    
-                    this.Visible = true;
+
+                    //formularioPrincipal.ShowDialog();
+                    formularioPrincipal.Show();
+                    this.Hide();
+                   // this.Visible = true;
                     xpCollectionUsuario.Reload();
                     this.txtContraseña.Text = string.Empty;
                     this.txtContraseña.Focus();

@@ -34,6 +34,7 @@ namespace SisVentaDevExpress.Formularios
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.MenuSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bolverAlLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuAlmacen = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,7 +105,8 @@ namespace SisVentaDevExpress.Formularios
             // MenuSistema
             // 
             this.MenuSistema.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
+            this.salirToolStripMenuItem,
+            this.bolverAlLoginToolStripMenuItem});
             this.MenuSistema.Image = global::SisVentaDevExpress.Properties.Resources.Tienda;
             this.MenuSistema.Name = "MenuSistema";
             this.MenuSistema.Size = new System.Drawing.Size(105, 20);
@@ -112,11 +114,19 @@ namespace SisVentaDevExpress.Formularios
             // 
             // salirToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Image = global::SisVentaDevExpress.Properties.Resources.Cancelar;
+            this.salirToolStripMenuItem.Image = global::SisVentaDevExpress.Properties.Resources.Login;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Text = "Bolver al Login";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.bolverAlLoginToolStripMenuItem_Click);
+            // 
+            // bolverAlLoginToolStripMenuItem
+            // 
+            this.bolverAlLoginToolStripMenuItem.Image = global::SisVentaDevExpress.Properties.Resources.Cancelar;
+            this.bolverAlLoginToolStripMenuItem.Name = "bolverAlLoginToolStripMenuItem";
+            this.bolverAlLoginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bolverAlLoginToolStripMenuItem.Text = "Salir";
+            this.bolverAlLoginToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // MenuAlmacen
             // 
@@ -207,8 +217,9 @@ namespace SisVentaDevExpress.Formularios
             // 
             // trabajadoresToolStripMenuItem
             // 
+            this.trabajadoresToolStripMenuItem.Image = global::SisVentaDevExpress.Properties.Resources.Trabajador2;
             this.trabajadoresToolStripMenuItem.Name = "trabajadoresToolStripMenuItem";
-            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.trabajadoresToolStripMenuItem.Text = "Trabajadores";
             this.trabajadoresToolStripMenuItem.Click += new System.EventHandler(this.trabajadoresToolStripMenuItem_Click);
             // 
@@ -503,6 +514,7 @@ namespace SisVentaDevExpress.Formularios
         private System.Windows.Forms.ToolStripButton tsCompras;
         private System.Windows.Forms.ToolStripButton tsVentas;
         private DevExpress.Xpo.XPCollection xpCollectionAcceso;
+        private System.Windows.Forms.ToolStripMenuItem bolverAlLoginToolStripMenuItem;
     }
 }
 

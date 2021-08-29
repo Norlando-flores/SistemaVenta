@@ -1068,10 +1068,12 @@ namespace SisVentaDevExpress.Formularios
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::SisVentaDevExpress.Properties.Resources.Trabajador2;
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox1.Location = new System.Drawing.Point(208, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(102, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -1112,8 +1114,11 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.search.Control = this.lblTituloTrabajadores;
             this.search.Location = new System.Drawing.Point(0, 0);
+            this.search.MaxSize = new System.Drawing.Size(196, 88);
+            this.search.MinSize = new System.Drawing.Size(196, 88);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(196, 88);
+            this.search.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.search.TextSize = new System.Drawing.Size(0, 0);
             this.search.TextVisible = false;
             // 
@@ -1121,8 +1126,11 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.layoutControlItem1.Control = this.pictureBox1;
             this.layoutControlItem1.Location = new System.Drawing.Point(196, 0);
+            this.layoutControlItem1.MaxSize = new System.Drawing.Size(106, 0);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(106, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(106, 88);
+            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
