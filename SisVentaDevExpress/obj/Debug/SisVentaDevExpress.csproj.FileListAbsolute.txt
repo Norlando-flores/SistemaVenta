@@ -133,3 +133,4 @@ C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDev
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Formularios.frm_Trabajador.resources
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Formularios.frm_Principal.resources
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Formularios.frm_acceso.resources
+C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Formularios.frm_Ingresos.resources

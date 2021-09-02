@@ -229,6 +229,14 @@ namespace SisVentaDevExpress.Formularios
             a.Show();
             this.Close();
         }
+
+        private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Ingresos formulario_Ingreso = new frm_Ingresos();
+            formulario_Ingreso.MdiParent = this;
+            formulario_Ingreso.Show();
+            formulario_Ingreso.WindowState = FormWindowState.Maximized;
+        }
     }
 }
 

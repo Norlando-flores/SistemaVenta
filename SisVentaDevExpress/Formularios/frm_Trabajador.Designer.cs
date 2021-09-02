@@ -1068,6 +1068,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::SisVentaDevExpress.Properties.Resources.Trabajador;
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox1.Location = new System.Drawing.Point(208, 12);
             this.pictureBox1.Name = "pictureBox1";

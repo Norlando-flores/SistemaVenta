@@ -89,6 +89,12 @@
     <Compile Include="Formularios\frm_Cliente.Designer.cs">
       <DependentUpon>frm_Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frm_Ingresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frm_Ingresos.Designer.cs">
+      <DependentUpon>frm_Ingresos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frm_Presentacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Cliente.resx">
       <DependentUpon>frm_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frm_Ingresos.resx">
+      <DependentUpon>frm_Ingresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Presentacion.resx">
       <DependentUpon>frm_Presentacion.cs</DependentUpon>
