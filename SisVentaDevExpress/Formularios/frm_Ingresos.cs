@@ -19,7 +19,7 @@ namespace SisVentaDevExpress.Formularios
         private bool IsEditar = false;
         Detalle_Ingreso detalle_editar = null;
         //Ingreso ingreso_editar = null;
-        Ingreso ingreso;
+        Ingreso ingreso=null;
         private decimal TotalPagado = 0;
         public frm_Ingresos()
         {
@@ -49,6 +49,8 @@ namespace SisVentaDevExpress.Formularios
             this.sbTrabajador.Text = string.Empty;
             this.sbProveedor.Text = string.Empty;
             this.lblTotalP.Text = "0,0";
+            this.gridControlDetalleIngreso.DataSource = null;
+            ingreso = null;
         }
         private void LimpiarDetalles()
         {
@@ -60,6 +62,7 @@ namespace SisVentaDevExpress.Formularios
         //Habilitar los controles del Formuario
         private void Habilitar(bool valor)
         {
+            
             this.txtidIngresos.ReadOnly = !valor;
             this.txtSerie.ReadOnly = !valor;
             this.txtCorrelativo.ReadOnly = !valor;
@@ -82,6 +85,7 @@ namespace SisVentaDevExpress.Formularios
         {
             if (this.IsNuevo || this.IsEditar)
             {
+
                 this.Habilitar(true);
                 this.btnAgregar.Enabled = false;
                 this.btnGuardar.Enabled = true;
@@ -107,17 +111,19 @@ namespace SisVentaDevExpress.Formularios
         }
         private void OcultarColumnas()
         {
-           // this.dataListadoDetalle.Columns[0].Visible = true;
-            //this.dataListadoDetalle.Columns[1].Visible = true;
+            //dataListadoDetalle.Columns[0].Visible = false;
+            //dataListadoDetalle.Columns[1].Visible = false;
+            //dataListadoDetalle.Columns[2].Visible = false;
+            //dataListadoDetalle.Columns[3].Visible = false;
         }
 
         private void frm_Ingresos_Load(object sender, EventArgs e)
         {
             ingreso = new Ingreso(unitOfWorkIngreso);
-           
+
             gridControlDetalleIngreso.DataSource = ingreso.Detalle_Ingresos;
+
             this.Mostrar();
-            this.OcultarColumnas();
             this.Habilitar(false);
             this.Botones();
         }
@@ -158,10 +164,16 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (ingreso == null)
+            {
+                ingreso = new Ingreso(unitOfWorkIngreso);
+
+                gridControlDetalleIngreso.DataSource = ingreso.Detalle_Ingresos;
+            }
             this.IsNuevo = true;
             this.IsEditar = false;
             this.Botones();
-            //this.Limpiar();
+
             this.Habilitar(true);
             tabControl1.SelectedIndex = 1;
             this.sbProveedor.Focus();
@@ -203,10 +215,8 @@ namespace SisVentaDevExpress.Formularios
                 {
                     if (this.IsNuevo)
                     {
-                        /////Ingreso ingreso =new Ingreso(unitOfWorkIngreso);
                         string estado = "Emitido";
-                        //ingreso.IdTrabajador = (Trabajador)gridView1.GetFocusedRow();
-                        //ingreso.IdProveedor = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
+
                         ingreso.IGV = Convert.ToDecimal(txtIGV.Text);
                         ingreso.Fecha_Ingreso = dtFechaIngreso.Value;
                         ingreso.Correlativo = txtCorrelativo.Text;
@@ -217,6 +227,11 @@ namespace SisVentaDevExpress.Formularios
                         unitOfWorkIngreso.CommitChanges();
                         xpCollectionIngreso.Reload();
                         this.MensajeOk("Se a Guardado el Rejistro de Forma Correcta");
+
+                        this.IsNuevo = true;
+                        this.IsEditar = false;
+                        this.btnGuardar.Enabled = true;
+                        this.Habilitar(true);
                     }
                     this.Habilitar(false);
                     this.Limpiar();
@@ -270,30 +285,24 @@ namespace SisVentaDevExpress.Formularios
 
                 else
                 {
-                    //Articulo i = (Articulo)searchLookUpEdit1View.GetFocusedRow();
-                    //if (dataListadoDetalle.SelectRows() ["IdArticulo"].Equals(i.IdArticulos))
-                    //{
-                    //    MensajeError("El articulo ya fue agregado");
-                    //}
-                    //else
-                    //{
-                    Detalle_Ingreso detalleIngreso = new Detalle_Ingreso(unitOfWorkIngreso);
-                    detalleIngreso.IdArticulo = (Articulo)searchLookUpEdit1View.GetFocusedRow();
-                    detalleIngreso.Stock_inicial = Convert.ToInt32(txtStockInicial.Text.Trim());
-                    detalleIngreso.Precio_Compra = Convert.ToDecimal(txtPrecioCompra.Text.Trim());
-                    detalleIngreso.Precio_Venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
-                    detalleIngreso.Fecha_Produccion = dtFechaProducion.Value;
-                    detalleIngreso.Fecha_Vencimiento = dtFechaVencimiento.Value;
-                    detalleIngreso.Save();
-
-                    ingreso.Detalle_Ingresos.Add(detalleIngreso);
-                    this.MensajeOk("Articulo Adregado");
-                    //MessageBox.Show(Convert.ToString(i.IdArticulos));
-                    decimal subTotal = Convert.ToDecimal((this.txtStockInicial.Text)) * Convert.ToDecimal((this.txtPrecioCompra.Text));
-                    TotalPagado = TotalPagado + subTotal;
-                    this.lblTotalP.Text = TotalPagado.ToString();
-                    this.LimpiarDetalles();
-                    //}
+                    if (ingreso != null)
+                    {
+                        Detalle_Ingreso detalleIngreso = new Detalle_Ingreso(unitOfWorkIngreso);
+                        detalleIngreso.IdArticulo = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+                        detalleIngreso.Stock_inicial = Convert.ToInt32(txtStockInicial.Text.Trim());
+                        detalleIngreso.Precio_Compra = Convert.ToDecimal(txtPrecioCompra.Text.Trim());
+                        detalleIngreso.Precio_Venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
+                        detalleIngreso.Fecha_Produccion = dtFechaProducion.Value;
+                        detalleIngreso.Fecha_Vencimiento = dtFechaVencimiento.Value;
+                        detalleIngreso.Save();
+                        xpCollectionDetalleIngreso.Reload();
+                        ingreso.Detalle_Ingresos.Add(detalleIngreso);
+                        this.MensajeOk("Articulo Adregado");
+                        decimal subTotal = Convert.ToDecimal((this.txtStockInicial.Text)) * Convert.ToDecimal((this.txtPrecioCompra.Text));
+                        TotalPagado = TotalPagado + subTotal;
+                        this.lblTotalP.Text = TotalPagado.ToString();
+                        this.LimpiarDetalles();
+                    }
                 }                              
             }
             catch (Exception ex)
@@ -315,10 +324,16 @@ namespace SisVentaDevExpress.Formularios
 
         private void sbTrabajador_EditValueChanged(object sender, EventArgs e)
         {
-           ///// Ingreso ingreso = new Ingreso(unitOfWorkIngreso);
+            ///// Ingreso ingreso = new Ingreso(unitOfWorkIngreso);
             Trabajador trabajador = (Trabajador)gridView1.GetFocusedRow();
-            ingreso.IdTrabajador = trabajador;
-            ingreso.Save();
+            if (ingreso != null)
+            {
+                ingreso.IdTrabajador = trabajador;
+                ingreso.Save();
+            }
+            
+          
+
            // MessageBox.Show(ingreso.IdTrabajador.ToString());
         }
 
@@ -326,8 +341,12 @@ namespace SisVentaDevExpress.Formularios
         {
             ////Ingreso ingreso = new Ingreso(unitOfWorkIngreso);
             Proveedor i = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
-            ingreso.IdProveedor = i;
-            ingreso.Save();
+            if (ingreso != null)
+            {
+                ingreso.IdProveedor = i;
+                ingreso.Save();
+            }
+
             //MessageBox.Show(i.IdProveedor.ToString());
         }
 
@@ -375,5 +394,22 @@ namespace SisVentaDevExpress.Formularios
             //ingreso_editar = (Ingreso)dataListado.GetFocusedRow();
             //MessageBox.Show(ingreso_editar.Estado);
         }
+
+        private void btNuevo_Click(object sender, EventArgs e)
+        {
+            //if (ingreso == null)
+            //{
+            //    ingreso = new Ingreso(unitOfWorkIngreso);
+
+            //    gridControlDetalleIngreso.DataSource = ingreso.Detalle_Ingresos;
+            //}
+            //this.IsNuevo = true;
+            //this.IsEditar = false;
+            //this.btnGuardar.Enabled = true;
+            ////this.Limpiar();
+            //this.Habilitar(true);
+            ////Habilitar(true);
+        }
+
     }
 }

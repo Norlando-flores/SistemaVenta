@@ -65,9 +65,11 @@ namespace SisVentaDevExpress.Formularios
             this.sbxPresentacion = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.xpCollectionPresentacion = new DevExpress.Xpo.XPCollection(this.components);
             this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sbxCategoria = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.xpCollectionCategoria = new DevExpress.Xpo.XPCollection(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.txtCodigo = new DevExpress.XtraEditors.TextEdit();
@@ -103,8 +105,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.errorIcon = new System.Windows.Forms.ErrorProvider(this.components);
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.colCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -556,6 +556,20 @@ namespace SisVentaDevExpress.Formularios
             this.searchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
+            // colPresentacion
+            // 
+            this.colPresentacion.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPresentacion.AppearanceCell.Options.UseFont = true;
+            this.colPresentacion.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPresentacion.AppearanceHeader.Options.UseFont = true;
+            this.colPresentacion.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPresentacion.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPresentacion.Caption = "Presentacion";
+            this.colPresentacion.FieldName = "Nombre";
+            this.colPresentacion.Name = "colPresentacion";
+            this.colPresentacion.Visible = true;
+            this.colPresentacion.VisibleIndex = 0;
+            // 
             // sbxCategoria
             // 
             this.sbxCategoria.Location = new System.Drawing.Point(501, 54);
@@ -586,6 +600,20 @@ namespace SisVentaDevExpress.Formularios
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCategoria.AppearanceCell.Options.UseFont = true;
+            this.colCategoria.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCategoria.AppearanceHeader.Options.UseFont = true;
+            this.colCategoria.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCategoria.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoria.Caption = "Categoria";
+            this.colCategoria.FieldName = "Nombre";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.Visible = true;
+            this.colCategoria.VisibleIndex = 0;
             // 
             // txtDescripcion
             // 
@@ -946,34 +974,6 @@ namespace SisVentaDevExpress.Formularios
             // errorIcon
             // 
             this.errorIcon.ContainerControl = this;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCategoria.AppearanceCell.Options.UseFont = true;
-            this.colCategoria.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCategoria.AppearanceHeader.Options.UseFont = true;
-            this.colCategoria.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCategoria.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colCategoria.Caption = "Categoria";
-            this.colCategoria.FieldName = "Nombre";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.Visible = true;
-            this.colCategoria.VisibleIndex = 0;
-            // 
-            // colPresentacion
-            // 
-            this.colPresentacion.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colPresentacion.AppearanceCell.Options.UseFont = true;
-            this.colPresentacion.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colPresentacion.AppearanceHeader.Options.UseFont = true;
-            this.colPresentacion.AppearanceHeader.Options.UseTextOptions = true;
-            this.colPresentacion.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPresentacion.Caption = "Presentacion";
-            this.colPresentacion.FieldName = "Nombre";
-            this.colPresentacion.Name = "colPresentacion";
-            this.colPresentacion.Visible = true;
-            this.colPresentacion.VisibleIndex = 0;
             // 
             // frm_Articulos
             // 
