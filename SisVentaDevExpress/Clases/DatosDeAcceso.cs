@@ -11,5 +11,7 @@ namespace SisVentaDevExpress.Clases
         static public string acceso;
         static public string usuario;
         static public string contraceña;
+
+        static public int idArticulo;
     }
 }

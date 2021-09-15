@@ -103,6 +103,8 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.errorIcon = new System.Windows.Forms.ErrorProvider(this.components);
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.colCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -547,6 +549,8 @@ namespace SisVentaDevExpress.Formularios
             // 
             // searchLookUpEdit2View
             // 
+            this.searchLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPresentacion});
             this.searchLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit2View.Name = "searchLookUpEdit2View";
             this.searchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -567,6 +571,7 @@ namespace SisVentaDevExpress.Formularios
             this.sbxCategoria.Size = new System.Drawing.Size(149, 22);
             this.sbxCategoria.StyleController = this.layoutControl4;
             this.sbxCategoria.TabIndex = 13;
+            this.sbxCategoria.EditValueChanged += new System.EventHandler(this.sbxCategoria_EditValueChanged);
             // 
             // xpCollectionCategoria
             // 
@@ -575,6 +580,8 @@ namespace SisVentaDevExpress.Formularios
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCategoria});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -940,6 +947,34 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.errorIcon.ContainerControl = this;
             // 
+            // colCategoria
+            // 
+            this.colCategoria.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCategoria.AppearanceCell.Options.UseFont = true;
+            this.colCategoria.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCategoria.AppearanceHeader.Options.UseFont = true;
+            this.colCategoria.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCategoria.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoria.Caption = "Categoria";
+            this.colCategoria.FieldName = "Nombre";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.Visible = true;
+            this.colCategoria.VisibleIndex = 0;
+            // 
+            // colPresentacion
+            // 
+            this.colPresentacion.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPresentacion.AppearanceCell.Options.UseFont = true;
+            this.colPresentacion.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPresentacion.AppearanceHeader.Options.UseFont = true;
+            this.colPresentacion.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPresentacion.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPresentacion.Caption = "Presentacion";
+            this.colPresentacion.FieldName = "Nombre";
+            this.colPresentacion.Name = "colPresentacion";
+            this.colPresentacion.Visible = true;
+            this.colPresentacion.VisibleIndex = 0;
+            // 
             // frm_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1087,5 +1122,7 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraLayout.LayoutControlItem lblPresentacion;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
+        private DevExpress.XtraGrid.Columns.GridColumn colPresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colCategoria;
     }
 }

@@ -1,10 +1,5 @@
-﻿using System;
-using DevExpress.Xpo;
-using DevExpress.Xpo.Metadata;
-using DevExpress.Data.Filtering;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Reflection;
+﻿using DevExpress.Xpo;
+using System;
 namespace SisVentaDevExpress.Ventas
 {
 
@@ -12,6 +7,14 @@ namespace SisVentaDevExpress.Ventas
     {
         public Trabajador(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+
+        public string NombreCompleto
+        {
+            get
+            {
+                return Nombre + " " + Apellidos;
+            }
+        }
     }
 
 }

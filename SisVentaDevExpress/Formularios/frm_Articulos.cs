@@ -144,6 +144,7 @@ namespace SisVentaDevExpress.Formularios
                        unitOfWorkArticulos.CommitChanges();
                        xpCollectionArticulos.Reload();
                        this.MensajeOk("Se a Guardado el Rejistro de Forma Correcta");
+                    //MessageBox.Show(Convert.ToString(articulo.IdArticulos));
                     }
                     this.Mostrar();
                     this.IsNuevo = false;
@@ -254,6 +255,11 @@ namespace SisVentaDevExpress.Formularios
                 MessageBox.Show("El dato esta Siendo Ocupado", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             xpCollectionPresentacion.Reload();
+        }
+
+        private void sbxCategoria_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

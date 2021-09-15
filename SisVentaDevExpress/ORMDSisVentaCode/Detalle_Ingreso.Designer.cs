@@ -62,24 +62,17 @@ namespace SisVentaDevExpress.Ventas
             get { return fStock_inicial; }
             set { SetPropertyValue<int>(nameof(Stock_inicial), ref fStock_inicial, value); }
         }
-        int fStock_Actual;
-        [Persistent(@"stock_Actual")]
-        public int Stock_Actual
-        {
-            get { return fStock_Actual; }
-            set { SetPropertyValue<int>(nameof(Stock_Actual), ref fStock_Actual, value); }
-        }
         DateTime fFecha_Produccion;
         public DateTime Fecha_Produccion
         {
             get { return fFecha_Produccion; }
             set { SetPropertyValue<DateTime>(nameof(Fecha_Produccion), ref fFecha_Produccion, value); }
         }
-        DateTime fFecha_Venta;
-        public DateTime Fecha_Venta
+        DateTime fFecha_Vencimiento;
+        public DateTime Fecha_Vencimiento
         {
-            get { return fFecha_Venta; }
-            set { SetPropertyValue<DateTime>(nameof(Fecha_Venta), ref fFecha_Venta, value); }
+            get { return fFecha_Vencimiento; }
+            set { SetPropertyValue<DateTime>(nameof(Fecha_Vencimiento), ref fFecha_Vencimiento, value); }
         }
         [Association(@"Detalle_ventaReferencesDetalle_Ingreso")]
         public XPCollection<Detalle_venta> Detalle_ventas { get { return GetCollection<Detalle_venta>(nameof(Detalle_ventas)); } }

@@ -54,13 +54,6 @@ namespace SisVentaDevExpress.Ventas
             get { return fFecha_Nacimiento; }
             set { SetPropertyValue<DateTime>(nameof(Fecha_Nacimiento), ref fFecha_Nacimiento, value); }
         }
-        string fNum_Documento;
-        [Size(30)]
-       /* public string Num_Documento
-        {
-            get { return fNum_Documento; }
-            set { SetPropertyValue<string>(nameof(Num_Documento), ref fNum_Documento, value); }
-        }*/
         string fDireccion;
         public string Direccion
         {
