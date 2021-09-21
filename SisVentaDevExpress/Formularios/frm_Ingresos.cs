@@ -18,7 +18,7 @@ namespace SisVentaDevExpress.Formularios
         private bool IsNuevo = false;
         private bool IsEditar = false;
         Detalle_Ingreso detalle_editar = null;
-        //Ingreso ingreso_editar = null;
+        Ingreso ingreso_editar = null;
         Ingreso ingreso=null;
         private decimal TotalPagado = 0;
         public frm_Ingresos()
@@ -108,6 +108,7 @@ namespace SisVentaDevExpress.Formularios
         {
 
             this.lblTotal.Text = "Total de Registro: " + Convert.ToString(xpCollectionIngreso.Count);
+            xpCollectionArticulos.Reload();
         }
         private void OcultarColumnas()
         {
@@ -119,10 +120,10 @@ namespace SisVentaDevExpress.Formularios
 
         private void frm_Ingresos_Load(object sender, EventArgs e)
         {
-            ingreso = new Ingreso(unitOfWorkIngreso);
+            //ingreso = new Ingreso(unitOfWorkIngreso);
 
-            gridControlDetalleIngreso.DataSource = ingreso.Detalle_Ingresos;
-
+            //gridControlDetalleIngreso.DataSource = ingreso.Detalle_Ingresos;
+            gridControlDetalleIngreso.DataSource = null;
             this.Mostrar();
             this.Habilitar(false);
             this.Botones();
@@ -132,33 +133,26 @@ namespace SisVentaDevExpress.Formularios
         {
             //Ingreso idt = (Ingreso)dataListado.GetFocusedRow();
             //string estado = "Aunulado";
-            //try
-            //{
-            //    DialogResult opcion;
-            //    opcion = MessageBox.Show("Desea Anular el Rejistro", "Sistema de Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            try
+            {
+                DialogResult opcion;
+                opcion = MessageBox.Show("Desea elimino el Rejistro", "Sistema de Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-            //    if (opcion == DialogResult.OK)
-            //    {
-            //        ingreso.IdTrabajador = ingreso_editar.IdTrabajador;
-            //        ingreso.IdProveedor = ingreso_editar.IdProveedor;
-            //        ingreso.IGV = ingreso_editar.IGV;
-            //        ingreso.Fecha_Ingreso = ingreso_editar.Fecha_Ingreso;
-            //        ingreso.Correlativo = ingreso_editar.Correlativo;
-            //        ingreso.Serie = ingreso_editar.Serie;
-            //        ingreso.Tipo_Comprobante = ingreso_editar.Tipo_Comprobante;
-            //        ingreso.Estado = estado;
-            //        ingreso.Save();
-            //        unitOfWorkIngreso.CommitChanges();
-            //        xpCollectionIngreso.Reload();
-            //        this.MensajeOk("Se Anulo Correctamente el rejistro");
-            //        this.Mostrar();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    //MessageBox.Show(ex.Message + ex.StackTrace);
-            //    MessageBox.Show("El dato esta Siendo Ocupado", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                if (opcion == DialogResult.OK)
+                {
+                    Ingreso ingreos = (Ingreso)dataListado.GetFocusedRow();
+                    ingreos.Delete();
+
+                    unitOfWorkIngreso.CommitChanges();
+                    xpCollectionIngreso.Reload();
+                    MessageBox.Show("Se elimino correctamente el rejistro");
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("El dato esta Siendo Ocupado", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             //xpCollectionIngreso.Reload();
         }
 
@@ -411,5 +405,53 @@ namespace SisVentaDevExpress.Formularios
             ////Habilitar(true);
         }
 
+        private void btnEditar1_Click(object sender, EventArgs e)
+        {
+            ingreso_editar = (Ingreso)dataListado.GetFocusedRow();
+            this.txtidIngresos.Text = ingreso_editar.IdIngreso.ToString();
+            this.sbTrabajador.Text= (ingreso_editar.IdTrabajador).IdTrabajador.ToString();
+            this.sbProveedor.Text= (ingreso_editar.IdProveedor).IdProveedor.ToString();
+            this.dtFechaIngreso.Value = ingreso_editar.Fecha_Ingreso;
+            this.txtIGV.Text = ingreso_editar.IGV.ToString();
+            this.cbComprobante.Text = ingreso_editar.Tipo_Comprobante.ToString();
+            this.txtSerie.Text = ingreso_editar.Serie.ToString();
+            this.txtCorrelativo.Text = ingreso_editar.Correlativo.ToString();
+            gridControlDetalleIngreso.DataSource = ingreso_editar.Detalle_Ingresos;
+            this.sbTrabajador.Focus();
+
+            //ingreso = new Ingreso()
+            tabControl1.SelectedIndex = 1;
+            this.Habilitar(true);
+            //gridControlDetalleIngreso.DataSource = xpCollectionDetalleIngreso;
+
+
+        }
+
+        private void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+            string estado = "Anulado";
+            Ingreso ingreso = ingreso_editar;
+            ingreso.IdTrabajador = (Trabajador)gridView1.GetFocusedRow();
+            ingreso.IdProveedor = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
+            ingreso.Fecha_Ingreso = dtFechaIngreso.Value;
+            ingreso.IGV = Convert.ToDecimal(txtIGV.Text);
+            ingreso.Correlativo = txtCorrelativo.Text;
+            ingreso.Serie = txtSerie.Text;
+            ingreso.Tipo_Comprobante = cbComprobante.Text;
+            ingreso.Estado = estado;
+
+            ingreso.Save();
+            unitOfWorkIngreso.CommitChanges();
+            xpCollectionIngreso.Reload();
+            Limpiar();
+            this.MensajeOk("Se a Actualizo el Rejistro de Forma Correcta");
+            this.Habilitar(false);
+            tabControl1.SelectedIndex = 0;
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.Botones();
+            errorIcon.Clear();
+            this.Limpiar();
+        }
     }
 }

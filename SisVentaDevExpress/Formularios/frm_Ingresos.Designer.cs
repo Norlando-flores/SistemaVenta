@@ -85,6 +85,7 @@ namespace SisVentaDevExpress.Formularios
             this.gridControlDetalleIngreso = new DevExpress.XtraGrid.GridControl();
             this.xpCollectionDetalleIngreso = new DevExpress.Xpo.XPCollection(this.components);
             this.dataListadoDetalle = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrecio_Compra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrecio_Venta = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -365,6 +366,7 @@ namespace SisVentaDevExpress.Formularios
             this.btnEditar1.StyleController = this.layoutControl2;
             this.btnEditar1.TabIndex = 2;
             this.btnEditar1.Text = "Editar";
+            this.btnEditar1.Click += new System.EventHandler(this.btnEditar1_Click);
             // 
             // btnAgregar
             // 
@@ -390,7 +392,7 @@ namespace SisVentaDevExpress.Formularios
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dataListado});
             this.gridControl2.Click += new System.EventHandler(this.gridControl2_Click);
-            this.gridControl2.DoubleClick += new System.EventHandler(this.gridControl2_DoubleClick);
+            this.gridControl2.DoubleClick += new System.EventHandler(this.btnEditar1_Click);
             // 
             // xpCollectionIngreso
             // 
@@ -877,6 +879,7 @@ namespace SisVentaDevExpress.Formularios
             // dataListadoDetalle
             // 
             this.dataListadoDetalle.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
             this.ColArticulo,
             this.colPrecio_Compra,
             this.colPrecio_Venta,
@@ -886,6 +889,14 @@ namespace SisVentaDevExpress.Formularios
             this.dataListadoDetalle.GridControl = this.gridControlDetalleIngreso;
             this.dataListadoDetalle.Name = "dataListadoDetalle";
             this.dataListadoDetalle.OptionsBehavior.Editable = false;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "id Ingreso";
+            this.gridColumn2.FieldName = "IdIngreso.IdIngreso";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // ColArticulo
             // 
@@ -899,7 +910,7 @@ namespace SisVentaDevExpress.Formularios
             this.ColArticulo.FieldName = "IdArticulo.Nombre";
             this.ColArticulo.Name = "ColArticulo";
             this.ColArticulo.Visible = true;
-            this.ColArticulo.VisibleIndex = 0;
+            this.ColArticulo.VisibleIndex = 1;
             // 
             // colPrecio_Compra
             // 
@@ -913,7 +924,7 @@ namespace SisVentaDevExpress.Formularios
             this.colPrecio_Compra.FieldName = "Precio_Compra";
             this.colPrecio_Compra.Name = "colPrecio_Compra";
             this.colPrecio_Compra.Visible = true;
-            this.colPrecio_Compra.VisibleIndex = 1;
+            this.colPrecio_Compra.VisibleIndex = 2;
             // 
             // colPrecio_Venta
             // 
@@ -926,7 +937,7 @@ namespace SisVentaDevExpress.Formularios
             this.colPrecio_Venta.FieldName = "Precio_Venta";
             this.colPrecio_Venta.Name = "colPrecio_Venta";
             this.colPrecio_Venta.Visible = true;
-            this.colPrecio_Venta.VisibleIndex = 2;
+            this.colPrecio_Venta.VisibleIndex = 3;
             // 
             // colStock_inicial
             // 
@@ -940,7 +951,7 @@ namespace SisVentaDevExpress.Formularios
             this.colStock_inicial.FieldName = "Stock_inicial";
             this.colStock_inicial.Name = "colStock_inicial";
             this.colStock_inicial.Visible = true;
-            this.colStock_inicial.VisibleIndex = 3;
+            this.colStock_inicial.VisibleIndex = 4;
             // 
             // colFecha_Produccion
             // 
@@ -954,7 +965,7 @@ namespace SisVentaDevExpress.Formularios
             this.colFecha_Produccion.FieldName = "Fecha_Produccion";
             this.colFecha_Produccion.Name = "colFecha_Produccion";
             this.colFecha_Produccion.Visible = true;
-            this.colFecha_Produccion.VisibleIndex = 4;
+            this.colFecha_Produccion.VisibleIndex = 5;
             // 
             // colFecha_Vencimiento
             // 
@@ -968,7 +979,7 @@ namespace SisVentaDevExpress.Formularios
             this.colFecha_Vencimiento.FieldName = "Fecha_Vencimiento";
             this.colFecha_Vencimiento.Name = "colFecha_Vencimiento";
             this.colFecha_Vencimiento.Visible = true;
-            this.colFecha_Vencimiento.VisibleIndex = 5;
+            this.colFecha_Vencimiento.VisibleIndex = 6;
             // 
             // groupBox2
             // 
@@ -1347,6 +1358,7 @@ namespace SisVentaDevExpress.Formularios
             this.btnGuardarCambios.StyleController = this.layoutControl4;
             this.btnGuardarCambios.TabIndex = 14;
             this.btnGuardarCambios.Text = "Guardar Cambios";
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // btnGuardar
             // 
@@ -1966,5 +1978,6 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraGrid.Columns.GridColumn colStock_inicial;
         private DevExpress.XtraGrid.Columns.GridColumn colFecha_Produccion;
         private DevExpress.XtraGrid.Columns.GridColumn colFecha_Vencimiento;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
