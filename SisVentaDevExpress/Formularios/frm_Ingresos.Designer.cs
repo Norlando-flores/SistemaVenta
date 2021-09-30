@@ -77,12 +77,9 @@ namespace SisVentaDevExpress.Formularios
             this.xpCollectionProveedor = new DevExpress.Xpo.XPCollection(this.components);
             this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lblTotalP = new System.Windows.Forms.Label();
-            this.lblTotalPagado = new System.Windows.Forms.Label();
             this.gridControlDetalleIngreso = new DevExpress.XtraGrid.GridControl();
             this.xpCollectionDetalleIngreso = new DevExpress.Xpo.XPCollection(this.components);
             this.dataListadoDetalle = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCodigoArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrecio_Compra = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -135,9 +132,6 @@ namespace SisVentaDevExpress.Formularios
             this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblCorrelativo = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblTrabajador = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblComprobante = new DevExpress.XtraLayout.LayoutControlItem();
@@ -226,9 +220,6 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblCorrelativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTrabajador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblComprobante)).BeginInit();
@@ -390,7 +381,6 @@ namespace SisVentaDevExpress.Formularios
             this.gridControl2.TabIndex = 6;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dataListado});
-            this.gridControl2.Click += new System.EventHandler(this.gridControl2_Click);
             this.gridControl2.DoubleClick += new System.EventHandler(this.btnEditar1_Click);
             // 
             // xpCollectionIngreso
@@ -696,8 +686,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl4.Controls.Add(this.txtIGV);
             this.layoutControl4.Controls.Add(this.sbTrabajador);
             this.layoutControl4.Controls.Add(this.sbProveedor);
-            this.layoutControl4.Controls.Add(this.lblTotalP);
-            this.layoutControl4.Controls.Add(this.lblTotalPagado);
             this.layoutControl4.Controls.Add(this.gridControlDetalleIngreso);
             this.layoutControl4.Controls.Add(this.groupBox2);
             this.layoutControl4.Controls.Add(this.txtCorrelativo);
@@ -817,22 +805,6 @@ namespace SisVentaDevExpress.Formularios
             this.Proveedor.Visible = true;
             this.Proveedor.VisibleIndex = 0;
             // 
-            // lblTotalP
-            // 
-            this.lblTotalP.Location = new System.Drawing.Point(106, 330);
-            this.lblTotalP.Name = "lblTotalP";
-            this.lblTotalP.Size = new System.Drawing.Size(144, 20);
-            this.lblTotalP.TabIndex = 27;
-            this.lblTotalP.Text = "0,0";
-            // 
-            // lblTotalPagado
-            // 
-            this.lblTotalPagado.Location = new System.Drawing.Point(12, 330);
-            this.lblTotalPagado.Name = "lblTotalPagado";
-            this.lblTotalPagado.Size = new System.Drawing.Size(90, 20);
-            this.lblTotalPagado.TabIndex = 26;
-            this.lblTotalPagado.Text = "Total Pagado:";
-            // 
             // gridControlDetalleIngreso
             // 
             this.gridControlDetalleIngreso.DataSource = this.xpCollectionDetalleIngreso;
@@ -840,7 +812,7 @@ namespace SisVentaDevExpress.Formularios
             this.gridControlDetalleIngreso.Location = new System.Drawing.Point(12, 164);
             this.gridControlDetalleIngreso.MainView = this.dataListadoDetalle;
             this.gridControlDetalleIngreso.Name = "gridControlDetalleIngreso";
-            this.gridControlDetalleIngreso.Size = new System.Drawing.Size(843, 162);
+            this.gridControlDetalleIngreso.Size = new System.Drawing.Size(843, 186);
             this.gridControlDetalleIngreso.TabIndex = 25;
             this.gridControlDetalleIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dataListadoDetalle});
@@ -854,7 +826,6 @@ namespace SisVentaDevExpress.Formularios
             // dataListadoDetalle
             // 
             this.dataListadoDetalle.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn2,
             this.colCodigoArticulo,
             this.ColArticulo,
             this.colPrecio_Compra,
@@ -867,22 +838,6 @@ namespace SisVentaDevExpress.Formularios
             this.dataListadoDetalle.Name = "dataListadoDetalle";
             this.dataListadoDetalle.OptionsBehavior.Editable = false;
             this.dataListadoDetalle.OptionsView.ShowFooter = true;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "id Ingreso";
-            this.gridColumn2.FieldName = "IdIngreso.IdIngreso";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
             // 
             // colCodigoArticulo
             // 
@@ -898,7 +853,7 @@ namespace SisVentaDevExpress.Formularios
             this.colCodigoArticulo.FieldName = "IdArticulo.IdArticulos";
             this.colCodigoArticulo.Name = "colCodigoArticulo";
             this.colCodigoArticulo.Visible = true;
-            this.colCodigoArticulo.VisibleIndex = 1;
+            this.colCodigoArticulo.VisibleIndex = 0;
             // 
             // ColArticulo
             // 
@@ -912,7 +867,7 @@ namespace SisVentaDevExpress.Formularios
             this.ColArticulo.FieldName = "IdArticulo.Nombre";
             this.ColArticulo.Name = "ColArticulo";
             this.ColArticulo.Visible = true;
-            this.ColArticulo.VisibleIndex = 2;
+            this.ColArticulo.VisibleIndex = 1;
             // 
             // colPrecio_Compra
             // 
@@ -928,7 +883,7 @@ namespace SisVentaDevExpress.Formularios
             this.colPrecio_Compra.FieldName = "Precio_Compra";
             this.colPrecio_Compra.Name = "colPrecio_Compra";
             this.colPrecio_Compra.Visible = true;
-            this.colPrecio_Compra.VisibleIndex = 3;
+            this.colPrecio_Compra.VisibleIndex = 2;
             // 
             // colPrecio_Venta
             // 
@@ -943,7 +898,7 @@ namespace SisVentaDevExpress.Formularios
             this.colPrecio_Venta.FieldName = "Precio_Venta";
             this.colPrecio_Venta.Name = "colPrecio_Venta";
             this.colPrecio_Venta.Visible = true;
-            this.colPrecio_Venta.VisibleIndex = 4;
+            this.colPrecio_Venta.VisibleIndex = 3;
             // 
             // colStockInicial
             // 
@@ -955,11 +910,11 @@ namespace SisVentaDevExpress.Formularios
             this.colStockInicial.AppearanceHeader.Options.UseFont = true;
             this.colStockInicial.AppearanceHeader.Options.UseTextOptions = true;
             this.colStockInicial.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colStockInicial.Caption = "Articulo Ingresado";
+            this.colStockInicial.Caption = "Cant. Articulo";
             this.colStockInicial.FieldName = "Stock_inicial";
             this.colStockInicial.Name = "colStockInicial";
             this.colStockInicial.Visible = true;
-            this.colStockInicial.VisibleIndex = 5;
+            this.colStockInicial.VisibleIndex = 4;
             // 
             // colFecha_Produccion
             // 
@@ -975,7 +930,7 @@ namespace SisVentaDevExpress.Formularios
             this.colFecha_Produccion.FieldName = "Fecha_Produccion";
             this.colFecha_Produccion.Name = "colFecha_Produccion";
             this.colFecha_Produccion.Visible = true;
-            this.colFecha_Produccion.VisibleIndex = 6;
+            this.colFecha_Produccion.VisibleIndex = 5;
             // 
             // colFecha_Vencimiento
             // 
@@ -991,7 +946,7 @@ namespace SisVentaDevExpress.Formularios
             this.colFecha_Vencimiento.FieldName = "Fecha_Vencimiento";
             this.colFecha_Vencimiento.Name = "colFecha_Vencimiento";
             this.colFecha_Vencimiento.Visible = true;
-            this.colFecha_Vencimiento.VisibleIndex = 7;
+            this.colFecha_Vencimiento.VisibleIndex = 6;
             // 
             // gridColumn3
             // 
@@ -1006,8 +961,10 @@ namespace SisVentaDevExpress.Formularios
             this.gridColumn3.Caption = "Sub Total";
             this.gridColumn3.FieldName = "Sub_total";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Sub_total", "Total Pagado= {0}")});
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 8;
+            this.gridColumn3.VisibleIndex = 7;
             // 
             // groupBox2
             // 
@@ -1089,7 +1046,6 @@ namespace SisVentaDevExpress.Formularios
             this.sbArticulo.Size = new System.Drawing.Size(127, 22);
             this.sbArticulo.StyleController = this.layoutControl5;
             this.sbArticulo.TabIndex = 5;
-            this.sbArticulo.EditValueChanged += new System.EventHandler(this.sbArticulo_EditValueChanged);
             // 
             // xpCollectionArticulos
             // 
@@ -1428,9 +1384,6 @@ namespace SisVentaDevExpress.Formularios
             this.emptySpaceItem12,
             this.layoutControlItem3,
             this.layoutControlItem15,
-            this.layoutControlItem16,
-            this.emptySpaceItem6,
-            this.layoutControlItem17,
             this.lblCorrelativo,
             this.lblTrabajador,
             this.lblComprobante,
@@ -1496,41 +1449,9 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem15.Control = this.gridControlDetalleIngreso;
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 152);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(847, 166);
+            this.layoutControlItem15.Size = new System.Drawing.Size(847, 190);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
-            // 
-            // layoutControlItem16
-            // 
-            this.layoutControlItem16.Control = this.lblTotalPagado;
-            this.layoutControlItem16.Location = new System.Drawing.Point(0, 318);
-            this.layoutControlItem16.MaxSize = new System.Drawing.Size(94, 24);
-            this.layoutControlItem16.MinSize = new System.Drawing.Size(94, 24);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(94, 24);
-            this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem16.TextVisible = false;
-            // 
-            // emptySpaceItem6
-            // 
-            this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(242, 318);
-            this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(605, 24);
-            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem17
-            // 
-            this.layoutControlItem17.Control = this.lblTotalP;
-            this.layoutControlItem17.Location = new System.Drawing.Point(94, 318);
-            this.layoutControlItem17.MaxSize = new System.Drawing.Size(148, 24);
-            this.layoutControlItem17.MinSize = new System.Drawing.Size(148, 24);
-            this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(148, 24);
-            this.layoutControlItem17.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem17.TextVisible = false;
             // 
             // lblCorrelativo
             // 
@@ -1831,9 +1752,6 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblCorrelativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTrabajador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblComprobante)).EndInit();
@@ -1942,16 +1860,11 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.Xpo.XPCollection xpCollectionProveedor;
         private DevExpress.Xpo.UnitOfWork unitOfWorkIngreso;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
-        private System.Windows.Forms.Label lblTotalP;
-        private System.Windows.Forms.Label lblTotalPagado;
         private DevExpress.XtraGrid.GridControl gridControlDetalleIngreso;
         private DevExpress.XtraGrid.Views.Grid.GridView dataListadoDetalle;
         private DevExpress.Xpo.XPCollection xpCollectionArticulos;
         private DevExpress.Xpo.UnitOfWork unitOfWorkDetalleIngreso;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraLayout.LayoutControlItem lblProveedor;
         private System.Windows.Forms.ToolTip ttMensaje;
         private System.Windows.Forms.ErrorProvider errorIcon;
@@ -1985,7 +1898,6 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraGrid.Columns.GridColumn colPrecio_Venta;
         private DevExpress.XtraGrid.Columns.GridColumn colFecha_Produccion;
         private DevExpress.XtraGrid.Columns.GridColumn colFecha_Vencimiento;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
         private DevExpress.XtraEditors.SimpleButton btnAnular1;
