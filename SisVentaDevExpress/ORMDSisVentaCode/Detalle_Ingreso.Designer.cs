@@ -36,8 +36,8 @@ namespace SisVentaDevExpress.Ventas
             set { SetPropertyValue<Ingreso>(nameof(IdIngreso), ref fIdIngreso, value); }
         }
         Articulo fIdArticulo;
+        [Indexed(Name = @"iidArticulo_detalle_Ingreso")]
         [Persistent(@"idArticulo")]
-        [Association(@"Detalle_IngresoReferencesArticulo")]
         public Articulo IdArticulo
         {
             get { return fIdArticulo; }
@@ -73,6 +73,20 @@ namespace SisVentaDevExpress.Ventas
         {
             get { return fFecha_Vencimiento; }
             set { SetPropertyValue<DateTime>(nameof(Fecha_Vencimiento), ref fFecha_Vencimiento, value); }
+        }
+        decimal fSub_total;
+        [Persistent(@"sub_total")]
+        public decimal Sub_total
+        {
+            get { return fSub_total; }
+            set { SetPropertyValue<decimal>(nameof(Sub_total), ref fSub_total, value); }
+        }
+        int fStock_Actual;
+        [Persistent(@"stock_Actual")]
+        public int Stock_Actual
+        {
+            get { return fStock_Actual; }
+            set { SetPropertyValue<int>(nameof(Stock_Actual), ref fStock_Actual, value); }
         }
         [Association(@"Detalle_ventaReferencesDetalle_Ingreso")]
         public XPCollection<Detalle_venta> Detalle_ventas { get { return GetCollection<Detalle_venta>(nameof(Detalle_ventas)); } }

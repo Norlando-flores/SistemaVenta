@@ -36,8 +36,8 @@ namespace SisVentaDevExpress.Ventas
             set { SetPropertyValue<Cliente>(nameof(IdCliente), ref fIdCliente, value); }
         }
         Trabajador fIdTrabajador;
+        [Indexed(Name = @"iidTrabajador_venta")]
         [Persistent(@"idTrabajador")]
-        [Association(@"VentaReferencesTrabajador")]
         public Trabajador IdTrabajador
         {
             get { return fIdTrabajador; }

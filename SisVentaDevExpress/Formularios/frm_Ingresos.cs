@@ -284,19 +284,22 @@ namespace SisVentaDevExpress.Formularios
                 {
                     if (this.IsNuevo && ingreso != null)
                     {
+                        decimal sub_Total = Convert.ToDecimal((txtStockInicial.Text)) * Convert.ToDecimal((txtPrecioCompra.Text));
                         Detalle_Ingreso detalleIngreso = new Detalle_Ingreso(unitOfWorkIngreso);
                         detalleIngreso.IdArticulo = (Articulo)searchLookUpEdit1View.GetFocusedRow();
                         detalleIngreso.Stock_inicial = Convert.ToInt32(txtStockInicial.Text.Trim());
+                        detalleIngreso.Stock_Actual = Convert.ToInt32(txtStockInicial.Text.Trim());
                         detalleIngreso.Precio_Compra = Convert.ToDecimal(txtPrecioCompra.Text.Trim());
                         detalleIngreso.Precio_Venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
                         detalleIngreso.Fecha_Produccion = dtFechaProducion.Value;
                         detalleIngreso.Fecha_Vencimiento = dtFechaVencimiento.Value;
+                        detalleIngreso.Sub_total = sub_Total;
                         detalleIngreso.Save();
                         xpCollectionDetalleIngreso.Reload();
                         ingreso.Detalle_Ingresos.Add(detalleIngreso);
                         this.MensajeOk("Articulo Adregado");
-                        decimal subTotal = Convert.ToDecimal((this.txtStockInicial.Text)) * Convert.ToDecimal((this.txtPrecioCompra.Text));
-                        TotalPagado = TotalPagado + subTotal;
+                        //decimal subTotal = Convert.ToDecimal((this.txtStockInicial.Text)) * Convert.ToDecimal((this.txtPrecioCompra.Text));
+                        TotalPagado = TotalPagado + sub_Total;
                         this.lblTotalP.Text = TotalPagado.ToString();
                         this.LimpiarDetalles();
                     }
@@ -304,18 +307,25 @@ namespace SisVentaDevExpress.Formularios
                     {
                         if (this.IsEditar)
                         {
+                            decimal sub_Total = Convert.ToDecimal((txtStockInicial.Text)) * Convert.ToDecimal((txtPrecioCompra.Text));
                             Detalle_Ingreso detalle = detalle_editar;
                             detalle.IdArticulo = (Articulo)searchLookUpEdit1View.GetFocusedRow();
                             detalle.Stock_inicial = Convert.ToInt32(txtStockInicial.Text.Trim());
+                            detalle.Stock_Actual = Convert.ToInt32(txtStockInicial.Text.Trim());
                             detalle.Precio_Compra = Convert.ToDecimal(txtPrecioCompra.Text.Trim());
                             detalle.Precio_Venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
                             detalle.Fecha_Produccion = dtFechaProducion.Value;
                             detalle.Fecha_Vencimiento = dtFechaVencimiento.Value;
+                            detalle.Sub_total = sub_Total;
                             detalle.Save();
                             unitOfWorkIngreso.CommitChanges();
                             xpCollectionDetalleIngreso.Reload();
                             LimpiarDetalles();
                             this.MensajeOk("Se a Actualizo el Rejistro de Forma Correcta");
+
+                            TotalPagado = detalle.Sub_total;
+                            this.lblTotalP.Text = TotalPagado.ToString();
+                            this.LimpiarDetalles();
                         }
                         //string estado = "Anulado";
                         //Ingreso ingreso = ingreso_editar;
@@ -520,6 +530,7 @@ namespace SisVentaDevExpress.Formularios
             this.txtPrecioVenta.Text = detalle_editar.Precio_Venta.ToString();
             this.dtFechaProducion.Value = detalle_editar.Fecha_Produccion;
             this.dtFechaVencimiento.Value = detalle_editar.Fecha_Vencimiento;
+            this.lblTotalP.Text = detalle_editar.Sub_total.ToString();
 
             //this.txtidIngresos.Text = ingreso_editar.IdIngreso.ToString();
             //this.sbTrabajador.Text = (ingreso_editar.IdTrabajador).IdTrabajador.ToString();

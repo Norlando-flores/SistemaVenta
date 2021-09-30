@@ -104,8 +104,6 @@ namespace SisVentaDevExpress.Ventas
         }
         [Association(@"IngresoReferencesTrabajador")]
         public XPCollection<Ingreso> Ingresoes { get { return GetCollection<Ingreso>(nameof(Ingresoes)); } }
-        [Association(@"VentaReferencesTrabajador")]
-        public XPCollection<Venta> Ventas { get { return GetCollection<Venta>(nameof(Ventas)); } }
     }
 
 }
