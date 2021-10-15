@@ -37,6 +37,7 @@ namespace SisVentaDevExpress.Formularios
             this.bolverAlLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuAlmacen = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detalleDeArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presentacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuCompra = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,6 +133,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.MenuAlmacen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.articulosToolStripMenuItem,
+            this.detalleDeArticuloToolStripMenuItem,
             this.categoriasToolStripMenuItem,
             this.presentacionesToolStripMenuItem});
             this.MenuAlmacen.Image = global::SisVentaDevExpress.Properties.Resources.Almacen;
@@ -142,21 +144,28 @@ namespace SisVentaDevExpress.Formularios
             // articulosToolStripMenuItem
             // 
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.articulosToolStripMenuItem.Text = "Articulos";
             this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
+            // 
+            // detalleDeArticuloToolStripMenuItem
+            // 
+            this.detalleDeArticuloToolStripMenuItem.Name = "detalleDeArticuloToolStripMenuItem";
+            this.detalleDeArticuloToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.detalleDeArticuloToolStripMenuItem.Text = "Detalle de Articulo";
+            this.detalleDeArticuloToolStripMenuItem.Click += new System.EventHandler(this.detalleDeArticuloToolStripMenuItem_Click);
             // 
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // presentacionesToolStripMenuItem
             // 
             this.presentacionesToolStripMenuItem.Name = "presentacionesToolStripMenuItem";
-            this.presentacionesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.presentacionesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.presentacionesToolStripMenuItem.Text = "Presentaciones";
             this.presentacionesToolStripMenuItem.Click += new System.EventHandler(this.presentacionesToolStripMenuItem_Click);
             // 
@@ -173,14 +182,14 @@ namespace SisVentaDevExpress.Formularios
             // ingresosToolStripMenuItem
             // 
             this.ingresosToolStripMenuItem.Name = "ingresosToolStripMenuItem";
-            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.ingresosToolStripMenuItem.Text = "Ingresos";
             this.ingresosToolStripMenuItem.Click += new System.EventHandler(this.ingresosToolStripMenuItem_Click);
             // 
             // proveedorToolStripMenuItem
             // 
             this.proveedorToolStripMenuItem.Name = "proveedorToolStripMenuItem";
-            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.proveedorToolStripMenuItem.Text = "Proveedor";
             this.proveedorToolStripMenuItem.Click += new System.EventHandler(this.proveedorToolStripMenuItem_Click);
             // 
@@ -197,13 +206,14 @@ namespace SisVentaDevExpress.Formularios
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.ventasToolStripMenuItem1.Text = "Ventas";
+            this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.ventasToolStripMenuItem1_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -514,6 +524,7 @@ namespace SisVentaDevExpress.Formularios
         private System.Windows.Forms.ToolStripButton tsVentas;
         private DevExpress.Xpo.XPCollection xpCollectionAcceso;
         private System.Windows.Forms.ToolStripMenuItem bolverAlLoginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detalleDeArticuloToolStripMenuItem;
     }
 }
 

@@ -13,5 +13,10 @@ namespace SisVentaDevExpress.Clases
         static public string contraceña;
 
         static public int idArticulo;
+        static public int idIngreso;
+        static public string Articulo;
+        static public decimal precioVenta;
+        static public int stockActual;
+
     }
 }

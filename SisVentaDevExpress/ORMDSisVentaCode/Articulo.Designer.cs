@@ -63,6 +63,8 @@ namespace SisVentaDevExpress.Ventas
             get { return fIdPresentacion; }
             set { SetPropertyValue<Presentacion>(nameof(IdPresentacion), ref fIdPresentacion, value); }
         }
+        [Association(@"Detalle_IngresoReferencesArticulo")]
+        public XPCollection<Detalle_Ingreso> Detalle_Ingresos { get { return GetCollection<Detalle_Ingreso>(nameof(Detalle_Ingresos)); } }
     }
 
 }

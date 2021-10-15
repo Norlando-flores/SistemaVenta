@@ -12,6 +12,13 @@ namespace SisVentaDevExpress.Ventas
     {
         public Articulo(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
-    }
 
+        public string NombreCompleto
+        {
+            get
+            {
+                return Nombre + " " + IdCategoria.Nombre;
+            }
+        }
+    }
 }

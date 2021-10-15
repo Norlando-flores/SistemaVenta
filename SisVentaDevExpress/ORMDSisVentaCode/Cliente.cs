@@ -12,6 +12,14 @@ namespace SisVentaDevExpress.Ventas
     {
         public Cliente(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+
+        public string NombreCompleto
+        {
+            get
+            {
+                return Nombre + " " + Apellido;
+            }
+        }
     }
 
 }

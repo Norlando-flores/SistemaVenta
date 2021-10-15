@@ -174,12 +174,14 @@ namespace SisVentaDevExpress.Formularios
                 if (this.sbProveedor.Text == string.Empty)
                 {
                     this.sbProveedor.Focus();
+                    errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
                     errorIcon.SetError(sbProveedor, "Seleccione el Proveedor");
                 }
                 else if (this.txtIGV.Text == string.Empty)
                 {
                     this.txtIGV.Focus();
+                    errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
                     errorIcon.SetError(txtIGV, "Ingrese Impuesto");
                 }
@@ -201,11 +203,17 @@ namespace SisVentaDevExpress.Formularios
 
                 else
                 {
-                    if (this.IsNuevo)
+                    if (this.IsNuevo==true)
                     {
+                       // ingreso = new Ingreso(unitOfWorkIngreso);
+                        Trabajador trabajador = (Trabajador)gridView1.GetFocusedRow();
+                        Proveedor i = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
                         string estado = "Emitido";
 
                         ingreso.IGV = Convert.ToDecimal(txtIGV.Text);
+
+                        ingreso.IdTrabajador = trabajador;
+                        ingreso.IdProveedor = i;
                         ingreso.Fecha_Ingreso = dtFechaIngreso.Value;
                         ingreso.Correlativo = txtCorrelativo.Text;
                         ingreso.Serie = txtSerie.Text;
@@ -296,9 +304,15 @@ namespace SisVentaDevExpress.Formularios
                     {
                         if (this.IsEditar)
                         {
-                            decimal sub_Total = Convert.ToDecimal((txtStockInicial.Text)) * Convert.ToDecimal((txtPrecioCompra.Text));
                             Detalle_Ingreso detalle = detalle_editar;
-                            detalle.IdArticulo = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+                            Articulo art = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+                            if (art != null)
+                            {
+                                detalle.IdArticulo = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+                            }
+                            decimal sub_Total = Convert.ToDecimal((txtStockInicial.Text)) * Convert.ToDecimal((txtPrecioCompra.Text));
+
+                            
                             detalle.Stock_inicial = Convert.ToInt32(txtStockInicial.Text.Trim());
                             detalle.Stock_Actual = Convert.ToInt32(txtStockInicial.Text.Trim());
                             detalle.Precio_Compra = Convert.ToDecimal(txtPrecioCompra.Text.Trim());
@@ -325,34 +339,47 @@ namespace SisVentaDevExpress.Formularios
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+
             this.IsNuevo = false;
             this.IsEditar = false;
-            this.Botones();
-
-            this.Limpiar();
             this.Habilitar(false);
+            this.Limpiar();
+            this.Mostrar();
+            this.Botones();
             tabControl1.SelectedIndex = 0;
-            errorIcon.Clear();
+            //this.IsNuevo = false;
+            //this.IsEditar = false;
+            //this.Botones();
+            ////ingreso = null;
+            //this.Limpiar();
+            //this.Habilitar(false);
+            //tabControl1.SelectedIndex = 0;
+            //errorIcon.Clear();
+            //ingreso.Delete();
+            //unitOfWorkIngreso.CommitChanges();
+           
         }
 
         private void sbTrabajador_EditValueChanged(object sender, EventArgs e)
         {
-            Trabajador trabajador = (Trabajador)gridView1.GetFocusedRow();
-            if (ingreso != null)
-            {
-                ingreso.IdTrabajador = trabajador;
-                ingreso.Save();
-            }
+            //Trabajador trabajador = (Trabajador)gridView1.GetFocusedRow();
+            //if (ingreso != null)
+            //{
+            //    ingreso.IdTrabajador = trabajador;
+            //    ingreso.Save();
+            //    string fecha = trabajador.Telefono;
+            //    MensajeOk(fecha);
+            //}
         }
 
         private void sbProveedor_EditValueChanged(object sender, EventArgs e)
         {
-            Proveedor i = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
-            if (ingreso != null)
-            {
-                ingreso.IdProveedor = i;
-                ingreso.Save();
-            }
+            //Proveedor i = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
+            //if (ingreso != null)
+            //{
+            //    ingreso.IdProveedor = i;
+            //    ingreso.Save();
+            //}
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -415,10 +442,22 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-            string estado = "Emitido";
+
             Ingreso ingreso = ingreso_editar;
-            ingreso.IdTrabajador = (Trabajador)gridView1.GetFocusedRow();
-            ingreso.IdProveedor = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
+            Trabajador tra=(Trabajador)gridView1.GetFocusedRow();
+            if (tra != null)
+            {
+                ingreso.IdTrabajador = (Trabajador)gridView1.GetFocusedRow();
+            }
+            Proveedor pro = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
+            if (pro != null)
+            {
+                ingreso.IdProveedor = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
+            }
+            string estado = "Emitido";
+            
+           
+            
             ingreso.Fecha_Ingreso = dtFechaIngreso.Value;
             ingreso.IGV = Convert.ToDecimal(txtIGV.Text);
             ingreso.Correlativo = txtCorrelativo.Text;
@@ -453,6 +492,7 @@ namespace SisVentaDevExpress.Formularios
             this.dtFechaProducion.Value = detalle_editar.Fecha_Produccion;
             this.dtFechaVencimiento.Value = detalle_editar.Fecha_Vencimiento;
 
+            
             this.sbArticulo.Focus();
         }
 
@@ -484,6 +524,11 @@ namespace SisVentaDevExpress.Formularios
         private void btnImprimir1_Click(object sender, EventArgs e)
         {
             dataListado.ShowRibbonPrintPreview();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

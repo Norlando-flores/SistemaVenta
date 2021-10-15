@@ -237,6 +237,22 @@ namespace SisVentaDevExpress.Formularios
             formulario_Ingreso.Show();
             formulario_Ingreso.WindowState = FormWindowState.Maximized;
         }
+
+        private void detalleDeArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_DetalleIngreso formulario_Articulos = new frm_DetalleIngreso();
+            formulario_Articulos.MdiParent = this;
+            formulario_Articulos.Show();
+            formulario_Articulos.WindowState = FormWindowState.Maximized;
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_Venta formulario_Venta = new frm_Venta();
+            formulario_Venta.MdiParent = this;
+            formulario_Venta.Show();
+            formulario_Venta.WindowState = FormWindowState.Maximized;
+        }
     }
 }
 

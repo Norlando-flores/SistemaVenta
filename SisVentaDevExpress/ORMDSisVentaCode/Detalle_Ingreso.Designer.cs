@@ -38,6 +38,7 @@ namespace SisVentaDevExpress.Ventas
         Articulo fIdArticulo;
         [Indexed(Name = @"iidArticulo_detalle_Ingreso")]
         [Persistent(@"idArticulo")]
+        [Association(@"Detalle_IngresoReferencesArticulo")]
         public Articulo IdArticulo
         {
             get { return fIdArticulo; }

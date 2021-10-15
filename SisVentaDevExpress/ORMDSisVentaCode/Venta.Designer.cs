@@ -38,6 +38,7 @@ namespace SisVentaDevExpress.Ventas
         Trabajador fIdTrabajador;
         [Indexed(Name = @"iidTrabajador_venta")]
         [Persistent(@"idTrabajador")]
+        [Association(@"VentaReferencesTrabajador")]
         public Trabajador IdTrabajador
         {
             get { return fIdTrabajador; }
