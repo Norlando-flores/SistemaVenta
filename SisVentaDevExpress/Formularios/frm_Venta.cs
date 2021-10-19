@@ -25,6 +25,7 @@ namespace SisVentaDevExpress.Formularios
         private bool IsNuevo = false;
         private bool IsEditar = false;
         Detalle_venta detalle_editar = null;
+        Detalle_Ingreso detalle_editar1 = null;
         Venta venta_editar = null;
         Venta venta = null;
 
@@ -148,16 +149,18 @@ namespace SisVentaDevExpress.Formularios
         {
             try
             {
+                //Detalle_Ingreso detalle = detalle_editar1;
                 Detalle_Ingreso detalle = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
                 Detalle_venta d = (Detalle_venta)dataListadoDetalle.GetFocusedRow();
                 Detalle_Ingreso detalle2 = detalle;
                 if (detalle != null)
                 {
-                    
+                  
+                    //detalle = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
                     a = Convert.ToInt32(detalle.Stock_Actual) + Convert.ToInt32(d.Cantidad);
                     int b = a - Convert.ToInt32(txtCantidad.Text);
-                    //MensajeOk(a.ToString());
-                   // MensajeOk(b.ToString());
+                    MensajeOk(a.ToString());
+                    MensajeOk(b.ToString());
                     detalle2.Stock_Actual = b;
 
                     unitOfWorkVentas.CommitChanges();
@@ -489,6 +492,7 @@ namespace SisVentaDevExpress.Formularios
                         if (Convert.ToInt32(txtCantidad.Text) > Convert.ToInt32(txtstockActual.Text))
                         {
                             MensajeError("La cantidas solisitada excede  ala cantidad de articulos en este ingreso ");
+                            this.txtCantidad.Focus();
                         }
                         else
                         {
@@ -535,7 +539,7 @@ namespace SisVentaDevExpress.Formularios
                             detalle.Save();
                             
                             //salida();
-                            //unitOfWorkVentas.CommitChanges();
+                           // unitOfWorkVentas.CommitChanges();
                             xpCollectionDetalleVenta.Reload();
                             LimpiarDetalles();
                             this.MensajeOk("Se a Actualizo el Rejistro de Forma Correcta");                            
@@ -595,7 +599,7 @@ namespace SisVentaDevExpress.Formularios
                             //MensajeOk(detalle2.Stock_Actual.ToString());
                             //detalle2.Save();
                             //unitOfWorkVentas.CommitChanges();
-                            //xpCollectionArticulo.Reload();
+                            xpCollectionArticulo.Reload();
                         }
 
                         Detalle_venta di = (Detalle_venta)dataListadoDetalle.GetFocusedRow();
@@ -616,12 +620,12 @@ namespace SisVentaDevExpress.Formularios
                             int a = di1.IdDetalle_Ingreso.Stock_Actual + di1.Cantidad;
                             detalle2.Stock_Actual = a;
                             detalle2.Save();
-                            unitOfWorkVentas.CommitChanges();
+                            //unitOfWorkVentas.CommitChanges();
                             xpCollectionArticulo.Reload();
 
                             Detalle_venta detalle = (Detalle_venta)dataListadoDetalle.GetFocusedRow();
                             detalle.Delete();
-                            unitOfWorkVentas.CommitChanges();
+                            //unitOfWorkVentas.CommitChanges();
                             xpCollectionDetalleVenta.Reload();
                             MessageBox.Show("Se elimino correctamente el rejistro");
                         }

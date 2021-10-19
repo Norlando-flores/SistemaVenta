@@ -45,16 +45,7 @@ namespace SisVentaDevExpress.Formularios
             this.xpCollectionVenta = new DevExpress.Xpo.XPCollection(this.components);
             this.unitOfWorkVentas = new DevExpress.Xpo.UnitOfWork(this.components);
             this.dataListado = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colIdVenta = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTipo_Comprobante = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSerie = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCorrelativo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIGV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFechaVenta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -84,6 +75,8 @@ namespace SisVentaDevExpress.Formularios
             this.dataListadoDetalle = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colArtuculoDetalle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCategoria1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPresentacion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprecioVenta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescuento = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,9 +93,10 @@ namespace SisVentaDevExpress.Formularios
             this.colCodigoArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colArticulo1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrecioUnitario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colExistecia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtIdDetalle = new System.Windows.Forms.TextBox();
             this.txtstockActual = new System.Windows.Forms.TextBox();
             this.btnQuitar = new DevExpress.XtraEditors.SimpleButton();
@@ -165,6 +159,12 @@ namespace SisVentaDevExpress.Formularios
             this.unitOfWorkDetalleIngreso = new DevExpress.Xpo.UnitOfWork(this.components);
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcon = new System.Windows.Forms.ErrorProvider(this.components);
+            this.colTrabajador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCliente2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTipoComprovante = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSerie = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colConsecutivo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImpuesto = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -407,91 +407,36 @@ namespace SisVentaDevExpress.Formularios
             this.dataListado.Appearance.HideSelectionRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.dataListado.Appearance.SelectedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.dataListado.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colIdVenta,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.colFecha,
-            this.colTipo_Comprobante,
+            this.colFechaVenta,
+            this.colTrabajador,
+            this.colCliente2,
+            this.colTipoComprovante,
             this.colSerie,
-            this.colCorrelativo,
-            this.colIGV});
+            this.colConsecutivo,
+            this.colImpuesto});
             this.dataListado.GridControl = this.gridControl2;
             this.dataListado.Name = "dataListado";
             this.dataListado.OptionsBehavior.Editable = false;
             this.dataListado.OptionsFind.AlwaysVisible = true;
             this.dataListado.OptionsSelection.MultiSelect = true;
             // 
-            // colIdVenta
+            // colFechaVenta
             // 
-            this.colIdVenta.FieldName = "IdVenta";
-            this.colIdVenta.Name = "colIdVenta";
-            this.colIdVenta.Visible = true;
-            this.colIdVenta.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.FieldName = "IdCliente!";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.FieldName = "IdCliente!Key";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.FieldName = "IdTrabajador!";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.FieldName = "IdTrabajador!Key";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            // 
-            // colFecha
-            // 
-            this.colFecha.FieldName = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.Visible = true;
-            this.colFecha.VisibleIndex = 5;
-            // 
-            // colTipo_Comprobante
-            // 
-            this.colTipo_Comprobante.FieldName = "Tipo_Comprobante";
-            this.colTipo_Comprobante.Name = "colTipo_Comprobante";
-            this.colTipo_Comprobante.Visible = true;
-            this.colTipo_Comprobante.VisibleIndex = 6;
-            // 
-            // colSerie
-            // 
-            this.colSerie.FieldName = "Serie";
-            this.colSerie.Name = "colSerie";
-            this.colSerie.Visible = true;
-            this.colSerie.VisibleIndex = 7;
-            // 
-            // colCorrelativo
-            // 
-            this.colCorrelativo.FieldName = "Correlativo";
-            this.colCorrelativo.Name = "colCorrelativo";
-            this.colCorrelativo.Visible = true;
-            this.colCorrelativo.VisibleIndex = 8;
-            // 
-            // colIGV
-            // 
-            this.colIGV.FieldName = "IGV";
-            this.colIGV.Name = "colIGV";
-            this.colIGV.Visible = true;
-            this.colIGV.VisibleIndex = 9;
+            this.colFechaVenta.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colFechaVenta.AppearanceCell.Options.UseFont = true;
+            this.colFechaVenta.AppearanceCell.Options.UseTextOptions = true;
+            this.colFechaVenta.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colFechaVenta.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colFechaVenta.AppearanceHeader.Options.UseFont = true;
+            this.colFechaVenta.AppearanceHeader.Options.UseTextOptions = true;
+            this.colFechaVenta.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colFechaVenta.Caption = "Fecha Venta";
+            this.colFechaVenta.DisplayFormat.FormatString = "d";
+            this.colFechaVenta.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colFechaVenta.FieldName = "Fecha";
+            this.colFechaVenta.Name = "colFechaVenta";
+            this.colFechaVenta.Visible = true;
+            this.colFechaVenta.VisibleIndex = 0;
             // 
             // layoutControlGroup1
             // 
@@ -796,6 +741,8 @@ namespace SisVentaDevExpress.Formularios
             this.dataListadoDetalle.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colCodigo,
             this.colArtuculoDetalle,
+            this.colCategoria1,
+            this.colPresentacion1,
             this.colprecioVenta,
             this.colCantidad,
             this.colDescuento,
@@ -807,6 +754,14 @@ namespace SisVentaDevExpress.Formularios
             // 
             // colCodigo
             // 
+            this.colCodigo.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCodigo.AppearanceCell.Options.UseFont = true;
+            this.colCodigo.AppearanceCell.Options.UseTextOptions = true;
+            this.colCodigo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCodigo.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCodigo.AppearanceHeader.Options.UseFont = true;
+            this.colCodigo.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCodigo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colCodigo.Caption = "Codigo";
             this.colCodigo.FieldName = "IdDetalle_Ingreso.IdArticulo.Codigo";
             this.colCodigo.Name = "colCodigo";
@@ -815,43 +770,123 @@ namespace SisVentaDevExpress.Formularios
             // 
             // colArtuculoDetalle
             // 
+            this.colArtuculoDetalle.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colArtuculoDetalle.AppearanceCell.Options.UseFont = true;
+            this.colArtuculoDetalle.AppearanceCell.Options.UseTextOptions = true;
+            this.colArtuculoDetalle.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colArtuculoDetalle.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colArtuculoDetalle.AppearanceHeader.Options.UseFont = true;
+            this.colArtuculoDetalle.AppearanceHeader.Options.UseTextOptions = true;
+            this.colArtuculoDetalle.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colArtuculoDetalle.Caption = "Articulo";
-            this.colArtuculoDetalle.FieldName = "IdDetalle_Ingreso.IdArticulo.NombreCompleto";
+            this.colArtuculoDetalle.FieldName = "IdDetalle_Ingreso.IdArticulo.Nombre";
             this.colArtuculoDetalle.Name = "colArtuculoDetalle";
             this.colArtuculoDetalle.Visible = true;
             this.colArtuculoDetalle.VisibleIndex = 1;
             // 
+            // colCategoria1
+            // 
+            this.colCategoria1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCategoria1.AppearanceCell.Options.UseFont = true;
+            this.colCategoria1.AppearanceCell.Options.UseTextOptions = true;
+            this.colCategoria1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoria1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCategoria1.AppearanceHeader.Options.UseFont = true;
+            this.colCategoria1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCategoria1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoria1.Caption = "Categoria";
+            this.colCategoria1.FieldName = "IdDetalle_Ingreso.IdArticulo.IdCategoria.Nombre";
+            this.colCategoria1.Name = "colCategoria1";
+            this.colCategoria1.Visible = true;
+            this.colCategoria1.VisibleIndex = 2;
+            // 
+            // colPresentacion1
+            // 
+            this.colPresentacion1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPresentacion1.AppearanceCell.Options.UseFont = true;
+            this.colPresentacion1.AppearanceCell.Options.UseTextOptions = true;
+            this.colPresentacion1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPresentacion1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPresentacion1.AppearanceHeader.Options.UseFont = true;
+            this.colPresentacion1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPresentacion1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPresentacion1.Caption = "Presentacion";
+            this.colPresentacion1.FieldName = "IdDetalle_Ingreso.IdArticulo.IdPresentacion.Nombre";
+            this.colPresentacion1.Name = "colPresentacion1";
+            this.colPresentacion1.Visible = true;
+            this.colPresentacion1.VisibleIndex = 3;
+            // 
             // colprecioVenta
             // 
+            this.colprecioVenta.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colprecioVenta.AppearanceCell.Options.UseFont = true;
+            this.colprecioVenta.AppearanceCell.Options.UseTextOptions = true;
+            this.colprecioVenta.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colprecioVenta.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colprecioVenta.AppearanceHeader.Options.UseFont = true;
+            this.colprecioVenta.AppearanceHeader.Options.UseTextOptions = true;
+            this.colprecioVenta.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colprecioVenta.Caption = "Precio Unitario";
+            this.colprecioVenta.DisplayFormat.FormatString = "C$ {0}";
+            this.colprecioVenta.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colprecioVenta.FieldName = "Precio_Venta";
             this.colprecioVenta.Name = "colprecioVenta";
             this.colprecioVenta.Visible = true;
-            this.colprecioVenta.VisibleIndex = 2;
+            this.colprecioVenta.VisibleIndex = 4;
             // 
             // colCantidad
             // 
+            this.colCantidad.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCantidad.AppearanceCell.Options.UseFont = true;
+            this.colCantidad.AppearanceCell.Options.UseTextOptions = true;
+            this.colCantidad.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCantidad.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCantidad.AppearanceHeader.Options.UseFont = true;
+            this.colCantidad.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCantidad.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colCantidad.Caption = "Cantidad Solicitada";
             this.colCantidad.FieldName = "Cantidad";
             this.colCantidad.Name = "colCantidad";
             this.colCantidad.Visible = true;
-            this.colCantidad.VisibleIndex = 3;
+            this.colCantidad.VisibleIndex = 5;
             // 
             // colDescuento
             // 
+            this.colDescuento.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDescuento.AppearanceCell.Options.UseFont = true;
+            this.colDescuento.AppearanceCell.Options.UseTextOptions = true;
+            this.colDescuento.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDescuento.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDescuento.AppearanceHeader.Options.UseFont = true;
+            this.colDescuento.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDescuento.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colDescuento.Caption = "Descuento";
+            this.colDescuento.DisplayFormat.FormatString = "{0} %";
+            this.colDescuento.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDescuento.FieldName = "Descuento";
             this.colDescuento.Name = "colDescuento";
             this.colDescuento.Visible = true;
-            this.colDescuento.VisibleIndex = 4;
+            this.colDescuento.VisibleIndex = 6;
             // 
             // colTotal
             // 
+            this.colTotal.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTotal.AppearanceCell.Options.UseFont = true;
+            this.colTotal.AppearanceCell.Options.UseTextOptions = true;
+            this.colTotal.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTotal.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTotal.AppearanceHeader.Options.UseFont = true;
+            this.colTotal.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTotal.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTotal.Caption = "Total";
+            this.colTotal.DisplayFormat.FormatString = "C$ {0}";
+            this.colTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotal.FieldName = "Total";
             this.colTotal.Name = "colTotal";
+            this.colTotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total", "Total a Pagar= C$ {0}")});
             this.colTotal.Visible = true;
-            this.colTotal.VisibleIndex = 5;
+            this.colTotal.VisibleIndex = 7;
             // 
             // groupBox2
             // 
@@ -926,7 +961,7 @@ namespace SisVentaDevExpress.Formularios
             this.sbArticulo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.sbArticulo.Properties.DataSource = this.xpCollectionArticulo;
-            this.sbArticulo.Properties.DisplayMember = "IdArticulo.NombreCompleto";
+            this.sbArticulo.Properties.DisplayMember = "IdArticulo.Nombre";
             this.sbArticulo.Properties.PopupView = this.gridviewArticulo;
             this.sbArticulo.Properties.ValueMember = "IdDetalle_Ingreso";
             this.sbArticulo.Size = new System.Drawing.Size(699, 22);
@@ -946,9 +981,10 @@ namespace SisVentaDevExpress.Formularios
             this.colCodigoArticulo,
             this.colArticulo1,
             this.colArticulo,
+            this.colCategoria,
+            this.colPresentacion,
             this.colPrecioUnitario,
-            this.colExistecia,
-            this.gridColumn1});
+            this.colExistecia});
             this.gridviewArticulo.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridviewArticulo.GroupCount = 1;
             this.gridviewArticulo.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -956,9 +992,11 @@ namespace SisVentaDevExpress.Formularios
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Stock_Actual", this.colExistecia, "Total Existencia: {0}")});
             this.gridviewArticulo.Name = "gridviewArticulo";
             this.gridviewArticulo.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridviewArticulo.OptionsView.ShowFooter = true;
             this.gridviewArticulo.OptionsView.ShowGroupPanel = false;
             this.gridviewArticulo.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colArticulo, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colArticulo1, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colPrecioUnitario, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colFechaIngreso
             // 
@@ -1003,7 +1041,7 @@ namespace SisVentaDevExpress.Formularios
             this.colArticulo1.AppearanceHeader.Options.UseTextOptions = true;
             this.colArticulo1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colArticulo1.Caption = "Articulo";
-            this.colArticulo1.FieldName = "IdArticulo.NombreCompleto";
+            this.colArticulo1.FieldName = "IdArticulo.Nombre";
             this.colArticulo1.Name = "colArticulo1";
             this.colArticulo1.Visible = true;
             this.colArticulo1.VisibleIndex = 2;
@@ -1022,7 +1060,39 @@ namespace SisVentaDevExpress.Formularios
             this.colArticulo.FieldName = "IdArticulo.Nombre";
             this.colArticulo.Name = "colArticulo";
             this.colArticulo.Visible = true;
-            this.colArticulo.VisibleIndex = 3;
+            this.colArticulo.VisibleIndex = 2;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCategoria.AppearanceCell.Options.UseFont = true;
+            this.colCategoria.AppearanceCell.Options.UseTextOptions = true;
+            this.colCategoria.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoria.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCategoria.AppearanceHeader.Options.UseFont = true;
+            this.colCategoria.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCategoria.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoria.Caption = "Categoria";
+            this.colCategoria.FieldName = "IdArticulo.IdCategoria.Nombre";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.Visible = true;
+            this.colCategoria.VisibleIndex = 3;
+            // 
+            // colPresentacion
+            // 
+            this.colPresentacion.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPresentacion.AppearanceCell.Options.UseFont = true;
+            this.colPresentacion.AppearanceCell.Options.UseTextOptions = true;
+            this.colPresentacion.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPresentacion.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPresentacion.AppearanceHeader.Options.UseFont = true;
+            this.colPresentacion.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPresentacion.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPresentacion.Caption = "Presentacion";
+            this.colPresentacion.FieldName = "IdArticulo.IdPresentacion.Nombre";
+            this.colPresentacion.Name = "colPresentacion";
+            this.colPresentacion.Visible = true;
+            this.colPresentacion.VisibleIndex = 4;
             // 
             // colPrecioUnitario
             // 
@@ -1035,10 +1105,12 @@ namespace SisVentaDevExpress.Formularios
             this.colPrecioUnitario.AppearanceHeader.Options.UseTextOptions = true;
             this.colPrecioUnitario.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colPrecioUnitario.Caption = "Precio Unitario";
+            this.colPrecioUnitario.DisplayFormat.FormatString = "C$  {0}";
+            this.colPrecioUnitario.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPrecioUnitario.FieldName = "Precio_Venta";
             this.colPrecioUnitario.Name = "colPrecioUnitario";
             this.colPrecioUnitario.Visible = true;
-            this.colPrecioUnitario.VisibleIndex = 3;
+            this.colPrecioUnitario.VisibleIndex = 5;
             // 
             // colExistecia
             // 
@@ -1055,17 +1127,9 @@ namespace SisVentaDevExpress.Formularios
             this.colExistecia.FieldName = "Stock_Actual";
             this.colExistecia.Name = "colExistecia";
             this.colExistecia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Stock_Actual", "Total Existencia= {0:#}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Stock_Actual", "Total Existencias= {0:#}")});
             this.colExistecia.Visible = true;
-            this.colExistecia.VisibleIndex = 4;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Estado";
-            this.gridColumn1.FieldName = "IdIngreso.Estado";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
+            this.colExistecia.VisibleIndex = 6;
             // 
             // txtIdDetalle
             // 
@@ -1726,6 +1790,104 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.errorIcon.ContainerControl = this;
             // 
+            // colTrabajador
+            // 
+            this.colTrabajador.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTrabajador.AppearanceCell.Options.UseFont = true;
+            this.colTrabajador.AppearanceCell.Options.UseTextOptions = true;
+            this.colTrabajador.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTrabajador.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTrabajador.AppearanceHeader.Options.UseFont = true;
+            this.colTrabajador.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTrabajador.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTrabajador.Caption = "Trabajador";
+            this.colTrabajador.FieldName = "IdTrabajador.NombreCompleto";
+            this.colTrabajador.Name = "colTrabajador";
+            this.colTrabajador.Visible = true;
+            this.colTrabajador.VisibleIndex = 1;
+            // 
+            // colCliente2
+            // 
+            this.colCliente2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCliente2.AppearanceCell.Options.UseFont = true;
+            this.colCliente2.AppearanceCell.Options.UseTextOptions = true;
+            this.colCliente2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCliente2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCliente2.AppearanceHeader.Options.UseFont = true;
+            this.colCliente2.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCliente2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCliente2.Caption = "Cliente";
+            this.colCliente2.FieldName = "IdCliente.NombreCompleto";
+            this.colCliente2.Name = "colCliente2";
+            this.colCliente2.Visible = true;
+            this.colCliente2.VisibleIndex = 2;
+            // 
+            // colTipoComprovante
+            // 
+            this.colTipoComprovante.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTipoComprovante.AppearanceCell.Options.UseFont = true;
+            this.colTipoComprovante.AppearanceCell.Options.UseTextOptions = true;
+            this.colTipoComprovante.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTipoComprovante.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTipoComprovante.AppearanceHeader.Options.UseFont = true;
+            this.colTipoComprovante.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTipoComprovante.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTipoComprovante.Caption = "Comprovante";
+            this.colTipoComprovante.FieldName = "Tipo_Comprobante";
+            this.colTipoComprovante.Name = "colTipoComprovante";
+            this.colTipoComprovante.Visible = true;
+            this.colTipoComprovante.VisibleIndex = 3;
+            // 
+            // colSerie
+            // 
+            this.colSerie.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSerie.AppearanceCell.Options.UseFont = true;
+            this.colSerie.AppearanceCell.Options.UseTextOptions = true;
+            this.colSerie.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSerie.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSerie.AppearanceHeader.Options.UseFont = true;
+            this.colSerie.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSerie.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSerie.Caption = "Serie";
+            this.colSerie.FieldName = "Serie";
+            this.colSerie.Name = "colSerie";
+            this.colSerie.Visible = true;
+            this.colSerie.VisibleIndex = 4;
+            // 
+            // colConsecutivo
+            // 
+            this.colConsecutivo.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colConsecutivo.AppearanceCell.Options.UseFont = true;
+            this.colConsecutivo.AppearanceCell.Options.UseTextOptions = true;
+            this.colConsecutivo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colConsecutivo.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colConsecutivo.AppearanceHeader.Options.UseFont = true;
+            this.colConsecutivo.AppearanceHeader.Options.UseTextOptions = true;
+            this.colConsecutivo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colConsecutivo.Caption = "Consecutivo";
+            this.colConsecutivo.FieldName = "Correlativo";
+            this.colConsecutivo.Name = "colConsecutivo";
+            this.colConsecutivo.Visible = true;
+            this.colConsecutivo.VisibleIndex = 5;
+            // 
+            // colImpuesto
+            // 
+            this.colImpuesto.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colImpuesto.AppearanceCell.Options.UseFont = true;
+            this.colImpuesto.AppearanceCell.Options.UseTextOptions = true;
+            this.colImpuesto.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colImpuesto.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colImpuesto.AppearanceHeader.Options.UseFont = true;
+            this.colImpuesto.AppearanceHeader.Options.UseTextOptions = true;
+            this.colImpuesto.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colImpuesto.Caption = "Impuesto";
+            this.colImpuesto.DisplayFormat.FormatString = "{0} %";
+            this.colImpuesto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colImpuesto.FieldName = "IGV";
+            this.colImpuesto.Name = "colImpuesto";
+            this.colImpuesto.Visible = true;
+            this.colImpuesto.VisibleIndex = 6;
+            // 
             // frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1925,7 +2087,6 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraLayout.LayoutControlItem lblArticulo;
         private DevExpress.Xpo.XPCollection xpCollectionArticulo;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem11;
-        private DevExpress.XtraGrid.Columns.GridColumn colArticulo;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem13;
         private System.Windows.Forms.TextBox txtPrescioTotal;
         private DevExpress.XtraLayout.LayoutControlItem lblPrecioTotal;
@@ -1944,17 +2105,6 @@ namespace SisVentaDevExpress.Formularios
         private System.Windows.Forms.MaskedTextBox txtCantidad;
         private DevExpress.XtraLayout.LayoutControlItem lblcantidadSolisitada;
         private DevExpress.XtraLayout.LayoutControlItem lblDescuento1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdVenta;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn colFecha;
-        private DevExpress.XtraGrid.Columns.GridColumn colTipo_Comprobante;
-        private DevExpress.XtraGrid.Columns.GridColumn colSerie;
-        private DevExpress.XtraGrid.Columns.GridColumn colCorrelativo;
-        private DevExpress.XtraGrid.Columns.GridColumn colIGV;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewCliente;
         private DevExpress.Xpo.XPCollection xpCollectionDetalleVenta;
         private DevExpress.XtraGrid.Columns.GridColumn colCodigo;
@@ -1964,5 +2114,17 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraGrid.Columns.GridColumn colDescuento;
         private DevExpress.XtraGrid.Columns.GridColumn colTotal;
         private DevExpress.Xpo.UnitOfWork unitOfWorkDetalleIngreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colCategoria;
+        private DevExpress.XtraGrid.Columns.GridColumn colPresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colCategoria1;
+        private DevExpress.XtraGrid.Columns.GridColumn colPresentacion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colArticulo;
+        private DevExpress.XtraGrid.Columns.GridColumn colFechaVenta;
+        private DevExpress.XtraGrid.Columns.GridColumn colTrabajador;
+        private DevExpress.XtraGrid.Columns.GridColumn colCliente2;
+        private DevExpress.XtraGrid.Columns.GridColumn colTipoComprovante;
+        private DevExpress.XtraGrid.Columns.GridColumn colSerie;
+        private DevExpress.XtraGrid.Columns.GridColumn colConsecutivo;
+        private DevExpress.XtraGrid.Columns.GridColumn colImpuesto;
     }
 }
