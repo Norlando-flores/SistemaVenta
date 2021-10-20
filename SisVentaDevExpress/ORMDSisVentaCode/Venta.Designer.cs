@@ -77,6 +77,13 @@ namespace SisVentaDevExpress.Ventas
             get { return fIGV; }
             set { SetPropertyValue<decimal>(nameof(IGV), ref fIGV, value); }
         }
+        decimal fTotalPagar;
+        [Persistent(@"Total Pagar")]
+        public decimal TotalPagar
+        {
+            get { return fTotalPagar; }
+            set { SetPropertyValue<decimal>(nameof(TotalPagar), ref fTotalPagar, value); }
+        }
         [Association(@"Detalle_ventaReferencesVenta")]
         public XPCollection<Detalle_venta> Detalle_ventas { get { return GetCollection<Detalle_venta>(nameof(Detalle_ventas)); } }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using DevExpress.XtraGrid;
 using SisVentaDevExpress.Clases;
 using SisVentaDevExpress.Ventas;
 using System.Collections.Generic;
@@ -159,8 +160,8 @@ namespace SisVentaDevExpress.Formularios
                     //detalle = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
                     a = Convert.ToInt32(detalle.Stock_Actual) + Convert.ToInt32(d.Cantidad);
                     int b = a - Convert.ToInt32(txtCantidad.Text);
-                    MensajeOk(a.ToString());
-                    MensajeOk(b.ToString());
+                    //MensajeOk(a.ToString());
+                    //MensajeOk(b.ToString());
                     detalle2.Stock_Actual = b;
 
                     unitOfWorkVentas.CommitChanges();
@@ -376,6 +377,9 @@ namespace SisVentaDevExpress.Formularios
                 {
                     if (this.IsNuevo == true)
                     {
+
+                        //double p = Convert.ToDouble(colTotal.SummaryItem.SummaryValue);
+
                         Trabajador trabajador = (Trabajador)gridViewTrabajador.GetFocusedRow();
                         Cliente cliente = (Cliente)gridViewCliente.GetFocusedRow();
 
@@ -386,6 +390,7 @@ namespace SisVentaDevExpress.Formularios
                         venta.Tipo_Comprobante = cbComprobante.Text;
                         venta.Serie = txtSerie.Text;
                         venta.Correlativo = txtCorrelativo.Text;
+                        venta.TotalPagar = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
                         venta.Save();
                         unitOfWorkVentas.CommitChanges();
                         xpCollectionVenta.Reload();
@@ -427,11 +432,15 @@ namespace SisVentaDevExpress.Formularios
                 venta.IdCliente = (Cliente)gridViewCliente.GetFocusedRow();
             }
 
+            //double p = Convert.ToDouble(colTotal.SummaryItem.SummaryValue);
+            //MensajeOk(p.ToString());
+
             venta.Fecha = dtFechaventa.Value;
             venta.IGV = Convert.ToDecimal(txtIGV.Text);
             venta.Tipo_Comprobante = cbComprobante.Text;
             venta.Serie = txtSerie.Text;
             venta.Correlativo = txtCorrelativo.Text;
+            venta.TotalPagar = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
             venta.Save();
             unitOfWorkVentas.CommitChanges();
             xpCollectionVenta.Reload();
