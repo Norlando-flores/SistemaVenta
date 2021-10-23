@@ -1,6 +1,7 @@
 ﻿using DevExpress.Xpo;
 using DevExpress.Xpo.DB;
 using SisVentaDevExpress.Formularios;
+using SisVentaDevExpress.Reportes;
 using SisVentaDevExpress.Ventas;
 using System;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace SisVentaDevExpress
         static void Main()
         {
             XpoDefault.DataLayer = XpoDefault.GetDataLayer(
-                 ConnectionHelper.ConnectionString,
+                SisVentaDevExpress.Ventas.ConnectionHelper.ConnectionString,
+                 //ConnectionHelper.ConnectionString,
                  AutoCreateOption.DatabaseAndSchema);
 
             Application.EnableVisualStyles();

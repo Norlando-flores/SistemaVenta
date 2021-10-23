@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Data.Filtering;
 using DevExpress.Xpo;
+using System.Data.SqlClient;
+using System.Configuration;
 //Detalle_venta d = detalle_editar;
 //if (detalle != null)
 //{ 
@@ -252,6 +254,15 @@ namespace SisVentaDevExpress.Formularios
 
         private void frm_Venta_Load(object sender, EventArgs e)
         {
+
+            //BinaryOperator filterCriteria2 = new BinaryOperator(nameof(Detalle_venta.Total), 90, BinaryOperatorType.Equal);
+            //xpCollection1.Filter = new BetweenOperator(nameof(Detalle_venta.IdVenta), 408);
+           // venta.IdVenta = Convert.ToInt32((Venta)dataListado.GetFocusedRow());
+            //xpCollection1.Filter = filterCriteria2;
+
+           // MensajeOk(venta.IdVenta.ToString());
+
+
 
             BinaryOperator filterCriteria = new BinaryOperator(nameof(Detalle_Ingreso.Stock_Actual),0, BinaryOperatorType.Greater);
 
@@ -645,6 +656,27 @@ namespace SisVentaDevExpress.Formularios
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void btnComprobante_Click(object sender, EventArgs e)
+        {
+            //xpCollection1.Filter = CriteriaOperator.Parse("[IdVenta] = 4088 AND [Price] < ?", "Saloon", 100000);
+
+            Venta v = (Venta)dataListado.GetFocusedRow();
+            string j = v.IdVenta.ToString();
+            //xpCollection1.Filter = CriteriaOperator.Parse("[IdVenta.IdVenta] = ?", j);
+            // MensajeOk(j.ToString());
+
+            //gridView1.DataSource = 
+            //Venta obj = (Venta)dataListado.GetFocusedRow();
+
+
+
+            //List<Detalle_venta> lista = xpCollection1
+            frmReporteVenta l = new frmReporteVenta();
+
+            l.printInvoice(v);
+            l.ShowDialog();
         }
     }
 }
