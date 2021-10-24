@@ -84,6 +84,12 @@ namespace SisVentaDevExpress.Ventas
             get { return fTotalPagar; }
             set { SetPropertyValue<decimal>(nameof(TotalPagar), ref fTotalPagar, value); }
         }
+        decimal fSubTotal;
+        public decimal SubTotal
+        {
+            get { return fSubTotal; }
+            set { SetPropertyValue<decimal>(nameof(SubTotal), ref fSubTotal, value); }
+        }
         [Association(@"Detalle_ventaReferencesVenta")]
         public XPCollection<Detalle_venta> Detalle_ventas { get { return GetCollection<Detalle_venta>(nameof(Detalle_ventas)); } }
     }

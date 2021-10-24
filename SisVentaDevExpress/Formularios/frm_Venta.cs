@@ -230,9 +230,11 @@ namespace SisVentaDevExpress.Formularios
         {
             if (this.IsNuevo)
             {
+
+                //decimal a = d.Precio_Venta - ((d.Precio_Venta) * (decimal.Parse(txtIGV.Text) / 100));
                 Detalle_Ingreso d = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
                 txtstockActual.Text = Convert.ToString(d.Stock_Actual);
-                txtPrecioVenta.Text = Convert.ToString(d.Precio_Venta);
+                txtPrecioVenta.Text = Convert.ToString(d.Precio_Venta - ((d.Precio_Venta) * (decimal.Parse(txtIGV.Text) / 100))); //Convert.ToString(d.Precio_Venta)
                 txtIdDetalle.Text = Convert.ToString(d.IdDetalle_Ingreso);
                 //MensajeOk(d.IdDetalle_Ingreso.ToString());
                 //MensajeOk(txtIdDetalle.Text.ToString());
@@ -393,7 +395,7 @@ namespace SisVentaDevExpress.Formularios
 
                         Trabajador trabajador = (Trabajador)gridViewTrabajador.GetFocusedRow();
                         Cliente cliente = (Cliente)gridViewCliente.GetFocusedRow();
-
+                        //decimal a = (Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) + ((Convert.ToDecimal(colTotal.SummaryItem.SummaryValue)) * (decimal.Parse(txtIGV.Text) / 100)));
                         venta.IdTrabajador = trabajador;
                         venta.IdCliente = cliente;
                         venta.Fecha = dtFechaventa.Value;
@@ -401,7 +403,8 @@ namespace SisVentaDevExpress.Formularios
                         venta.Tipo_Comprobante = cbComprobante.Text;
                         venta.Serie = txtSerie.Text;
                         venta.Correlativo = txtCorrelativo.Text;
-                        venta.TotalPagar = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
+                        venta.SubTotal = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
+                        venta.TotalPagar = (Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) + ((Convert.ToDecimal(colTotal.SummaryItem.SummaryValue)) * (decimal.Parse(txtIGV.Text) / 100)));// Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
                         venta.Save();
                         unitOfWorkVentas.CommitChanges();
                         xpCollectionVenta.Reload();
@@ -468,6 +471,7 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+
             this.IsNuevo = false;
             this.IsEditar = false;
             this.Habilitar(false);
@@ -677,6 +681,11 @@ namespace SisVentaDevExpress.Formularios
 
             l.printInvoice(v);
             l.ShowDialog();
+        }
+
+        private void gridControlDetalleVenta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
