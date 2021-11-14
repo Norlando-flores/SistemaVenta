@@ -73,10 +73,11 @@ namespace SisVentaDevExpress
         }
         private void Mostrar()
         {
-            this.lblTotal.Text = "Total de Registro: " +Convert.ToString(xpCCategoria.Count);
+            this.lblTotal1.Text = "Total de Registro: " + Convert.ToString(xpCCategoria.Count);
         }
         private void frmCategoria_Load(object sender, EventArgs e)
         {
+            
             this.Mostrar();
             this.Habilitar(false);
             this.Botones();

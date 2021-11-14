@@ -103,6 +103,25 @@ namespace SisVentaDevExpress.Formularios
             }
 
         }
+        private void salida()
+        {
+            try
+            {
+                Articulo detalle = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+
+                if (detalle != null)
+                {
+                    Articulo detalle1 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+
+                    int precioVenta = Convert.ToInt32(detalle. - Convert.ToInt32(txtCantidad.Text));
+
+                    detalle1.Stock_Actual = stockActual;
+
+                    unitOfWorkVentas.CommitChanges();
+                    xpCollectionArticulo.Reload();
+                }
+            }
+        }
         private void Mostrar()
         {
 
@@ -343,7 +362,7 @@ namespace SisVentaDevExpress.Formularios
             this.IsNuevo = false;
             this.IsEditar = false;
             this.Habilitar(false);
-            this.Limpiar();
+            //this.Limpiar();
             this.Mostrar();
             this.Botones();
             tabControl1.SelectedIndex = 0;
@@ -469,7 +488,7 @@ namespace SisVentaDevExpress.Formularios
             unitOfWorkIngreso.CommitChanges();
             xpCollectionIngreso.Reload();
             Limpiar();
-            this.MensajeOk("Se a Actualizo el Rejistro de Forma Correcta");
+            this.MensajeOk("Se  Actualizo el Rejistro de Forma Correcta");
             this.Habilitar(false);
             tabControl1.SelectedIndex = 0;
             this.IsNuevo = false;

@@ -261,5 +261,10 @@ namespace SisVentaDevExpress.Formularios
         {
 
         }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

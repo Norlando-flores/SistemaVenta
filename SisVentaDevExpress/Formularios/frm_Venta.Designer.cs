@@ -1089,7 +1089,7 @@ namespace SisVentaDevExpress.Formularios
             // txtDescuento
             // 
             this.txtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescuento.Location = new System.Drawing.Point(672, 62);
+            this.txtDescuento.Location = new System.Drawing.Point(672, 32);
             this.txtDescuento.Mask = "9999999999";
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(100, 22);
@@ -1100,7 +1100,7 @@ namespace SisVentaDevExpress.Formularios
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(479, 62);
+            this.txtCantidad.Location = new System.Drawing.Point(479, 32);
             this.txtCantidad.Mask = "9999999999";
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 22);
@@ -1112,7 +1112,7 @@ namespace SisVentaDevExpress.Formularios
             // txtPrescioTotal
             // 
             this.txtPrescioTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrescioTotal.Location = new System.Drawing.Point(98, 88);
+            this.txtPrescioTotal.Location = new System.Drawing.Point(98, 58);
             this.txtPrescioTotal.Name = "txtPrescioTotal";
             this.txtPrescioTotal.ReadOnly = true;
             this.txtPrescioTotal.Size = new System.Drawing.Size(86, 20);
@@ -1122,7 +1122,7 @@ namespace SisVentaDevExpress.Formularios
             // sbArticulo
             // 
             this.sbArticulo.EditValue = "";
-            this.sbArticulo.Location = new System.Drawing.Point(73, 36);
+            this.sbArticulo.Location = new System.Drawing.Point(73, 6);
             this.sbArticulo.Name = "sbArticulo";
             this.sbArticulo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbArticulo.Properties.Appearance.Options.UseFont = true;
@@ -1309,7 +1309,7 @@ namespace SisVentaDevExpress.Formularios
             // txtIdDetalle
             // 
             this.txtIdDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdDetalle.Location = new System.Drawing.Point(348, 12);
+            this.txtIdDetalle.Location = new System.Drawing.Point(348, -18);
             this.txtIdDetalle.Name = "txtIdDetalle";
             this.txtIdDetalle.Size = new System.Drawing.Size(460, 20);
             this.txtIdDetalle.TabIndex = 13;
@@ -1318,7 +1318,7 @@ namespace SisVentaDevExpress.Formularios
             // txtstockActual
             // 
             this.txtstockActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstockActual.Location = new System.Drawing.Point(283, 62);
+            this.txtstockActual.Location = new System.Drawing.Point(283, 32);
             this.txtstockActual.Name = "txtstockActual";
             this.txtstockActual.ReadOnly = true;
             this.txtstockActual.Size = new System.Drawing.Size(49, 20);
@@ -1328,7 +1328,7 @@ namespace SisVentaDevExpress.Formularios
             // btnQuitar
             // 
             this.btnQuitar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.ImageOptions.Image")));
-            this.btnQuitar.Location = new System.Drawing.Point(786, 62);
+            this.btnQuitar.Location = new System.Drawing.Point(786, 32);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(22, 22);
             this.btnQuitar.StyleController = this.layoutControl5;
@@ -1338,7 +1338,7 @@ namespace SisVentaDevExpress.Formularios
             // btnAgregar1
             // 
             this.btnAgregar1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar1.ImageOptions.Image")));
-            this.btnAgregar1.Location = new System.Drawing.Point(786, 36);
+            this.btnAgregar1.Location = new System.Drawing.Point(786, 6);
             this.btnAgregar1.Name = "btnAgregar1";
             this.btnAgregar1.Size = new System.Drawing.Size(22, 22);
             this.btnAgregar1.StyleController = this.layoutControl5;
@@ -1348,7 +1348,7 @@ namespace SisVentaDevExpress.Formularios
             // txtIdDetalleVenta
             // 
             this.txtIdDetalleVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdDetalleVenta.Location = new System.Drawing.Point(125, 12);
+            this.txtIdDetalleVenta.Location = new System.Drawing.Point(125, -18);
             this.txtIdDetalleVenta.Name = "txtIdDetalleVenta";
             this.txtIdDetalleVenta.Size = new System.Drawing.Size(219, 20);
             this.txtIdDetalleVenta.TabIndex = 4;
@@ -1357,7 +1357,7 @@ namespace SisVentaDevExpress.Formularios
             // txtPrecioVenta
             // 
             this.txtPrecioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioVenta.Location = new System.Drawing.Point(116, 62);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(116, 32);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.ReadOnly = true;
             this.txtPrecioVenta.Size = new System.Drawing.Size(65, 20);

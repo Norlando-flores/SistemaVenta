@@ -434,6 +434,7 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
+
             Venta venta = venta_editar;
             Trabajador trabajador = (Trabajador)gridViewTrabajador.GetFocusedRow();
             if (trabajador != null)
@@ -490,7 +491,7 @@ namespace SisVentaDevExpress.Formularios
                     this.sbArticulo.Focus();
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtIGV, "Seleccione el Articulo");
+                    errorIcon.SetError(sbArticulo, "Seleccione el Articulo");
                 }
 
                 else if (this.txtCantidad.Text == string.Empty)

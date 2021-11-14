@@ -19,13 +19,13 @@ namespace SisVentaDevExpress
         static void Main()
         {
             XpoDefault.DataLayer = XpoDefault.GetDataLayer(
-                SisVentaDevExpress.Ventas.ConnectionHelper.ConnectionString,
-                 //ConnectionHelper.ConnectionString,
-                 AutoCreateOption.DatabaseAndSchema);
+            SisVentaDevExpress.Ventas.ConnectionHelper.ConnectionString,
+            //ConnectionHelper.ConnectionString,
+            AutoCreateOption.DatabaseAndSchema);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmrestore());
+            Application.Run(new frm_acceso());
         }
     }
 }

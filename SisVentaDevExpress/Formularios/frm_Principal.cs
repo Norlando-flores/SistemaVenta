@@ -184,8 +184,8 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuMantenimiento.Enabled = true;
                     this.MenuConsultas.Enabled = true;
                     this.MenuHerramientas.Enabled = true;
-                    this.tsCompras.Enabled = true;
-                    this.tsVentas.Enabled = true;
+                    //this.tsCompras.Enabled = true;
+                   // this.tsVentas.Enabled = true;
                 }
                 else if (acceso == "Vendedor")
                 {
@@ -195,8 +195,8 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuMantenimiento.Enabled = false;
                     this.MenuConsultas.Enabled = true;
                     this.MenuHerramientas.Enabled = true;
-                    this.tsCompras.Enabled = false;
-                    this.tsVentas.Enabled = true;
+                    //this.tsCompras.Enabled = false;
+                   // this.tsVentas.Enabled = true;
                 }
                 else if (acceso == "Almasenero")
                 {
@@ -206,8 +206,8 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuMantenimiento.Enabled = false;
                     this.MenuConsultas.Enabled = true;
                     this.MenuHerramientas.Enabled = true;
-                    this.tsCompras.Enabled = true;
-                    this.tsVentas.Enabled = false;
+                    //this.tsCompras.Enabled = true;
+                    //this.tsVentas.Enabled = false;
                 }
                 else
                 {
@@ -217,8 +217,8 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuMantenimiento.Enabled = false;
                     this.MenuConsultas.Enabled = false;
                     this.MenuHerramientas.Enabled = false;
-                    this.tsCompras.Enabled = false;
-                    this.tsVentas.Enabled = false;
+                   // this.tsCompras.Enabled = false;
+                    //this.tsVentas.Enabled = false;
                 }
             }
         }

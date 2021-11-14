@@ -54,6 +54,7 @@ namespace SisVentaDevExpress
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -70,11 +71,12 @@ namespace SisVentaDevExpress
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.lblDescripcion = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -87,7 +89,6 @@ namespace SisVentaDevExpress
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcon = new System.Windows.Forms.ErrorProvider(this.components);
             this.unitOfWorkPresentacion = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -106,6 +107,7 @@ namespace SisVentaDevExpress
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
@@ -120,11 +122,12 @@ namespace SisVentaDevExpress
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblDescripcion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -135,7 +138,6 @@ namespace SisVentaDevExpress
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkPresentacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -228,6 +230,7 @@ namespace SisVentaDevExpress
             this.dataListado.OptionsBehavior.Editable = false;
             this.dataListado.OptionsFind.AlwaysVisible = true;
             this.dataListado.OptionsSelection.MultiSelect = true;
+            this.dataListado.OptionsView.ShowGroupPanel = false;
             // 
             // colNombre
             // 
@@ -263,10 +266,12 @@ namespace SisVentaDevExpress
             // 
             // btnEliminar1
             // 
+            this.btnEliminar1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar1.Appearance.Options.UseFont = true;
             this.btnEliminar1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar1.ImageOptions.Image")));
-            this.btnEliminar1.Location = new System.Drawing.Point(413, 12);
+            this.btnEliminar1.Location = new System.Drawing.Point(295, 12);
             this.btnEliminar1.Name = "btnEliminar1";
-            this.btnEliminar1.Size = new System.Drawing.Size(131, 36);
+            this.btnEliminar1.Size = new System.Drawing.Size(91, 36);
             this.btnEliminar1.StyleController = this.layoutControl2;
             this.btnEliminar1.TabIndex = 4;
             this.btnEliminar1.Text = "Eliminar";
@@ -274,10 +279,12 @@ namespace SisVentaDevExpress
             // 
             // btnImprimir1
             // 
+            this.btnImprimir1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir1.Appearance.Options.UseFont = true;
             this.btnImprimir1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir1.ImageOptions.Image")));
-            this.btnImprimir1.Location = new System.Drawing.Point(280, 12);
+            this.btnImprimir1.Location = new System.Drawing.Point(196, 12);
             this.btnImprimir1.Name = "btnImprimir1";
-            this.btnImprimir1.Size = new System.Drawing.Size(129, 36);
+            this.btnImprimir1.Size = new System.Drawing.Size(95, 36);
             this.btnImprimir1.StyleController = this.layoutControl2;
             this.btnImprimir1.TabIndex = 3;
             this.btnImprimir1.Text = "Imprimir";
@@ -285,10 +292,12 @@ namespace SisVentaDevExpress
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Appearance.Options.UseFont = true;
             this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
             this.btnAgregar.Location = new System.Drawing.Point(12, 12);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(129, 36);
+            this.btnAgregar.Size = new System.Drawing.Size(96, 36);
             this.btnAgregar.StyleController = this.layoutControl2;
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
@@ -296,10 +305,12 @@ namespace SisVentaDevExpress
             // 
             // btnEditar1
             // 
+            this.btnEditar1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar1.Appearance.Options.UseFont = true;
             this.btnEditar1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar1.ImageOptions.Image")));
-            this.btnEditar1.Location = new System.Drawing.Point(145, 12);
+            this.btnEditar1.Location = new System.Drawing.Point(112, 12);
             this.btnEditar1.Name = "btnEditar1";
-            this.btnEditar1.Size = new System.Drawing.Size(131, 36);
+            this.btnEditar1.Size = new System.Drawing.Size(80, 36);
             this.btnEditar1.StyleController = this.layoutControl2;
             this.btnEditar1.TabIndex = 2;
             this.btnEditar1.Text = "Editar";
@@ -316,7 +327,8 @@ namespace SisVentaDevExpress
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.emptySpaceItem1,
-            this.layoutControlItem13});
+            this.layoutControlItem13,
+            this.emptySpaceItem7});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(556, 313);
             this.layoutControlGroup1.TextVisible = false;
@@ -325,35 +337,47 @@ namespace SisVentaDevExpress
             // 
             this.layoutControlItem3.Control = this.btnAgregar;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.MaxSize = new System.Drawing.Size(100, 40);
+            this.layoutControlItem3.MinSize = new System.Drawing.Size(100, 40);
             this.layoutControlItem3.Name = "layoutControlItem2";
-            this.layoutControlItem3.Size = new System.Drawing.Size(133, 40);
+            this.layoutControlItem3.Size = new System.Drawing.Size(100, 40);
+            this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnEditar1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(133, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(100, 0);
+            this.layoutControlItem4.MaxSize = new System.Drawing.Size(84, 40);
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(84, 40);
             this.layoutControlItem4.Name = "layoutControlItem3";
-            this.layoutControlItem4.Size = new System.Drawing.Size(135, 40);
+            this.layoutControlItem4.Size = new System.Drawing.Size(84, 40);
+            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnImprimir1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(268, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(184, 0);
+            this.layoutControlItem5.MaxSize = new System.Drawing.Size(99, 40);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(99, 40);
             this.layoutControlItem5.Name = "layoutControlItem4";
-            this.layoutControlItem5.Size = new System.Drawing.Size(133, 40);
+            this.layoutControlItem5.Size = new System.Drawing.Size(99, 40);
+            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnEliminar1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(401, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(283, 0);
+            this.layoutControlItem6.MaxSize = new System.Drawing.Size(95, 40);
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(95, 40);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(135, 40);
+            this.layoutControlItem6.Size = new System.Drawing.Size(95, 40);
+            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -382,6 +406,14 @@ namespace SisVentaDevExpress
             this.layoutControlItem13.Size = new System.Drawing.Size(268, 24);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(378, 0);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(158, 40);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tabPage2
             // 
@@ -474,11 +506,13 @@ namespace SisVentaDevExpress
             // btnGuardarCambios
             // 
             this.btnGuardarCambios.Appearance.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.btnGuardarCambios.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCambios.Appearance.Options.UseBackColor = true;
+            this.btnGuardarCambios.Appearance.Options.UseFont = true;
             this.btnGuardarCambios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarCambios.ImageOptions.Image")));
-            this.btnGuardarCambios.Location = new System.Drawing.Point(163, 196);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(121, 222);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(192, 36);
+            this.btnGuardarCambios.Size = new System.Drawing.Size(151, 36);
             this.btnGuardarCambios.StyleController = this.layoutControl4;
             this.btnGuardarCambios.TabIndex = 8;
             this.btnGuardarCambios.Text = "Guardar Cambios";
@@ -487,11 +521,13 @@ namespace SisVentaDevExpress
             // btnGuardar
             // 
             this.btnGuardar.Appearance.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.btnGuardar.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Appearance.Options.UseBackColor = true;
+            this.btnGuardar.Appearance.Options.UseFont = true;
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(12, 196);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 222);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(147, 36);
+            this.btnGuardar.Size = new System.Drawing.Size(105, 36);
             this.btnGuardar.StyleController = this.layoutControl4;
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "&Guardar";
@@ -500,11 +536,13 @@ namespace SisVentaDevExpress
             // btnCancelar
             // 
             this.btnCancelar.Appearance.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.btnCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Appearance.Options.UseBackColor = true;
+            this.btnCancelar.Appearance.Options.UseFont = true;
             this.btnCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.ImageOptions.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(359, 196);
+            this.btnCancelar.Location = new System.Drawing.Point(276, 222);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(155, 36);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 36);
             this.btnCancelar.StyleController = this.layoutControl4;
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
@@ -520,12 +558,12 @@ namespace SisVentaDevExpress
             this.emptySpaceItem4,
             this.emptySpaceItem6,
             this.lblDescripcion,
-            this.emptySpaceItem8,
             this.emptySpaceItem5,
             this.layoutControlItem10,
             this.layoutControlItem9,
             this.layoutControlItem11,
-            this.emptySpaceItem3});
+            this.emptySpaceItem3,
+            this.emptySpaceItem9});
             this.layoutControlGroup3.Name = "Root";
             this.layoutControlGroup3.Size = new System.Drawing.Size(526, 270);
             this.layoutControlGroup3.TextVisible = false;
@@ -580,20 +618,15 @@ namespace SisVentaDevExpress
             this.lblDescripcion.Text = "Descripcion:  ";
             this.lblDescripcion.TextSize = new System.Drawing.Size(95, 16);
             // 
-            // emptySpaceItem8
-            // 
-            this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 224);
-            this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(506, 26);
-            this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
             this.emptySpaceItem5.Location = new System.Drawing.Point(0, 159);
+            this.emptySpaceItem5.MaxSize = new System.Drawing.Size(506, 51);
+            this.emptySpaceItem5.MinSize = new System.Drawing.Size(506, 51);
             this.emptySpaceItem5.Name = "emptySpaceItem2";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(506, 25);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(506, 51);
+            this.emptySpaceItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem10
@@ -601,9 +634,12 @@ namespace SisVentaDevExpress
             this.layoutControlItem10.Control = this.btnGuardar;
             this.layoutControlItem10.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem10.CustomizationFormText = "layoutControlItem9";
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 184);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 210);
+            this.layoutControlItem10.MaxSize = new System.Drawing.Size(109, 40);
+            this.layoutControlItem10.MinSize = new System.Drawing.Size(109, 40);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(151, 40);
+            this.layoutControlItem10.Size = new System.Drawing.Size(109, 40);
+            this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem10.Text = "layoutControlItem9";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
@@ -611,9 +647,12 @@ namespace SisVentaDevExpress
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnGuardarCambios;
-            this.layoutControlItem9.Location = new System.Drawing.Point(151, 184);
+            this.layoutControlItem9.Location = new System.Drawing.Point(109, 210);
+            this.layoutControlItem9.MaxSize = new System.Drawing.Size(155, 40);
+            this.layoutControlItem9.MinSize = new System.Drawing.Size(155, 40);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(196, 40);
+            this.layoutControlItem9.Size = new System.Drawing.Size(155, 40);
+            this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -622,12 +661,31 @@ namespace SisVentaDevExpress
             this.layoutControlItem11.Control = this.btnCancelar;
             this.layoutControlItem11.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem11.CustomizationFormText = "layoutControlItem9";
-            this.layoutControlItem11.Location = new System.Drawing.Point(347, 184);
+            this.layoutControlItem11.Location = new System.Drawing.Point(264, 210);
+            this.layoutControlItem11.MaxSize = new System.Drawing.Size(102, 40);
+            this.layoutControlItem11.MinSize = new System.Drawing.Size(102, 40);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(159, 40);
+            this.layoutControlItem11.Size = new System.Drawing.Size(102, 40);
+            this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem11.Text = "layoutControlItem9";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(506, 16);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(366, 210);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(140, 40);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup2
             // 
@@ -720,14 +778,6 @@ namespace SisVentaDevExpress
             // 
             this.errorIcon.ContainerControl = this;
             // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(506, 16);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // frm_Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -756,6 +806,7 @@ namespace SisVentaDevExpress
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
@@ -770,11 +821,12 @@ namespace SisVentaDevExpress
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblDescripcion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -785,7 +837,6 @@ namespace SisVentaDevExpress
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkPresentacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -840,7 +891,6 @@ namespace SisVentaDevExpress
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.LayoutControlItem lblDescripcion;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
@@ -849,5 +899,7 @@ namespace SisVentaDevExpress
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
     }
 }

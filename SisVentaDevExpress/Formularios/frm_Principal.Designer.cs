@@ -72,11 +72,11 @@ namespace SisVentaDevExpress.Formularios
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsCompras = new System.Windows.Forms.ToolStripButton();
-            this.tsVentas = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.xpCollectionAcceso = new DevExpress.Xpo.XPCollection(this.components);
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -117,7 +117,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.salirToolStripMenuItem.Image = global::SisVentaDevExpress.Properties.Resources.Login;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Bolver al Login";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.bolverAlLoginToolStripMenuItem_Click);
             // 
@@ -125,7 +125,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.bolverAlLoginToolStripMenuItem.Image = global::SisVentaDevExpress.Properties.Resources.Cancelar;
             this.bolverAlLoginToolStripMenuItem.Name = "bolverAlLoginToolStripMenuItem";
-            this.bolverAlLoginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bolverAlLoginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bolverAlLoginToolStripMenuItem.Text = "Salir";
             this.bolverAlLoginToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -206,14 +206,14 @@ namespace SisVentaDevExpress.Formularios
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.ventasToolStripMenuItem1.Text = "Ventas";
             this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.ventasToolStripMenuItem1_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -242,8 +242,8 @@ namespace SisVentaDevExpress.Formularios
             this.existeciasDeArticulosToolStripMenuItem});
             this.MenuConsultas.Image = global::SisVentaDevExpress.Properties.Resources.Consulta;
             this.MenuConsultas.Name = "MenuConsultas";
-            this.MenuConsultas.Size = new System.Drawing.Size(87, 20);
-            this.MenuConsultas.Text = "Consultas";
+            this.MenuConsultas.Size = new System.Drawing.Size(81, 20);
+            this.MenuConsultas.Text = "Reportes";
             // 
             // ventaPorFechasToolStripMenuItem
             // 
@@ -402,8 +402,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator2,
-            this.tsCompras,
-            this.tsVentas});
+            this.tsCompras});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(990, 25);
@@ -423,18 +422,11 @@ namespace SisVentaDevExpress.Formularios
             this.tsCompras.Size = new System.Drawing.Size(23, 22);
             this.tsCompras.Text = "toolStripButton1";
             // 
-            // tsVentas
-            // 
-            this.tsVentas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsVentas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsVentas.Name = "tsVentas";
-            this.tsVentas.Size = new System.Drawing.Size(23, 22);
-            this.tsVentas.Text = "toolStripButton1";
-            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
+            this.toolStripStatusLabel,
+            this.toolStripProgressBar1});
             this.statusStrip.Location = new System.Drawing.Point(0, 431);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(990, 22);
@@ -450,6 +442,11 @@ namespace SisVentaDevExpress.Formularios
             // xpCollectionAcceso
             // 
             this.xpCollectionAcceso.ObjectType = typeof(SisVentaDevExpress.Ventas.Trabajador);
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
             // frm_Principal
             // 
@@ -521,10 +518,10 @@ namespace SisVentaDevExpress.Formularios
         private System.Windows.Forms.ToolStripMenuItem existeciasDeArticulosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apaToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton tsCompras;
-        private System.Windows.Forms.ToolStripButton tsVentas;
         private DevExpress.Xpo.XPCollection xpCollectionAcceso;
         private System.Windows.Forms.ToolStripMenuItem bolverAlLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detalleDeArticuloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }
 

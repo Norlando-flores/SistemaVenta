@@ -63,8 +63,8 @@ namespace SisVentaDevExpress.Formularios
             foreach (Trabajador u in xpCollectionUsuario)
             {
                 DatosDeAcceso.acceso = u.Acceso;
-                DatosDeAcceso.acceso = u.Usuario;
-                DatosDeAcceso.acceso = u.Acceso;
+                DatosDeAcceso.usuario = u.Usuario;
+                //DatosDeAcceso.acceso = u.NombreCompleto;
                 if (txtUsuario.Text.Equals(u.Usuario) && txtContraseña.Text.Equals(u.Contraseña))
                 {
                     //this.Visible = false;
