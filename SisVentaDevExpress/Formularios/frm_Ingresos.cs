@@ -103,7 +103,7 @@ namespace SisVentaDevExpress.Formularios
             }
 
         }
-        private void salida()
+        private void precio1()
         {
             try
             {
@@ -112,14 +112,29 @@ namespace SisVentaDevExpress.Formularios
                 if (detalle != null)
                 {
                     Articulo detalle1 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+                    if (detalle1.PrecioVenta == 0)
+                    {
+                        int precioVenta = Convert.ToInt32((detalle.PrecioVenta + Convert.ToDecimal(txtPrecioVenta.Text)));
+                        //MensajeOk(precioVenta.ToString());
+                        detalle1.PrecioVenta = precioVenta;
 
-                    int precioVenta = Convert.ToInt32(detalle. - Convert.ToInt32(txtCantidad.Text));
+                        unitOfWorkIngreso.CommitChanges();
+                        xpCollectionArticulos.Reload();
+                    }
+                    else
+                    {
+                        int precioVenta = Convert.ToInt32((detalle.PrecioVenta + Convert.ToDecimal(txtPrecioVenta.Text))/2);
+                        //MensajeOk(precioVenta.ToString());
+                        detalle1.PrecioVenta = precioVenta;
 
-                    detalle1.Stock_Actual = stockActual;
-
-                    unitOfWorkVentas.CommitChanges();
-                    xpCollectionArticulo.Reload();
+                        unitOfWorkIngreso.CommitChanges();
+                        xpCollectionArticulos.Reload();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
         private void Mostrar()
@@ -304,6 +319,7 @@ namespace SisVentaDevExpress.Formularios
                     {
                         decimal sub_Total = Convert.ToDecimal((txtStockInicial.Text)) * Convert.ToDecimal((txtPrecioCompra.Text));
                         Detalle_Ingreso detalleIngreso = new Detalle_Ingreso(unitOfWorkIngreso);
+                        precio1();
                         detalleIngreso.IdArticulo = (Articulo)searchLookUpEdit1View.GetFocusedRow();
                         detalleIngreso.Stock_inicial = Convert.ToInt32(txtStockInicial.Text.Trim());
                         detalleIngreso.Stock_Actual = Convert.ToInt32(txtStockInicial.Text.Trim());

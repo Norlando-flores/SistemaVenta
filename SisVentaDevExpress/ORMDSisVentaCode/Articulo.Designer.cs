@@ -63,6 +63,12 @@ namespace SisVentaDevExpress.Ventas
             get { return fIdPresentacion; }
             set { SetPropertyValue<Presentacion>(nameof(IdPresentacion), ref fIdPresentacion, value); }
         }
+        decimal fPrecioVenta;
+        public decimal PrecioVenta
+        {
+            get { return fPrecioVenta; }
+            set { SetPropertyValue<decimal>(nameof(PrecioVenta), ref fPrecioVenta, value); }
+        }
         [Association(@"Detalle_IngresoReferencesArticulo")]
         public XPCollection<Detalle_Ingreso> Detalle_Ingresos { get { return GetCollection<Detalle_Ingreso>(nameof(Detalle_Ingresos)); } }
     }

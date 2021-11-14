@@ -234,7 +234,8 @@ namespace SisVentaDevExpress.Formularios
                 //decimal a = d.Precio_Venta - ((d.Precio_Venta) * (decimal.Parse(txtIGV.Text) / 100));
                 Detalle_Ingreso d = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
                 txtstockActual.Text = Convert.ToString(d.Stock_Actual);
-                txtPrecioVenta.Text = Convert.ToString(d.Precio_Venta - ((d.Precio_Venta) * (decimal.Parse(txtIGV.Text) / 100))); //Convert.ToString(d.Precio_Venta)
+                txtPrecioVenta.Text = Convert.ToString(d.IdArticulo.PrecioVenta);
+                //txtPrecioVenta.Text = Convert.ToString(d.Precio_Venta - ((d.Precio_Venta) * (decimal.Parse(txtIGV.Text) / 100))); //Convert.ToString(d.Precio_Venta)
                 txtIdDetalle.Text = Convert.ToString(d.IdDetalle_Ingreso);
                 //MensajeOk(d.IdDetalle_Ingreso.ToString());
                 //MensajeOk(txtIdDetalle.Text.ToString());

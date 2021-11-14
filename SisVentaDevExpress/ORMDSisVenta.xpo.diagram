@@ -2,12 +2,12 @@
 <visualDesignerDiagram dslVersion="1.0.0.0" Id="1505ca7b-e43f-488b-bb69-4a3313162475" absoluteBounds="0, 0, 18, 28" name="ORMDSisVenta">
   <dataBaseObjectModelMoniker Id="25be7c61-2c54-479b-af2d-4d051c32eda2" />
   <nestedChildShapes>
-    <xpObjectShape Id="b2443ec6-56c3-4c89-8903-3e42d2f6f3de" absoluteBounds="6.2083328333333352, 16.7884521484375, 1.5, 2.524278971354164">
+    <xpObjectShape Id="b2443ec6-56c3-4c89-8903-3e42d2f6f3de" absoluteBounds="6.2083328333333352, 16.692301432291664, 1.5, 2.7165804036458354">
       <xpObjectMoniker Id="824c1658-6691-4386-9aa9-b8fed6865af4" />
       <nestedChildShapes>
-        <elementListCompartment Id="14fe7379-0466-4bcc-98cb-bfca79b6d6d9" absoluteBounds="6.2233328333333358, 17.098452148437502, 1.4700000000000002, 1.4031982421875" name="Fields" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="87b6d420-da94-4200-bce3-28669955a58a" absoluteBounds="6.2233328333333358, 18.511650390625, 1.4700000000000002, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="b2fe29f2-0f0c-4834-88be-4cf5b29ab1d6" absoluteBounds="6.2233328333333358, 18.7710400390625, 1.4700000000000002, 0.44169108072916663" name="Collections" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="14fe7379-0466-4bcc-98cb-bfca79b6d6d9" absoluteBounds="6.2233328333333358, 17.002301432291667, 1.4700000000000002, 1.5954996744791665" name="Fields" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="87b6d420-da94-4200-bce3-28669955a58a" absoluteBounds="6.2233328333333349, 18.607801106770832, 1.4700000000000002, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b2fe29f2-0f0c-4834-88be-4cf5b29ab1d6" absoluteBounds="6.2233328333333349, 18.86719075520833, 1.4700000000000002, 0.44169108072916652" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
     <xpObjectShape Id="301a17eb-26f1-4951-a890-f38b1edf3bb8" absoluteBounds="8.4583328333333352, 19.396742350260414, 1.5, 1.7550732421874997">
@@ -123,7 +123,7 @@
     <commentShape Id="048f9a23-0203-4347-9a5c-c5e754a7ab63" absoluteBounds="8.5, 26.75, 3.5, 1">
       <commentMoniker Id="691d8850-a550-4805-80cb-eda4fbdef2fe" />
     </commentShape>
-    <simpleAssociationConnector Id="75e4ce5b-b350-4de4-9e91-5483521c684a" edgePoints="[(8.45833283333334 : 20.2742789713542); (8.32482464757159 : 20.2742789713542 : JumpStart); (8.15815798090492 : 20.2742789713542 : JumpEnd); (6.95833283333334 : 20.2742789713542); (6.95833283333334 : 19.3127311197917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <simpleAssociationConnector Id="75e4ce5b-b350-4de4-9e91-5483521c684a" edgePoints="[(8.45833283333334 : 20.2803492141927); (8.32506696969935 : 20.2803492141927 : JumpStart); (8.15840030303268 : 20.2803492141927 : JumpEnd); (6.95833283333334 : 20.2803492141927); (6.95833283333334 : 19.4088818359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <simpleAssociationMoniker Id="71b2b87e-a736-47d9-967c-8e5c06acee07" />
       <relativeChildShapes />
       <nodes>
@@ -136,7 +136,7 @@
         </associationConnectorReferencesSourceCollectionField>
       </sourceCollectionField>
     </simpleAssociationConnector>
-    <simpleAssociationConnector Id="5e1108e1-380b-40f1-83d2-0fc384aae70c" edgePoints="[(8.45833283333334 : 17.717597249349); (8.22276274142353 : 17.717597249349 : JumpStart); (8.05609607475686 : 17.717597249349 : JumpEnd); (7.70833283333334 : 17.717597249349)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <simpleAssociationConnector Id="5e1108e1-380b-40f1-83d2-0fc384aae70c" edgePoints="[(8.45833283333334 : 17.6730550130208); (8.22098462977803 : 17.6730550130208 : JumpStart); (8.05431796311136 : 17.6730550130208 : JumpEnd); (7.70833283333334 : 17.6730550130208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <simpleAssociationMoniker Id="2bc965b8-d77e-423a-8593-45f0dca5b526" />
       <relativeChildShapes />
       <nodes>
@@ -227,7 +227,7 @@
         </associationConnectorReferencesSourceCollectionField>
       </sourceCollectionField>
     </simpleAssociationConnector>
-    <commentConnector Id="6c7486d4-2527-47c8-a70c-f1933428ce67" edgePoints="[(8.5 : 16); (8.14631785642044 : 16.3522458145428 : JumpStart); (8.02822718273763 : 16.4698569133682 : JumpEnd); (7.70833283333334 : 16.7884521484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <commentConnector Id="6c7486d4-2527-47c8-a70c-f1933428ce67" edgePoints="[(8.5 : 16); (8.14806967540188 : 16.3077579544091 : JumpStart); (8.02260824025257 : 16.4174721561701 : JumpEnd); (7.70833283333334 : 16.6923014322917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <commentReferencesSubjectsMoniker Id="a8fa9054-bea8-4d21-9951-ddc9ac11d3e0" />
       <nodes>
         <commentShapeMoniker Id="902e6970-69d3-4be2-93ea-80f92a557758" />
