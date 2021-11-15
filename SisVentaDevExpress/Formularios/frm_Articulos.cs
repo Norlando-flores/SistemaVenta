@@ -134,12 +134,13 @@ namespace SisVentaDevExpress.Formularios
                     if (this.IsNuevo)
                     {
                        Articulo articulo = new Articulo(unitOfWorkArticulos);
-                       articulo.Codigo = txtCodigoVenta.Text; 
+                       articulo.Codigo = txtCodigoVenta.Text;
                        articulo.Nombre = txtNombre.Text;
                        articulo.Descripcion = txtDescripcion.Text;
                        articulo.IdCategoria = (Categoria)searchLookUpEdit1View.GetFocusedRow();
                        articulo.IdPresentacion = (Presentacion)searchLookUpEdit2View.GetFocusedRow();
-
+                       articulo.PrecioVenta = 0;
+                       articulo.Existencia = 0;
                        articulo.Save();
                        unitOfWorkArticulos.CommitChanges();
                        xpCollectionArticulos.Reload();
@@ -191,6 +192,7 @@ namespace SisVentaDevExpress.Formularios
                     articulo.Descripcion = txtDescripcion.Text.ToString();
                     articulo.IdCategoria = (Categoria)searchLookUpEdit1View.GetFocusedRow();
                     articulo.IdPresentacion = (Presentacion)searchLookUpEdit2View.GetFocusedRow();
+                    
                     articulo.Save();
                     unitOfWorkArticulos.CommitChanges();
                     xpCollectionArticulos.Reload();

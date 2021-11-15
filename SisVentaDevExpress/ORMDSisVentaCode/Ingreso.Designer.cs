@@ -76,13 +76,6 @@ namespace SisVentaDevExpress.Ventas
             get { return fIGV; }
             set { SetPropertyValue<decimal>(nameof(IGV), ref fIGV, value); }
         }
-        string fEstado;
-        [Size(50)]
-        public string Estado
-        {
-            get { return fEstado; }
-            set { SetPropertyValue<string>(nameof(Estado), ref fEstado, value); }
-        }
         [Association(@"Detalle_IngresoReferencesIngreso")]
         public XPCollection<Detalle_Ingreso> Detalle_Ingresos { get { return GetCollection<Detalle_Ingreso>(nameof(Detalle_Ingresos)); } }
     }

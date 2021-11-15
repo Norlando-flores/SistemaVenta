@@ -89,8 +89,6 @@ namespace SisVentaDevExpress.Ventas
             get { return fStock_Actual; }
             set { SetPropertyValue<int>(nameof(Stock_Actual), ref fStock_Actual, value); }
         }
-        [Association(@"Detalle_ventaReferencesDetalle_Ingreso")]
-        public XPCollection<Detalle_venta> Detalle_ventas { get { return GetCollection<Detalle_venta>(nameof(Detalle_ventas)); } }
     }
 
 }

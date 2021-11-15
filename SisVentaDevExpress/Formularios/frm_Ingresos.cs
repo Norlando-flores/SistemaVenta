@@ -112,20 +112,48 @@ namespace SisVentaDevExpress.Formularios
                 if (detalle != null)
                 {
                     Articulo detalle1 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
-                    if (detalle1.PrecioVenta == 0)
-                    {
-                        int precioVenta = Convert.ToInt32((detalle.PrecioVenta + Convert.ToDecimal(txtPrecioVenta.Text)));
-                        //MensajeOk(precioVenta.ToString());
-                        detalle1.PrecioVenta = precioVenta;
-
+                    detalle1.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+                    if (detalle1.Existencia == 0)
+                    {                        
+                        detalle1.Existencia = int.Parse(txtStockInicial.Text);
                         unitOfWorkIngreso.CommitChanges();
                         xpCollectionArticulos.Reload();
                     }
                     else
                     {
-                        int precioVenta = Convert.ToInt32((detalle.PrecioVenta + Convert.ToDecimal(txtPrecioVenta.Text))/2);
-                        //MensajeOk(precioVenta.ToString());
-                        detalle1.PrecioVenta = precioVenta;
+                        detalle1.Existencia = Convert.ToInt32((detalle.Existencia + Convert.ToInt32(txtStockInicial.Text)));
+                        unitOfWorkIngreso.CommitChanges();
+                        xpCollectionArticulos.Reload();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+        private void precio2()
+        {
+            try
+            {
+                Articulo detalle = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+
+                if (detalle != null)
+                {
+                    Articulo detalle1 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+                    Detalle_Ingreso detalle2 = (Detalle_Ingreso)dataListadoDetalle.GetFocusedRow();
+                    detalle1.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+                    if (detalle1.Existencia == 0)
+                    {
+
+                        detalle1.Existencia = int.Parse(txtStockInicial.Text);
+                        unitOfWorkIngreso.CommitChanges();
+                        xpCollectionArticulos.Reload();
+                    }
+                    else
+                    {
+                        int a = Convert.ToInt32((detalle.Existencia - Convert.ToInt32(detalle2.Stock_inicial))+int.Parse(txtStockInicial.Text));
+                        detalle1.Existencia = a;
 
                         unitOfWorkIngreso.CommitChanges();
                         xpCollectionArticulos.Reload();
@@ -242,7 +270,6 @@ namespace SisVentaDevExpress.Formularios
                        // ingreso = new Ingreso(unitOfWorkIngreso);
                         Trabajador trabajador = (Trabajador)gridView1.GetFocusedRow();
                         Proveedor i = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
-                        string estado = "Emitido";
 
                         ingreso.IGV = Convert.ToDecimal(txtIGV.Text);
 
@@ -252,7 +279,6 @@ namespace SisVentaDevExpress.Formularios
                         ingreso.Correlativo = txtCorrelativo.Text;
                         ingreso.Serie = txtSerie.Text;
                         ingreso.Tipo_Comprobante = cbComprobante.Text;
-                        ingreso.Estado = estado;
                         ingreso.Save();
                         unitOfWorkIngreso.CommitChanges();
                         xpCollectionIngreso.Reload();
@@ -347,7 +373,7 @@ namespace SisVentaDevExpress.Formularios
                             }
                             decimal sub_Total = Convert.ToDecimal((txtStockInicial.Text)) * Convert.ToDecimal((txtPrecioCompra.Text));
 
-                            
+                            precio2();
                             detalle.Stock_inicial = Convert.ToInt32(txtStockInicial.Text.Trim());
                             detalle.Stock_Actual = Convert.ToInt32(txtStockInicial.Text.Trim());
                             detalle.Precio_Compra = Convert.ToDecimal(txtPrecioCompra.Text.Trim());
@@ -356,7 +382,8 @@ namespace SisVentaDevExpress.Formularios
                             detalle.Fecha_Vencimiento = dtFechaVencimiento.Value;
                             detalle.Sub_total = sub_Total;
                             detalle.Save();
-                            unitOfWorkIngreso.CommitChanges();
+                            
+                            //unitOfWorkIngreso.CommitChanges();
                             xpCollectionDetalleIngreso.Reload();
                             LimpiarDetalles();
                             this.MensajeOk("Se a Actualizo el Rejistro de Forma Correcta");
@@ -489,16 +516,12 @@ namespace SisVentaDevExpress.Formularios
             {
                 ingreso.IdProveedor = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
             }
-            string estado = "Emitido";
-            
-           
-            
+              
             ingreso.Fecha_Ingreso = dtFechaIngreso.Value;
             ingreso.IGV = Convert.ToDecimal(txtIGV.Text);
             ingreso.Correlativo = txtCorrelativo.Text;
             ingreso.Serie = txtSerie.Text;
             ingreso.Tipo_Comprobante = cbComprobante.Text;
-            ingreso.Estado = estado;
 
             ingreso.Save();
             unitOfWorkIngreso.CommitChanges();
@@ -529,31 +552,6 @@ namespace SisVentaDevExpress.Formularios
 
             
             this.sbArticulo.Focus();
-        }
-
-        private void btnAnular1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult opcion;
-                opcion = MessageBox.Show("Desea Anulado el Rejistro", "Sistema de Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                string estado = "Anulado";
-                if (opcion == DialogResult.OK)
-                {
-                    Ingreso ingreos = (Ingreso)dataListado.GetFocusedRow();
-                    ingreos.Estado = estado;
-                    ingreos.Save();
-
-                    unitOfWorkIngreso.CommitChanges();
-                    xpCollectionIngreso.Reload();
-                    MessageBox.Show("Se Anulado correctamente el rejistro");
-                }
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message + ex.StackTrace);
-                MessageBox.Show("El dato esta Siendo Ocupado", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void btnImprimir1_Click(object sender, EventArgs e)

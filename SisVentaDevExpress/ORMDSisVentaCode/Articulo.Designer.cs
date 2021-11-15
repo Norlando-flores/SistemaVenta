@@ -69,8 +69,16 @@ namespace SisVentaDevExpress.Ventas
             get { return fPrecioVenta; }
             set { SetPropertyValue<decimal>(nameof(PrecioVenta), ref fPrecioVenta, value); }
         }
+        int fExistencia;
+        public int Existencia
+        {
+            get { return fExistencia; }
+            set { SetPropertyValue<int>(nameof(Existencia), ref fExistencia, value); }
+        }
         [Association(@"Detalle_IngresoReferencesArticulo")]
         public XPCollection<Detalle_Ingreso> Detalle_Ingresos { get { return GetCollection<Detalle_Ingreso>(nameof(Detalle_Ingresos)); } }
+        [Association(@"Detalle_ventaReferencesArticulo")]
+        public XPCollection<Detalle_venta> Detalle_ventas { get { return GetCollection<Detalle_venta>(nameof(Detalle_ventas)); } }
     }
 
 }

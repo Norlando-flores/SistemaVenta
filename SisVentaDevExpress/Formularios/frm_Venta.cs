@@ -153,18 +153,18 @@ namespace SisVentaDevExpress.Formularios
             try
             {
                 //Detalle_Ingreso detalle = detalle_editar1;
-                Detalle_Ingreso detalle = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
+                Articulo detalle = (Articulo)gridviewArticulo.GetFocusedRow();
                 Detalle_venta d = (Detalle_venta)dataListadoDetalle.GetFocusedRow();
-                Detalle_Ingreso detalle2 = detalle;
+                Articulo detalle2 = detalle;
                 if (detalle != null)
                 {
                   
                     //detalle = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
-                    a = Convert.ToInt32(detalle.Stock_Actual) + Convert.ToInt32(d.Cantidad);
+                    a = Convert.ToInt32(detalle.Existencia) + Convert.ToInt32(d.Cantidad);
                     int b = a - Convert.ToInt32(txtCantidad.Text);
                     //MensajeOk(a.ToString());
                     //MensajeOk(b.ToString());
-                    detalle2.Stock_Actual = b;
+                    detalle2.Existencia = b;
 
                     unitOfWorkVentas.CommitChanges();
                     xpCollectionArticulo.Reload();
@@ -179,15 +179,15 @@ namespace SisVentaDevExpress.Formularios
         {
             try
             {
-                Detalle_Ingreso detalle = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
+                Articulo detalle = (Articulo)gridviewArticulo.GetFocusedRow();
 
                 if (detalle != null)
                 {
-                    Detalle_Ingreso detalle1= (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
+                    Articulo detalle1 = (Articulo)gridviewArticulo.GetFocusedRow();
 
-                    int stockActual = Convert.ToInt32(detalle.Stock_Actual - Convert.ToInt32(txtCantidad.Text));
+                    int stockActual = Convert.ToInt32(detalle.Existencia - Convert.ToInt32(txtCantidad.Text));
 
-                    detalle1.Stock_Actual = stockActual;
+                    detalle1.Existencia = stockActual;
 
                     unitOfWorkVentas.CommitChanges();
                     xpCollectionArticulo.Reload();
@@ -230,15 +230,10 @@ namespace SisVentaDevExpress.Formularios
         {
             if (this.IsNuevo)
             {
-
-                //decimal a = d.Precio_Venta - ((d.Precio_Venta) * (decimal.Parse(txtIGV.Text) / 100));
-                Detalle_Ingreso d = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
-                txtstockActual.Text = Convert.ToString(d.Stock_Actual);
-                txtPrecioVenta.Text = Convert.ToString(d.IdArticulo.PrecioVenta);
-                //txtPrecioVenta.Text = Convert.ToString(d.Precio_Venta - ((d.Precio_Venta) * (decimal.Parse(txtIGV.Text) / 100))); //Convert.ToString(d.Precio_Venta)
-                txtIdDetalle.Text = Convert.ToString(d.IdDetalle_Ingreso);
-                //MensajeOk(d.IdDetalle_Ingreso.ToString());
-                //MensajeOk(txtIdDetalle.Text.ToString());
+                Articulo d = (Articulo)gridviewArticulo.GetFocusedRow();
+                txtstockActual.Text = Convert.ToString(d.Existencia);              
+                txtPrecioVenta.Text = Convert.ToString(d.PrecioVenta);
+                txtIdDetalle.Text = Convert.ToString(d.IdArticulos);
                 this.txtCantidad.ReadOnly = false;
                 this.txtDescuento.ReadOnly = false;
                 this.txtCantidad.Focus();
@@ -258,18 +253,9 @@ namespace SisVentaDevExpress.Formularios
         private void frm_Venta_Load(object sender, EventArgs e)
         {
 
-            //BinaryOperator filterCriteria2 = new BinaryOperator(nameof(Detalle_venta.Total), 90, BinaryOperatorType.Equal);
-            //xpCollection1.Filter = new BetweenOperator(nameof(Detalle_venta.IdVenta), 408);
-           // venta.IdVenta = Convert.ToInt32((Venta)dataListado.GetFocusedRow());
-            //xpCollection1.Filter = filterCriteria2;
+            //BinaryOperator filterCriteria = new BinaryOperator(nameof(Articulo.Existencia),0, BinaryOperatorType.Greater);
 
-           // MensajeOk(venta.IdVenta.ToString());
-
-
-
-            BinaryOperator filterCriteria = new BinaryOperator(nameof(Detalle_Ingreso.Stock_Actual),0, BinaryOperatorType.Greater);
-
-            xpCollectionArticulo.Filter = filterCriteria;
+            //xpCollectionArticulo.Filter = filterCriteria;
 
             gridControlDetalleVenta.DataSource = null;
             gridControl2.DataSource = xpCollectionVenta;
@@ -527,7 +513,7 @@ namespace SisVentaDevExpress.Formularios
                             //Detalle_venta d = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
                             //detalleVenta.IdDetalle_Ingreso = Convert.ToInt32(txtIdDetalle.Text.Trim());
                             salida();
-                            detalleVenta.IdDetalle_Ingreso = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
+                            detalleVenta.IdArticulo = (Articulo)gridviewArticulo.GetFocusedRow();
                             detalleVenta.Cantidad = Convert.ToInt32(txtCantidad.Text.Trim());
                             detalleVenta.Precio_Venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
                             detalleVenta.Descuento = Convert.ToInt32(txtDescuento.Text.Trim());
@@ -549,10 +535,10 @@ namespace SisVentaDevExpress.Formularios
                         {
                             
                             Detalle_venta detalle = detalle_editar;
-                            Detalle_Ingreso art = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
+                            Articulo art = (Articulo)gridviewArticulo.GetFocusedRow();
                             if (art != null)
                             {
-                                detalle.IdDetalle_Ingreso = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
+                                detalle.IdArticulo = (Articulo)gridviewArticulo.GetFocusedRow();
                             }
                             //decimal sub_Total = Convert.ToDecimal((txtStockInicial.Text)) * Convert.ToDecimal((txtPrecioCompra.Text));
 
@@ -586,12 +572,12 @@ namespace SisVentaDevExpress.Formularios
         {
             
             detalle_editar = (Detalle_venta)dataListadoDetalle.GetFocusedRow();
-            this.sbArticulo.Text = (detalle_editar.IdDetalle_Ingreso).IdDetalle_Ingreso.ToString();
+            this.sbArticulo.Text = (detalle_editar.IdArticulo).IdArticulos.ToString();
             venta_editar = (Venta)dataListado.GetFocusedRow();
             this.txtIdDetalleVenta.Text = detalle_editar.IdDetalle_Venta.ToString();
             this.txtidVenta.Text = venta_editar.IdVenta.ToString();            
             this.txtPrecioVenta.Text = detalle_editar.Precio_Venta.ToString();
-            this.txtstockActual.Text = detalle_editar.IdDetalle_Ingreso.Stock_Actual.ToString();
+            this.txtstockActual.Text = detalle_editar.IdArticulo.Existencia.ToString();
             this.txtCantidad.Text = detalle_editar.Cantidad.ToString();
             this.txtDescuento.Text = detalle_editar.Descuento.ToString();
             this.txtPrescioTotal.Text = detalle_editar.Total.ToString();
@@ -615,13 +601,13 @@ namespace SisVentaDevExpress.Formularios
                 {
                     if (this.IsNuevo && venta != null)
                     {
-                        Detalle_Ingreso detalle1 = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
+                        Articulo detalle1 = (Articulo)gridviewArticulo.GetFocusedRow();
                         Detalle_venta di1 = (Detalle_venta)dataListadoDetalle.GetFocusedRow();
-                        Detalle_Ingreso detalle2 = di1.IdDetalle_Ingreso;
+                        Articulo detalle2 = di1.IdArticulo;
                         if (detalle1 == null)
                         {
-                            int a = di1.IdDetalle_Ingreso.Stock_Actual + di1.Cantidad;
-                            detalle2.Stock_Actual = a;
+                            int a = di1.IdArticulo.Existencia + di1.Cantidad;
+                            detalle2.Existencia = a;
                             //MensajeOk(detalle2.Stock_Actual.ToString());
                             //detalle2.Save();
                             //unitOfWorkVentas.CommitChanges();
@@ -640,11 +626,11 @@ namespace SisVentaDevExpress.Formularios
                     {
                         Detalle_Ingreso detalle1 = (Detalle_Ingreso)gridviewArticulo.GetFocusedRow();
                         Detalle_venta di1 = (Detalle_venta)dataListadoDetalle.GetFocusedRow();
-                        Detalle_Ingreso detalle2 = di1.IdDetalle_Ingreso;
+                        Articulo detalle2 = di1.IdArticulo;
                         if (detalle1 == null)
                         {
-                            int a = di1.IdDetalle_Ingreso.Stock_Actual + di1.Cantidad;
-                            detalle2.Stock_Actual = a;
+                            int a = di1.IdArticulo.Existencia + di1.Cantidad;
+                            detalle2.Existencia = a;
                             detalle2.Save();
                             //unitOfWorkVentas.CommitChanges();
                             xpCollectionArticulo.Reload();

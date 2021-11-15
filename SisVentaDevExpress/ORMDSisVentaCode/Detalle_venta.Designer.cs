@@ -34,14 +34,6 @@ namespace SisVentaDevExpress.Ventas
             get { return fIdVenta; }
             set { SetPropertyValue<Venta>(nameof(IdVenta), ref fIdVenta, value); }
         }
-        Detalle_Ingreso fIdDetalle_Ingreso;
-        [Persistent(@"idDetalle_Ingreso")]
-        [Association(@"Detalle_ventaReferencesDetalle_Ingreso")]
-        public Detalle_Ingreso IdDetalle_Ingreso
-        {
-            get { return fIdDetalle_Ingreso; }
-            set { SetPropertyValue<Detalle_Ingreso>(nameof(IdDetalle_Ingreso), ref fIdDetalle_Ingreso, value); }
-        }
         int fCantidad;
         public int Cantidad
         {
@@ -65,6 +57,14 @@ namespace SisVentaDevExpress.Ventas
         {
             get { return fTotal; }
             set { SetPropertyValue<decimal>(nameof(Total), ref fTotal, value); }
+        }
+        Articulo fIdArticulo;
+        [Persistent(@"idArticulo")]
+        [Association(@"Detalle_ventaReferencesArticulo")]
+        public Articulo IdArticulo
+        {
+            get { return fIdArticulo; }
+            set { SetPropertyValue<Articulo>(nameof(IdArticulo), ref fIdArticulo, value); }
         }
     }
 
