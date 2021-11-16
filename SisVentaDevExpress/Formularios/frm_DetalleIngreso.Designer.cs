@@ -40,7 +40,6 @@ namespace SisVentaDevExpress.Formularios
             this.gridControlDetalleVenta = new DevExpress.XtraGrid.GridControl();
             this.xpCollectionDetalleIngreso = new DevExpress.Xpo.XPCollection(this.components);
             this.dataListado = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colFechaIngreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCodArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -172,7 +171,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             // xpCollectionDetalleIngreso
             // 
-            this.xpCollectionDetalleIngreso.ObjectType = typeof(SisVentaDevExpress.Ventas.Detalle_Ingreso);
+            this.xpCollectionDetalleIngreso.ObjectType = typeof(SisVentaDevExpress.Ventas.Detalle_venta);
             // 
             // dataListado
             // 
@@ -181,7 +180,6 @@ namespace SisVentaDevExpress.Formularios
             this.dataListado.Appearance.HideSelectionRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.dataListado.Appearance.SelectedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.dataListado.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colFechaIngreso,
             this.colCodArticulo,
             this.colArticulo,
             this.colCategoria,
@@ -190,7 +188,6 @@ namespace SisVentaDevExpress.Formularios
             this.colPrecio_Compra,
             this.colPrecio_Venta});
             this.dataListado.GridControl = this.gridControlDetalleVenta;
-            this.dataListado.GroupCount = 1;
             this.dataListado.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "IdArticulo.Nombre", null, "({0})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Stock_Actual", this.colExistenciaActual, "Total Existencia: {0}")});
@@ -198,25 +195,6 @@ namespace SisVentaDevExpress.Formularios
             this.dataListado.OptionsBehavior.Editable = false;
             this.dataListado.OptionsFind.AlwaysVisible = true;
             this.dataListado.OptionsSelection.MultiSelect = true;
-            this.dataListado.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colArticulo, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // colFechaIngreso
-            // 
-            this.colFechaIngreso.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colFechaIngreso.AppearanceCell.Options.UseFont = true;
-            this.colFechaIngreso.AppearanceCell.Options.UseTextOptions = true;
-            this.colFechaIngreso.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colFechaIngreso.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colFechaIngreso.AppearanceHeader.Options.UseFont = true;
-            this.colFechaIngreso.AppearanceHeader.Options.UseTextOptions = true;
-            this.colFechaIngreso.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colFechaIngreso.Caption = "Fecha Ingreso";
-            this.colFechaIngreso.FieldName = "IdIngreso.Fecha_Ingreso";
-            this.colFechaIngreso.Name = "colFechaIngreso";
-            this.colFechaIngreso.Visible = true;
-            this.colFechaIngreso.VisibleIndex = 0;
-            this.colFechaIngreso.Width = 108;
             // 
             // colCodArticulo
             // 
@@ -232,7 +210,7 @@ namespace SisVentaDevExpress.Formularios
             this.colCodArticulo.FieldName = "IdArticulo.Codigo";
             this.colCodArticulo.Name = "colCodArticulo";
             this.colCodArticulo.Visible = true;
-            this.colCodArticulo.VisibleIndex = 1;
+            this.colCodArticulo.VisibleIndex = 0;
             this.colCodArticulo.Width = 108;
             // 
             // colArticulo
@@ -249,7 +227,7 @@ namespace SisVentaDevExpress.Formularios
             this.colArticulo.FieldName = "IdArticulo.Nombre";
             this.colArticulo.Name = "colArticulo";
             this.colArticulo.Visible = true;
-            this.colArticulo.VisibleIndex = 2;
+            this.colArticulo.VisibleIndex = 1;
             this.colArticulo.Width = 108;
             // 
             // colCategoria
@@ -296,9 +274,9 @@ namespace SisVentaDevExpress.Formularios
             this.colExistenciaActual.AppearanceHeader.Options.UseFont = true;
             this.colExistenciaActual.AppearanceHeader.Options.UseTextOptions = true;
             this.colExistenciaActual.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colExistenciaActual.Caption = "Existencia Actual";
+            this.colExistenciaActual.Caption = "Cantidad Ingresada";
             this.colExistenciaActual.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colExistenciaActual.FieldName = "Stock_Actual";
+            this.colExistenciaActual.FieldName = "IdArticulo.Detalle_Ingresos.Stock_inicial";
             this.colExistenciaActual.Name = "colExistenciaActual";
             this.colExistenciaActual.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Stock_Actual", "Total Existencia: {0}")});
@@ -316,7 +294,8 @@ namespace SisVentaDevExpress.Formularios
             this.colPrecio_Compra.AppearanceHeader.Options.UseFont = true;
             this.colPrecio_Compra.AppearanceHeader.Options.UseTextOptions = true;
             this.colPrecio_Compra.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPrecio_Compra.FieldName = "Precio_Compra";
+            this.colPrecio_Compra.Caption = "Existenca";
+            this.colPrecio_Compra.FieldName = "IdArticulo.Existencia";
             this.colPrecio_Compra.Name = "colPrecio_Compra";
             this.colPrecio_Compra.Visible = true;
             this.colPrecio_Compra.VisibleIndex = 5;
@@ -332,7 +311,8 @@ namespace SisVentaDevExpress.Formularios
             this.colPrecio_Venta.AppearanceHeader.Options.UseFont = true;
             this.colPrecio_Venta.AppearanceHeader.Options.UseTextOptions = true;
             this.colPrecio_Venta.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPrecio_Venta.FieldName = "Precio_Venta";
+            this.colPrecio_Venta.Caption = "Venta";
+            this.colPrecio_Venta.FieldName = "IdArticulo.Detalle_ventas.Cantidad";
             this.colPrecio_Venta.Name = "colPrecio_Venta";
             this.colPrecio_Venta.Visible = true;
             this.colPrecio_Venta.VisibleIndex = 6;
@@ -508,7 +488,6 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraGrid.Columns.GridColumn colFechaIngreso;
         private DevExpress.XtraGrid.Columns.GridColumn colExistenciaActual;
     }
 }

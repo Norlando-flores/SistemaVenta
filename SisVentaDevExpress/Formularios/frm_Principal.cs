@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SisVentaDevExpress.Reportes;
 
 namespace SisVentaDevExpress.Formularios
 {
@@ -163,11 +164,6 @@ namespace SisVentaDevExpress.Formularios
 
         private void frm_Principal_Load(object sender, EventArgs e)
         {
-            /*foreach (Trabajador trabajador in xpCollectionAcceso)
-            {
-                this.acceso = trabajador.Acceso;
-                MessageBox.Show(acceso);
-            }*/
             xpCollectionAcceso.Reload();
             this.GestionAcceso();
         }
@@ -183,7 +179,7 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuVentas.Enabled = true;
                     this.MenuMantenimiento.Enabled = true;
                     this.MenuConsultas.Enabled = true;
-                    this.MenuHerramientas.Enabled = true;
+                   // this.MenuHerramientas.Enabled = true;
                     //this.tsCompras.Enabled = true;
                    // this.tsVentas.Enabled = true;
                 }
@@ -194,7 +190,7 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuVentas.Enabled = true;
                     this.MenuMantenimiento.Enabled = false;
                     this.MenuConsultas.Enabled = true;
-                    this.MenuHerramientas.Enabled = true;
+                   // this.MenuHerramientas.Enabled = true;
                     //this.tsCompras.Enabled = false;
                    // this.tsVentas.Enabled = true;
                 }
@@ -205,7 +201,7 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuVentas.Enabled = false;
                     this.MenuMantenimiento.Enabled = false;
                     this.MenuConsultas.Enabled = true;
-                    this.MenuHerramientas.Enabled = true;
+                    //this.MenuHerramientas.Enabled = true;
                     //this.tsCompras.Enabled = true;
                     //this.tsVentas.Enabled = false;
                 }
@@ -216,7 +212,7 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuVentas.Enabled = false;
                     this.MenuMantenimiento.Enabled = false;
                     this.MenuConsultas.Enabled = false;
-                    this.MenuHerramientas.Enabled = false;
+                    //this.MenuHerramientas.Enabled = false;
                    // this.tsCompras.Enabled = false;
                     //this.tsVentas.Enabled = false;
                 }
@@ -252,6 +248,14 @@ namespace SisVentaDevExpress.Formularios
             formulario_Venta.MdiParent = this;
             formulario_Venta.Show();
             formulario_Venta.WindowState = FormWindowState.Maximized;
+        }
+
+        private void existeciasDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteArticulos formularioArticulo = new frmReporteArticulos();
+            //formularioArticulo.MdiParent = this;
+            formularioArticulo.Show();
+            formularioArticulo.WindowState = FormWindowState.Maximized;
         }
     }
 }

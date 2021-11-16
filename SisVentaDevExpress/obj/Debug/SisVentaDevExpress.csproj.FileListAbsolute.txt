@@ -216,6 +216,7 @@ C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDev
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Formularios.frmReporteVenta.resources
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\bin\Debug\DevExpress.RichEdit.v20.1.Export.dll
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Reportes.reporteVenta.resources
-C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.XtraFormReporteVentas.resources
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\bin\Debug\SQLBackup.dll
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\AppLotificadora.Formularios.frmrestore.resources
+C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Reportes.frmReporteArticulos.resources
+C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Reportes.ReporteArticulo.resources

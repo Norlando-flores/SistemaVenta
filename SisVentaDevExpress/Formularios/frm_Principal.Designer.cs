@@ -31,7 +31,14 @@ namespace SisVentaDevExpress.Formularios
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Principal));
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsCompras = new System.Windows.Forms.ToolStripButton();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.xpCollectionAcceso = new DevExpress.Xpo.XPCollection(this.components);
             this.MenuSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bolverAlLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,9 +62,6 @@ namespace SisVentaDevExpress.Formularios
             this.MenuVer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuHerramientas = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.apaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuVentasnas = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,39 +73,64 @@ namespace SisVentaDevExpress.Formularios
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsCompras = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.xpCollectionAcceso = new DevExpress.Xpo.XPCollection(this.components);
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.menuStrip.SuspendLayout();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.restauracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.respaldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionAcceso)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip
+            // toolStrip
             // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuSistema,
-            this.MenuAlmacen,
-            this.MenuCompra,
-            this.MenuVentas,
-            this.MenuMantenimiento,
-            this.MenuConsultas,
-            this.MenuVer,
-            this.MenuHerramientas,
-            this.MenuVentasnas,
-            this.helpMenu});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.MdiWindowListItem = this.MenuVentasnas;
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(990, 24);
-            this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "MenuStrip";
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator2,
+            this.tsCompras});
+            this.toolStrip.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(990, 25);
+            this.toolStrip.TabIndex = 1;
+            this.toolStrip.Text = "ToolStrip";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsCompras
+            // 
+            this.tsCompras.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsCompras.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsCompras.Name = "tsCompras";
+            this.tsCompras.Size = new System.Drawing.Size(23, 22);
+            this.tsCompras.Text = "toolStripButton1";
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel,
+            this.toolStripProgressBar1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 431);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(990, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(189, 17);
+            this.toolStripStatusLabel.Text = "Sistema De Ventas Norlando Flores";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            // 
+            // xpCollectionAcceso
+            // 
+            this.xpCollectionAcceso.ObjectType = typeof(SisVentaDevExpress.Ventas.Trabajador);
             // 
             // MenuSistema
             // 
@@ -117,7 +146,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.salirToolStripMenuItem.Image = global::SisVentaDevExpress.Properties.Resources.Login;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Bolver al Login";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.bolverAlLoginToolStripMenuItem_Click);
             // 
@@ -125,7 +154,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.bolverAlLoginToolStripMenuItem.Image = global::SisVentaDevExpress.Properties.Resources.Cancelar;
             this.bolverAlLoginToolStripMenuItem.Name = "bolverAlLoginToolStripMenuItem";
-            this.bolverAlLoginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bolverAlLoginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bolverAlLoginToolStripMenuItem.Text = "Salir";
             this.bolverAlLoginToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -220,7 +249,9 @@ namespace SisVentaDevExpress.Formularios
             // MenuMantenimiento
             // 
             this.MenuMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.trabajadoresToolStripMenuItem});
+            this.trabajadoresToolStripMenuItem,
+            this.respaldoToolStripMenuItem,
+            this.restauracionToolStripMenuItem});
             this.MenuMantenimiento.Image = global::SisVentaDevExpress.Properties.Resources.Mantenimiento;
             this.MenuMantenimiento.Name = "MenuMantenimiento";
             this.MenuMantenimiento.Size = new System.Drawing.Size(110, 20);
@@ -228,9 +259,9 @@ namespace SisVentaDevExpress.Formularios
             // 
             // trabajadoresToolStripMenuItem
             // 
-            this.trabajadoresToolStripMenuItem.Image = global::SisVentaDevExpress.Properties.Resources.Trabajador;
+            this.trabajadoresToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trabajadoresToolStripMenuItem.Image")));
             this.trabajadoresToolStripMenuItem.Name = "trabajadoresToolStripMenuItem";
-            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.trabajadoresToolStripMenuItem.Text = "Trabajadores";
             this.trabajadoresToolStripMenuItem.Click += new System.EventHandler(this.trabajadoresToolStripMenuItem_Click);
             // 
@@ -240,28 +271,28 @@ namespace SisVentaDevExpress.Formularios
             this.ventaPorFechasToolStripMenuItem,
             this.comprasPorFechasToolStripMenuItem,
             this.existeciasDeArticulosToolStripMenuItem});
-            this.MenuConsultas.Image = global::SisVentaDevExpress.Properties.Resources.Consulta;
             this.MenuConsultas.Name = "MenuConsultas";
-            this.MenuConsultas.Size = new System.Drawing.Size(81, 20);
+            this.MenuConsultas.Size = new System.Drawing.Size(65, 20);
             this.MenuConsultas.Text = "Reportes";
             // 
             // ventaPorFechasToolStripMenuItem
             // 
             this.ventaPorFechasToolStripMenuItem.Name = "ventaPorFechasToolStripMenuItem";
-            this.ventaPorFechasToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.ventaPorFechasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.ventaPorFechasToolStripMenuItem.Text = "Venta Por Fechas";
             // 
             // comprasPorFechasToolStripMenuItem
             // 
             this.comprasPorFechasToolStripMenuItem.Name = "comprasPorFechasToolStripMenuItem";
-            this.comprasPorFechasToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.comprasPorFechasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.comprasPorFechasToolStripMenuItem.Text = "Compras Por Fechas";
             // 
             // existeciasDeArticulosToolStripMenuItem
             // 
             this.existeciasDeArticulosToolStripMenuItem.Name = "existeciasDeArticulosToolStripMenuItem";
-            this.existeciasDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.existeciasDeArticulosToolStripMenuItem.Text = "Existecias de Articulos";
+            this.existeciasDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.existeciasDeArticulosToolStripMenuItem.Text = "Reporte Articulos";
+            this.existeciasDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.existeciasDeArticulosToolStripMenuItem_Click);
             // 
             // MenuVer
             // 
@@ -292,28 +323,6 @@ namespace SisVentaDevExpress.Formularios
             this.statusBarToolStripMenuItem.Text = "&Barra de estado";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
             // 
-            // MenuHerramientas
-            // 
-            this.MenuHerramientas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem});
-            this.MenuHerramientas.Name = "MenuHerramientas";
-            this.MenuHerramientas.Size = new System.Drawing.Size(90, 20);
-            this.MenuHerramientas.Text = "&Herramientas";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.apaToolStripMenuItem});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
-            this.optionsToolStripMenuItem.Text = "BD";
-            // 
-            // apaToolStripMenuItem
-            // 
-            this.apaToolStripMenuItem.Name = "apaToolStripMenuItem";
-            this.apaToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.apaToolStripMenuItem.Text = "Apoyo BD";
-            // 
             // MenuVentasnas
             // 
             this.MenuVentasnas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -330,42 +339,42 @@ namespace SisVentaDevExpress.Formularios
             // newWindowToolStripMenuItem
             // 
             this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newWindowToolStripMenuItem.Text = "&Nueva ventana";
             this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cascadeToolStripMenuItem.Text = "&Cascada";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tileVerticalToolStripMenuItem.Text = "Mosaico &vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Mosaico &horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeAllToolStripMenuItem.Text = "C&errar todo";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.arrangeIconsToolStripMenuItem.Text = "&Organizar iconos";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
@@ -398,55 +407,38 @@ namespace SisVentaDevExpress.Formularios
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.aboutToolStripMenuItem.Text = "&Acerca de... ...";
             // 
-            // toolStrip
+            // menuStrip
             // 
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator2,
-            this.tsCompras});
-            this.toolStrip.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(990, 25);
-            this.toolStrip.TabIndex = 1;
-            this.toolStrip.Text = "ToolStrip";
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuSistema,
+            this.MenuAlmacen,
+            this.MenuCompra,
+            this.MenuVentas,
+            this.MenuMantenimiento,
+            this.MenuConsultas,
+            this.MenuVer,
+            this.MenuVentasnas,
+            this.helpMenu});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.MdiWindowListItem = this.MenuVentasnas;
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(990, 24);
+            this.menuStrip.TabIndex = 0;
+            this.menuStrip.Text = "MenuStrip";
             // 
-            // toolStripSeparator2
+            // restauracionToolStripMenuItem
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.restauracionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("restauracionToolStripMenuItem.Image")));
+            this.restauracionToolStripMenuItem.Name = "restauracionToolStripMenuItem";
+            this.restauracionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restauracionToolStripMenuItem.Text = "Restauracion";
             // 
-            // tsCompras
+            // respaldoToolStripMenuItem
             // 
-            this.tsCompras.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsCompras.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsCompras.Name = "tsCompras";
-            this.tsCompras.Size = new System.Drawing.Size(23, 22);
-            this.tsCompras.Text = "toolStripButton1";
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel,
-            this.toolStripProgressBar1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(990, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(189, 17);
-            this.toolStripStatusLabel.Text = "Sistema De Ventas Norlando Flores";
-            // 
-            // xpCollectionAcceso
-            // 
-            this.xpCollectionAcceso.ObjectType = typeof(SisVentaDevExpress.Ventas.Trabajador);
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.respaldoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("respaldoToolStripMenuItem.Image")));
+            this.respaldoToolStripMenuItem.Name = "respaldoToolStripMenuItem";
+            this.respaldoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.respaldoToolStripMenuItem.Text = "Respaldo";
             // 
             // frm_Principal
             // 
@@ -462,46 +454,33 @@ namespace SisVentaDevExpress.Formularios
             this.Text = "Sistema de Venta Norlando Flores";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_Principal_Load);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionAcceso)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
         #endregion
 
-
-        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MenuVer;
-        private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MenuHerramientas;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MenuVentasnas;
-        private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpMenu;
-        private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripButton tsCompras;
+        private DevExpress.Xpo.XPCollection xpCollectionAcceso;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripMenuItem MenuSistema;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bolverAlLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuAlmacen;
         private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detalleDeArticuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem presentacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuCompra;
@@ -512,16 +491,27 @@ namespace SisVentaDevExpress.Formularios
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuMantenimiento;
         private System.Windows.Forms.ToolStripMenuItem trabajadoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem respaldoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restauracionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuConsultas;
         private System.Windows.Forms.ToolStripMenuItem ventaPorFechasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasPorFechasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem existeciasDeArticulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem apaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton tsCompras;
-        private DevExpress.Xpo.XPCollection xpCollectionAcceso;
-        private System.Windows.Forms.ToolStripMenuItem bolverAlLoginToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem detalleDeArticuloToolStripMenuItem;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripMenuItem MenuVer;
+        private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuVentasnas;
+        private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpMenu;
+        private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip;
     }
 }
 
