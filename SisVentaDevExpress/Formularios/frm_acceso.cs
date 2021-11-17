@@ -64,9 +64,12 @@ namespace SisVentaDevExpress.Formularios
             {
                 DatosDeAcceso.acceso = u.Acceso;
                 DatosDeAcceso.usuario = u.Usuario;
+                DatosDeAcceso.idtrabajador = u;
+                DatosDeAcceso.NombreTrabajador = u.NombreCompleto;
                 //DatosDeAcceso.acceso = u.NombreCompleto;
                 if (txtUsuario.Text.Equals(u.Usuario) && txtContraseña.Text.Equals(u.Contraseña))
                 {
+
                     //this.Visible = false;
                     frm_Principal formularioPrincipal = new frm_Principal();
 

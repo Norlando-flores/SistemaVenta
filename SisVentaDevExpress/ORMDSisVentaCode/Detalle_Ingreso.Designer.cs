@@ -63,31 +63,12 @@ namespace SisVentaDevExpress.Ventas
             get { return fStock_inicial; }
             set { SetPropertyValue<int>(nameof(Stock_inicial), ref fStock_inicial, value); }
         }
-        DateTime fFecha_Produccion;
-        public DateTime Fecha_Produccion
-        {
-            get { return fFecha_Produccion; }
-            set { SetPropertyValue<DateTime>(nameof(Fecha_Produccion), ref fFecha_Produccion, value); }
-        }
-        DateTime fFecha_Vencimiento;
-        public DateTime Fecha_Vencimiento
-        {
-            get { return fFecha_Vencimiento; }
-            set { SetPropertyValue<DateTime>(nameof(Fecha_Vencimiento), ref fFecha_Vencimiento, value); }
-        }
         decimal fSub_total;
         [Persistent(@"sub_total")]
         public decimal Sub_total
         {
             get { return fSub_total; }
             set { SetPropertyValue<decimal>(nameof(Sub_total), ref fSub_total, value); }
-        }
-        int fStock_Actual;
-        [Persistent(@"stock_Actual")]
-        public int Stock_Actual
-        {
-            get { return fStock_Actual; }
-            set { SetPropertyValue<int>(nameof(Stock_Actual), ref fStock_Actual, value); }
         }
     }
 

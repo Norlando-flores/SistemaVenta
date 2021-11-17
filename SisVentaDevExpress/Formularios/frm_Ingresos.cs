@@ -75,9 +75,8 @@ namespace SisVentaDevExpress.Formularios
             this.txtStockInicial.ReadOnly = !valor;
             this.sbArticulo.Enabled = valor;
             this.txtPrecioCompra.ReadOnly = !valor;
-            this.txtPrecioVenta.ReadOnly = !valor;
-            this.dtFechaProducion.Enabled = valor;
-            this.dtFechaVencimiento.Enabled = valor;
+           // this.txtPrecioVenta.ReadOnly = !valor;
+
         }
         //Habilitar los botones
         private void Botones()
@@ -107,21 +106,39 @@ namespace SisVentaDevExpress.Formularios
         {
             try
             {
+            //    Articulo detalle2 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+            //    int a1 = detalle2.Existencia + int.Parse(txtStockInicial.Text);
+            //    //Calculo de precio
+            //    decimal a = detalle2.Existencia * detalle2.PrecioVenta;
+            //    decimal b = Convert.ToDecimal(txtStockInicial.Text) * Convert.ToDecimal(txtPrecioVenta.Text);
+            //    decimal c = (a + b) / a1;
+            //    MensajeOk($"Articulo {a.ToString()}");
+            //    MensajeOk($"Formulario {b.ToString()}");
+            //    MensajeOk($"existencia {a1.ToString()}");
+            //    MensajeOk($"calculo {c.ToString()}");
+
+
                 Articulo detalle = (Articulo)searchLookUpEdit1View.GetFocusedRow();
 
                 if (detalle != null)
                 {
                     Articulo detalle1 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
-                    detalle1.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+                    int CExistencia = detalle.Existencia + int.Parse(txtStockInicial.Text);
+                    decimal costoTotalExistencia = detalle1.Existencia * detalle1.PrecioVenta;
+                    decimal costoTotalNuvaCompra = Convert.ToDecimal(txtStockInicial.Text) * Convert.ToDecimal(txtPrecioVenta.Text);
+                    decimal Calculo = (costoTotalExistencia + costoTotalNuvaCompra) / CExistencia;
+                    //detalle1.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
                     if (detalle1.Existencia == 0)
                     {                        
                         detalle1.Existencia = int.Parse(txtStockInicial.Text);
+                        detalle1.PrecioVenta = decimal.Parse(txtPrecioVenta.Text);
                         unitOfWorkIngreso.CommitChanges();
                         xpCollectionArticulos.Reload();
                     }
                     else
                     {
-                        detalle1.Existencia = Convert.ToInt32((detalle.Existencia + Convert.ToInt32(txtStockInicial.Text)));
+                        detalle1.Existencia = CExistencia;
+                        detalle1.PrecioVenta = Calculo;
                         unitOfWorkIngreso.CommitChanges();
                         xpCollectionArticulos.Reload();
                     }
@@ -142,18 +159,34 @@ namespace SisVentaDevExpress.Formularios
                 {
                     Articulo detalle1 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
                     Detalle_Ingreso detalle2 = (Detalle_Ingreso)dataListadoDetalle.GetFocusedRow();
-                    detalle1.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+
+
+                    int ExistenciaAnterior = detalle1.Existencia - detalle2.Stock_inicial;
+                    decimal costoTotalExistencia = detalle1.Existencia * detalle1.PrecioVenta;
+                    decimal costoTotalSegungaCompra2 = Convert.ToDecimal(txtStockInicial.Text) * Convert.ToDecimal(txtPrecioVenta.Text);
+                    decimal costoTotalSegungaCompra = detalle2.Stock_inicial * detalle2.Precio_Venta;
+                    decimal costoTotalPrimeraCompra = (costoTotalExistencia - costoTotalSegungaCompra);
+                    decimal precioVentaAnterior = (costoTotalPrimeraCompra) / ExistenciaAnterior;
+                    decimal costoTotalSegunda2Compra = costoTotalPrimeraCompra + costoTotalSegungaCompra2;
+                    int NuevaExistencia = ExistenciaAnterior + Convert.ToInt32(txtStockInicial.Text);
+                    decimal nuevoprecio = (costoTotalPrimeraCompra + costoTotalSegungaCompra2) / NuevaExistencia;
+
+                    //int CExistencia = detalle.Existencia + int.Parse(txtStockInicial.Text);
+                    //decimal costoTotalExistencia = detalle1.Existencia * detalle1.PrecioVenta;
+                    //decimal costoTotalNuvaCompra = Convert.ToDecimal(txtStockInicial.Text) * Convert.ToDecimal(txtPrecioVenta.Text);
+                    //decimal Calculo = (costoTotalExistencia + costoTotalNuvaCompra) / CExistencia;
                     if (detalle1.Existencia == 0)
                     {
-
+                        detalle1.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
                         detalle1.Existencia = int.Parse(txtStockInicial.Text);
                         unitOfWorkIngreso.CommitChanges();
                         xpCollectionArticulos.Reload();
                     }
                     else
                     {
-                        int a = Convert.ToInt32((detalle.Existencia - Convert.ToInt32(detalle2.Stock_inicial))+int.Parse(txtStockInicial.Text));
-                        detalle1.Existencia = a;
+                       
+                        detalle1.Existencia = NuevaExistencia;
+                        detalle1.PrecioVenta = nuevoprecio;
 
                         unitOfWorkIngreso.CommitChanges();
                         xpCollectionArticulos.Reload();
@@ -223,7 +256,8 @@ namespace SisVentaDevExpress.Formularios
             this.IsNuevo = true;
             this.IsEditar = false;
             this.Botones();
-
+            //lblTrabajador3.Text =$"Trabajador: {DatosDeAcceso.NombreTrabajador}";
+            this.btnAgregar2.Text = "Agregar";
             this.Habilitar(true);
             tabControl1.SelectedIndex = 1;
             this.sbProveedor.Focus();
@@ -270,7 +304,7 @@ namespace SisVentaDevExpress.Formularios
                        // ingreso = new Ingreso(unitOfWorkIngreso);
                         Trabajador trabajador = (Trabajador)gridView1.GetFocusedRow();
                         Proveedor i = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
-
+                        
                         ingreso.IGV = Convert.ToDecimal(txtIGV.Text);
 
                         ingreso.IdTrabajador = trabajador;
@@ -348,11 +382,8 @@ namespace SisVentaDevExpress.Formularios
                         precio1();
                         detalleIngreso.IdArticulo = (Articulo)searchLookUpEdit1View.GetFocusedRow();
                         detalleIngreso.Stock_inicial = Convert.ToInt32(txtStockInicial.Text.Trim());
-                        detalleIngreso.Stock_Actual = Convert.ToInt32(txtStockInicial.Text.Trim());
                         detalleIngreso.Precio_Compra = Convert.ToDecimal(txtPrecioCompra.Text.Trim());
                         detalleIngreso.Precio_Venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
-                        detalleIngreso.Fecha_Produccion = dtFechaProducion.Value;
-                        detalleIngreso.Fecha_Vencimiento = dtFechaVencimiento.Value;
                         detalleIngreso.Sub_total = sub_Total;
                         detalleIngreso.Save();
                         xpCollectionDetalleIngreso.Reload();
@@ -375,11 +406,8 @@ namespace SisVentaDevExpress.Formularios
 
                             precio2();
                             detalle.Stock_inicial = Convert.ToInt32(txtStockInicial.Text.Trim());
-                            detalle.Stock_Actual = Convert.ToInt32(txtStockInicial.Text.Trim());
                             detalle.Precio_Compra = Convert.ToDecimal(txtPrecioCompra.Text.Trim());
                             detalle.Precio_Venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
-                            detalle.Fecha_Produccion = dtFechaProducion.Value;
-                            detalle.Fecha_Vencimiento = dtFechaVencimiento.Value;
                             detalle.Sub_total = sub_Total;
                             detalle.Save();
                             
@@ -492,13 +520,11 @@ namespace SisVentaDevExpress.Formularios
             this.txtCorrelativo.Text = ingreso_editar.Correlativo.ToString();
             gridControlDetalleIngreso.DataSource = ingreso_editar.Detalle_Ingresos;
             this.sbTrabajador.Focus();
-
+            this.btnAgregar2.Text = "Actualizar";
             this.IsNuevo = false;
             this.IsEditar = true;
             tabControl1.SelectedIndex = 1;
             this.Habilitar(true);
-
-
 
         }
 
@@ -547,8 +573,6 @@ namespace SisVentaDevExpress.Formularios
             this.txtStockInicial.Text = detalle_editar.Stock_inicial.ToString();
             this.txtPrecioCompra.Text = detalle_editar.Precio_Compra.ToString();
             this.txtPrecioVenta.Text = detalle_editar.Precio_Venta.ToString();
-            this.dtFechaProducion.Value = detalle_editar.Fecha_Produccion;
-            this.dtFechaVencimiento.Value = detalle_editar.Fecha_Vencimiento;
 
             
             this.sbArticulo.Focus();
@@ -562,6 +586,86 @@ namespace SisVentaDevExpress.Formularios
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Articulo detalle1 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
+            Detalle_Ingreso detalle2 = (Detalle_Ingreso)dataListadoDetalle.GetFocusedRow();
+            //int a1 = detalle1.Existencia + int.Parse(txtStockInicial.Text);
+            ////Calculo de precio
+            //decimal a2 = detalle1.Existencia * detalle1.PrecioVenta;
+            //decimal b2 = Convert.ToDecimal(txtStockInicial.Text) * Convert.ToDecimal(txtPrecioVenta.Text);
+            //decimal c2 = (a2 + b2) / a2;
+            //MensajeOk($"Articulo {a2.ToString()}");
+            //MensajeOk($"Formulario {b2.ToString()}");
+            //MensajeOk($"existencia {a2.ToString()}");
+            //MensajeOk($"calculo {c2.ToString()}");
+
+           
+            int ExistenciaAnterior = detalle1.Existencia - detalle2.Stock_inicial;
+            decimal costoTotalExistencia = detalle1.Existencia * detalle1.PrecioVenta;
+            decimal costoTotalSegungaCompra2 = Convert.ToDecimal(txtStockInicial.Text) * Convert.ToDecimal(txtPrecioVenta.Text);
+            decimal costoTotalSegungaCompra = detalle2.Stock_inicial * detalle2.Precio_Venta;
+            decimal costoTotalPrimeraCompra = (costoTotalExistencia - costoTotalSegungaCompra); 
+            decimal precioVentaAnterior = (costoTotalPrimeraCompra) / ExistenciaAnterior;
+            decimal costoTotalSegunda2Compra = costoTotalPrimeraCompra + costoTotalSegungaCompra2;
+            int NuevaExistencia = ExistenciaAnterior + Convert.ToInt32(txtStockInicial.Text);
+            decimal nuevoprecio = (costoTotalPrimeraCompra + costoTotalSegungaCompra2)/ NuevaExistencia;
+
+            MensajeOk($" precio Venta Anterior {precioVentaAnterior}");
+            MensajeOk($"Mi primera Existencia {ExistenciaAnterior}");
+            MensajeOk($" venta total de mi primer ingreso {costoTotalPrimeraCompra}");
+
+            MensajeOk($" venta total de mi segundo ingreso {costoTotalSegungaCompra2}");
+            MensajeOk($"la suma de mi primer ingreso y segundo {costoTotalSegunda2Compra}");
+            MensajeOk($"Nueva existencia {NuevaExistencia}");
+            MensajeOk($"Nuevo Precio {nuevoprecio}");
+
+            // MensajeOk($" venta total de mi primer ingreso {costoTotalPrimeraCompra}");
+
+            //detalle1.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+            //if (detalle1.Existencia == 0)
+            //{
+            //    detalle1.Existencia = int.Parse(txtStockInicial.Text);
+            //    detalle1.PrecioVenta = decimal.Parse(txtPrecioVenta.Text);
+            //    unitOfWorkIngreso.CommitChanges();
+            //    xpCollectionArticulos.Reload();
+            //}
+            //else
+            //{
+            //    detalle1.Existencia = CExistencia;
+            //    detalle1.PrecioVenta = Calculo;
+            //    unitOfWorkIngreso.CommitChanges();
+            //    xpCollectionArticulos.Reload();
+            //}
+
+            //decimal costoTotalNuevo = decimal.Parse(txtPrecioVenta.Text) * decimal.Parse(txtStockInicial.Text); //detalle2.Precio_Venta * detalle2.Stock_inicial;
+            //decimal b = detalle1.PrecioVenta * detalle1.Existencia;
+            //"Existencia Anterior" ==== decimal d = detalle1.Existencia - detalle2.Stock_inicial;//int.Parse(txtStockInicial.Text);
+
+            //decimal f = (precioVentaAnterior / CExistenciaAnterior);
+
+            ////decimal precioAnterior = detalle1.PrecioVenta * existenciaAnterior;
+            //MensajeOk($"precio Anterior {precioVentaAnterior.ToString()}");
+            //MensajeOk($"detalle {costoTotalNuvaCompra.ToString()}");
+            ////MensajeOk($"Articulo Costo Total Anterior {b.ToString()}");
+
+            //MensajeOk($"Existencia Anterior {CExistenciaAnterior.ToString()}");
+            //MensajeOk($" {Calculo.ToString()}");
+            //MensajeOk($" {costoTotalExistencia.ToString()}");
+        }
+
+        private void txtPrecioCompra_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPrecioCompra.Text == string.Empty)
+            {
+                txtPrecioVenta.Text = "0";
+            }
+            else
+            {
+                txtPrecioVenta.Text = (int.Parse(txtPrecioCompra.Text) + (((int.Parse(txtPrecioCompra.Text) * 25) / 100))).ToString();
+            }
         }
     }
 }
