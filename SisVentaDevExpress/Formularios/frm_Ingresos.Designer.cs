@@ -110,6 +110,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem16 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.txtCorrelativo = new System.Windows.Forms.TextBox();
             this.cbComprobante = new System.Windows.Forms.ComboBox();
             this.dtFechaIngreso = new System.Windows.Forms.DateTimePicker();
@@ -153,7 +154,6 @@ namespace SisVentaDevExpress.Formularios
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcon = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAgregar1 = new DevExpress.XtraEditors.SimpleButton();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -206,6 +206,7 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
@@ -237,7 +238,6 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkDetalleIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -665,6 +665,7 @@ namespace SisVentaDevExpress.Formularios
             this.txtIGV.Name = "txtIGV";
             this.txtIGV.Size = new System.Drawing.Size(100, 22);
             this.txtIGV.TabIndex = 30;
+            this.txtIGV.Text = "15";
             this.txtIGV.ValidatingType = typeof(int);
             // 
             // sbTrabajador
@@ -929,7 +930,7 @@ namespace SisVentaDevExpress.Formularios
             this.btnQuitar.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitar.Appearance.Options.UseFont = true;
             this.btnQuitar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.ImageOptions.Image")));
-            this.btnQuitar.Location = new System.Drawing.Point(455, 29);
+            this.btnQuitar.Location = new System.Drawing.Point(455, 62);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(81, 22);
             this.btnQuitar.StyleController = this.layoutControl5;
@@ -939,7 +940,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             // sbArticulo
             // 
-            this.sbArticulo.Location = new System.Drawing.Point(73, 3);
+            this.sbArticulo.Location = new System.Drawing.Point(73, 36);
             this.sbArticulo.Name = "sbArticulo";
             this.sbArticulo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbArticulo.Properties.Appearance.Options.UseFont = true;
@@ -1036,7 +1037,7 @@ namespace SisVentaDevExpress.Formularios
             // txtIdDetalleIngreso
             // 
             this.txtIdDetalleIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdDetalleIngreso.Location = new System.Drawing.Point(143, -21);
+            this.txtIdDetalleIngreso.Location = new System.Drawing.Point(143, 12);
             this.txtIdDetalleIngreso.Name = "txtIdDetalleIngreso";
             this.txtIdDetalleIngreso.Size = new System.Drawing.Size(665, 20);
             this.txtIdDetalleIngreso.TabIndex = 4;
@@ -1044,7 +1045,7 @@ namespace SisVentaDevExpress.Formularios
             // txtStockInicial
             // 
             this.txtStockInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStockInicial.Location = new System.Drawing.Point(99, 29);
+            this.txtStockInicial.Location = new System.Drawing.Point(99, 62);
             this.txtStockInicial.Name = "txtStockInicial";
             this.txtStockInicial.Size = new System.Drawing.Size(75, 20);
             this.txtStockInicial.TabIndex = 4;
@@ -1052,7 +1053,7 @@ namespace SisVentaDevExpress.Formularios
             // txtPrecioCompra
             // 
             this.txtPrecioCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioCompra.Location = new System.Drawing.Point(343, 3);
+            this.txtPrecioCompra.Location = new System.Drawing.Point(343, 36);
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.Size = new System.Drawing.Size(108, 20);
             this.txtPrecioCompra.TabIndex = 4;
@@ -1061,7 +1062,7 @@ namespace SisVentaDevExpress.Formularios
             // txtPrecioVenta
             // 
             this.txtPrecioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioVenta.Location = new System.Drawing.Point(337, 27);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(337, 60);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.ReadOnly = true;
             this.txtPrecioVenta.Size = new System.Drawing.Size(114, 24);
@@ -1072,7 +1073,7 @@ namespace SisVentaDevExpress.Formularios
             this.btnAgregar2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar2.Appearance.Options.UseFont = true;
             this.btnAgregar2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar2.ImageOptions.Image")));
-            this.btnAgregar2.Location = new System.Drawing.Point(455, 3);
+            this.btnAgregar2.Location = new System.Drawing.Point(455, 36);
             this.btnAgregar2.Name = "btnAgregar2";
             this.btnAgregar2.Size = new System.Drawing.Size(81, 22);
             this.btnAgregar2.StyleController = this.layoutControl5;
@@ -1222,6 +1223,14 @@ namespace SisVentaDevExpress.Formularios
             this.emptySpaceItem16.Name = "emptySpaceItem16";
             this.emptySpaceItem16.Size = new System.Drawing.Size(272, 26);
             this.emptySpaceItem16.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(528, 50);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(272, 26);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // txtCorrelativo
             // 
@@ -1665,14 +1674,6 @@ namespace SisVentaDevExpress.Formularios
             this.btnAgregar1.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar1.TabIndex = 0;
             // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(528, 50);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(272, 26);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // frm_Ingresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1734,6 +1735,7 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
@@ -1765,7 +1767,6 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkDetalleIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
 
         }

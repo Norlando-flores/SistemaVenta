@@ -25,7 +25,7 @@ namespace SisVentaDevExpress
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Ingresos());
+            Application.Run(new frm_acceso());
         }
     }
 }

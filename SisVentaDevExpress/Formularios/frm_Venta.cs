@@ -252,11 +252,10 @@ namespace SisVentaDevExpress.Formularios
 
         private void frm_Venta_Load(object sender, EventArgs e)
         {
-
+            xpCollectionTrabajador.Filter = CriteriaOperator.Parse("[Acceso] = ?", DatosDeAcceso.acceso);
             //BinaryOperator filterCriteria = new BinaryOperator(nameof(Articulo.Existencia),0, BinaryOperatorType.Greater);
 
             //xpCollectionArticulo.Filter = filterCriteria;
-
             gridControlDetalleVenta.DataSource = null;
             gridControl2.DataSource = xpCollectionVenta;
             this.Mostrar();

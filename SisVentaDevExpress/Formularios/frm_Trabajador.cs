@@ -108,7 +108,7 @@ namespace SisVentaDevExpress.Formularios
             try
             {
                 DialogResult opcion;
-                opcion = MessageBox.Show("Desea Eliminar el Rejistro", "Sistema de Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                opcion = MessageBox.Show("Desea Eliminar el Registro", "Sistema de Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (opcion == DialogResult.OK)
                 {
@@ -116,7 +116,7 @@ namespace SisVentaDevExpress.Formularios
                     trabajador.Delete();
                     unitOfWorkTrabajadores.CommitChanges();
                     xpCollectiontrabajadores.Reload();
-                    this.MensajeOk("Se elimino Correctamente el rejistro");
+                    this.MensajeOk("Se elimino Correctamente el registro");
                     this.Mostrar();
                 }
             }

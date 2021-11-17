@@ -177,7 +177,6 @@ namespace SisVentaDevExpress.Formularios
             // xpCollectionUsuario
             // 
             this.xpCollectionUsuario.ObjectType = typeof(SisVentaDevExpress.Ventas.Trabajador);
-            this.xpCollectionUsuario.Session = this.unitOfWorkAcceso;
             // 
             // pictureBox3
             // 
