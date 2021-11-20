@@ -107,16 +107,6 @@ namespace SisVentaDevExpress.Formularios
         {
             try
             {
-                //    Articulo detalle2 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
-                //    int a1 = detalle2.Existencia + int.Parse(txtStockInicial.Text);
-                //    //Calculo de precio
-                //    decimal a = detalle2.Existencia * detalle2.PrecioVenta;
-                //    decimal b = Convert.ToDecimal(txtStockInicial.Text) * Convert.ToDecimal(txtPrecioVenta.Text);
-                //    decimal c = (a + b) / a1;
-                //    MensajeOk($"Articulo {a.ToString()}");
-                //    MensajeOk($"Formulario {b.ToString()}");
-                //    MensajeOk($"existencia {a1.ToString()}");
-                //    MensajeOk($"calculo {c.ToString()}");
 
                 Articulo detalle = (Articulo)searchLookUpEdit1View.GetFocusedRow();
 

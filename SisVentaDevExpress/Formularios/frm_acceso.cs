@@ -60,7 +60,7 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            foreach (Trabajador u in xpCollectionUsuario)
+             foreach (Trabajador u in xpCollectionUsuario)
             {
                 DatosDeAcceso.acceso = u.Acceso;
                 DatosDeAcceso.usuario = u.Usuario;

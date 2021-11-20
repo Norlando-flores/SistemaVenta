@@ -102,6 +102,12 @@
     <Compile Include="Formularios\frmrestore.designer.cs">
       <DependentUpon>frmrestore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmOrdenCompra.Designer.cs">
+      <DependentUpon>frmOrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmReporteArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,12 @@
     <Compile Include="Reportes\ReporteArticulo.Designer.cs">
       <DependentUpon>ReporteArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\reporteOrdenDeCompra.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporteOrdenDeCompra.Designer.cs">
+      <DependentUpon>reporteOrdenDeCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\reporteVenta.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -241,6 +253,12 @@
     </Compile>
     <EmbeddedResource Include="Formularios\frmrestore.resx">
       <DependentUpon>frmrestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frm_Ingresos.aa-ER.resx">
+      <DependentUpon>frm_Ingresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmOrdenCompra.resx">
+      <DependentUpon>frmOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReporteArticulos.resx">
       <DependentUpon>frmReporteArticulos.cs</DependentUpon>
@@ -292,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteArticulo.resx">
       <DependentUpon>ReporteArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteOrdenDeCompra.resx">
+      <DependentUpon>reporteOrdenDeCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteVenta.resx">
       <DependentUpon>reporteVenta.cs</DependentUpon>
@@ -348,6 +369,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driving_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

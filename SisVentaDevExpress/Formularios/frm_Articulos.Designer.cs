@@ -191,10 +191,10 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 64);
+            this.tabControl1.Location = new System.Drawing.Point(12, 83);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(706, 357);
+            this.tabControl1.Size = new System.Drawing.Size(706, 338);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -205,7 +205,7 @@ namespace SisVentaDevExpress.Formularios
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(698, 331);
+            this.tabPage1.Size = new System.Drawing.Size(698, 312);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             // 
@@ -221,14 +221,14 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl2.Location = new System.Drawing.Point(3, 3);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(692, 325);
+            this.layoutControl2.Size = new System.Drawing.Size(692, 306);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // lblTotal
             // 
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(12, 293);
+            this.lblTotal.Location = new System.Drawing.Point(12, 274);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(332, 20);
             this.lblTotal.TabIndex = 1;
@@ -242,7 +242,7 @@ namespace SisVentaDevExpress.Formularios
             this.gridSplitContainer1.Location = new System.Drawing.Point(12, 52);
             this.gridSplitContainer1.Name = "gridSplitContainer1";
             this.gridSplitContainer1.Panel1.Controls.Add(this.gridControl2);
-            this.gridSplitContainer1.Size = new System.Drawing.Size(668, 237);
+            this.gridSplitContainer1.Size = new System.Drawing.Size(668, 218);
             this.gridSplitContainer1.TabIndex = 5;
             // 
             // gridControl2
@@ -254,7 +254,7 @@ namespace SisVentaDevExpress.Formularios
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControl2.Size = new System.Drawing.Size(668, 237);
+            this.gridControl2.Size = new System.Drawing.Size(668, 218);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dataListado});
@@ -333,9 +333,11 @@ namespace SisVentaDevExpress.Formularios
             this.dataListado.Appearance.GroupButton.Options.UseForeColor = true;
             this.dataListado.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.dataListado.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.dataListado.Appearance.GroupFooter.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataListado.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
             this.dataListado.Appearance.GroupFooter.Options.UseBackColor = true;
             this.dataListado.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.dataListado.Appearance.GroupFooter.Options.UseFont = true;
             this.dataListado.Appearance.GroupFooter.Options.UseForeColor = true;
             this.dataListado.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(110)))), ((int)(((byte)(165)))));
             this.dataListado.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
@@ -554,7 +556,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem13,
             this.emptySpaceItem5});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(692, 325);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(692, 306);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem3
@@ -610,14 +612,14 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem7.Control = this.gridSplitContainer1;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(672, 241);
+            this.layoutControlItem7.Size = new System.Drawing.Size(672, 222);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(336, 281);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(336, 262);
             this.emptySpaceItem3.Name = "emptySpaceItem1";
             this.emptySpaceItem3.Size = new System.Drawing.Size(336, 24);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -625,7 +627,7 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.lblTotal;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 281);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 262);
             this.layoutControlItem13.MaxSize = new System.Drawing.Size(336, 24);
             this.layoutControlItem13.MinSize = new System.Drawing.Size(336, 24);
             this.layoutControlItem13.Name = "layoutControlItem13";
@@ -650,7 +652,7 @@ namespace SisVentaDevExpress.Formularios
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(698, 304);
+            this.tabPage2.Size = new System.Drawing.Size(698, 331);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             // 
@@ -662,7 +664,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(597, 167, 650, 400);
             this.layoutControl3.Root = this.layoutControlGroup2;
-            this.layoutControl3.Size = new System.Drawing.Size(692, 298);
+            this.layoutControl3.Size = new System.Drawing.Size(692, 325);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -671,7 +673,7 @@ namespace SisVentaDevExpress.Formularios
             this.groupBox1.Controls.Add(this.layoutControl4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(668, 274);
+            this.groupBox1.Size = new System.Drawing.Size(668, 301);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Articulos";
@@ -692,13 +694,13 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl4.Name = "layoutControl4";
             this.layoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(640, 124, 650, 400);
             this.layoutControl4.Root = this.layoutControlGroup3;
-            this.layoutControl4.Size = new System.Drawing.Size(662, 255);
+            this.layoutControl4.Size = new System.Drawing.Size(662, 282);
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
             // 
             // sbxPresentacion
             // 
-            this.sbxPresentacion.Location = new System.Drawing.Point(501, 95);
+            this.sbxPresentacion.Location = new System.Drawing.Point(501, 99);
             this.sbxPresentacion.Name = "sbxPresentacion";
             this.sbxPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbxPresentacion.Properties.Appearance.Options.UseFont = true;
@@ -742,7 +744,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             // sbxCategoria
             // 
-            this.sbxCategoria.Location = new System.Drawing.Point(501, 53);
+            this.sbxCategoria.Location = new System.Drawing.Point(501, 55);
             this.sbxCategoria.Name = "sbxCategoria";
             this.sbxCategoria.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbxCategoria.Properties.Appearance.Options.UseFont = true;
@@ -788,16 +790,16 @@ namespace SisVentaDevExpress.Formularios
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(135, 131);
+            this.txtDescripcion.Location = new System.Drawing.Point(135, 137);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDescripcion.Size = new System.Drawing.Size(515, 41);
+            this.txtDescripcion.Size = new System.Drawing.Size(515, 50);
             this.txtDescripcion.TabIndex = 7;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(135, 95);
+            this.txtNombre.Location = new System.Drawing.Point(135, 99);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Properties.Appearance.Options.UseFont = true;
@@ -808,7 +810,7 @@ namespace SisVentaDevExpress.Formularios
             // txtCodigo
             // 
             this.txtCodigo.EditValue = "";
-            this.txtCodigo.Location = new System.Drawing.Point(135, 27);
+            this.txtCodigo.Location = new System.Drawing.Point(135, 29);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Properties.Appearance.Options.UseFont = true;
@@ -823,7 +825,7 @@ namespace SisVentaDevExpress.Formularios
             this.btnGuardarCambios.Appearance.Options.UseBackColor = true;
             this.btnGuardarCambios.Appearance.Options.UseFont = true;
             this.btnGuardarCambios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarCambios.ImageOptions.Image")));
-            this.btnGuardarCambios.Location = new System.Drawing.Point(121, 186);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(121, 210);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(151, 36);
             this.btnGuardarCambios.StyleController = this.layoutControl4;
@@ -838,7 +840,7 @@ namespace SisVentaDevExpress.Formularios
             this.btnGuardar.Appearance.Options.UseBackColor = true;
             this.btnGuardar.Appearance.Options.UseFont = true;
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(12, 186);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 210);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(105, 36);
             this.btnGuardar.StyleController = this.layoutControl4;
@@ -853,7 +855,7 @@ namespace SisVentaDevExpress.Formularios
             this.btnCancelar.Appearance.Options.UseBackColor = true;
             this.btnCancelar.Appearance.Options.UseFont = true;
             this.btnCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.ImageOptions.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(276, 186);
+            this.btnCancelar.Location = new System.Drawing.Point(276, 210);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 36);
             this.btnCancelar.StyleController = this.layoutControl4;
@@ -863,7 +865,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             // txtCodigoVenta
             // 
-            this.txtCodigoVenta.Location = new System.Drawing.Point(135, 53);
+            this.txtCodigoVenta.Location = new System.Drawing.Point(135, 55);
             this.txtCodigoVenta.Name = "txtCodigoVenta";
             this.txtCodigoVenta.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoVenta.Properties.Appearance.Options.UseFont = true;
@@ -894,7 +896,7 @@ namespace SisVentaDevExpress.Formularios
             this.emptySpaceItem9,
             this.emptySpaceItem10});
             this.layoutControlGroup3.Name = "Root";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(662, 255);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(662, 282);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // lblCodigo
@@ -902,7 +904,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblCodigo.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.AppearanceItemCaption.Options.UseFont = true;
             this.lblCodigo.Control = this.txtCodigo;
-            this.lblCodigo.Location = new System.Drawing.Point(0, 15);
+            this.lblCodigo.Location = new System.Drawing.Point(0, 17);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(642, 26);
             this.lblCodigo.Text = "Codigo:";
@@ -914,7 +916,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblNombre.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.AppearanceItemCaption.Options.UseFont = true;
             this.lblNombre.Control = this.txtNombre;
-            this.lblNombre.Location = new System.Drawing.Point(0, 83);
+            this.lblNombre.Location = new System.Drawing.Point(0, 87);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(321, 26);
             this.lblNombre.Text = "Nombre:";
@@ -923,9 +925,9 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 109);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 113);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(642, 10);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(642, 12);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lblDescripcion
@@ -933,26 +935,26 @@ namespace SisVentaDevExpress.Formularios
             this.lblDescripcion.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.AppearanceItemCaption.Options.UseFont = true;
             this.lblDescripcion.Control = this.txtDescripcion;
-            this.lblDescripcion.Location = new System.Drawing.Point(0, 119);
+            this.lblDescripcion.Location = new System.Drawing.Point(0, 125);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(642, 45);
+            this.lblDescripcion.Size = new System.Drawing.Size(642, 54);
             this.lblDescripcion.Text = "Descripcion:";
             this.lblDescripcion.TextSize = new System.Drawing.Size(120, 16);
             // 
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 214);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 238);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(642, 21);
+            this.emptySpaceItem8.Size = new System.Drawing.Size(642, 24);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 164);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 179);
             this.emptySpaceItem7.Name = "emptySpaceItem2";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(642, 10);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(642, 19);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem10
@@ -960,7 +962,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem10.Control = this.btnGuardar;
             this.layoutControlItem10.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem10.CustomizationFormText = "layoutControlItem9";
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 174);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 198);
             this.layoutControlItem10.MaxSize = new System.Drawing.Size(109, 40);
             this.layoutControlItem10.MinSize = new System.Drawing.Size(109, 40);
             this.layoutControlItem10.Name = "layoutControlItem10";
@@ -973,7 +975,7 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnGuardarCambios;
-            this.layoutControlItem9.Location = new System.Drawing.Point(109, 174);
+            this.layoutControlItem9.Location = new System.Drawing.Point(109, 198);
             this.layoutControlItem9.MaxSize = new System.Drawing.Size(155, 40);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(155, 40);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -987,7 +989,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem11.Control = this.btnCancelar;
             this.layoutControlItem11.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem11.CustomizationFormText = "layoutControlItem9";
-            this.layoutControlItem11.Location = new System.Drawing.Point(264, 174);
+            this.layoutControlItem11.Location = new System.Drawing.Point(264, 198);
             this.layoutControlItem11.MaxSize = new System.Drawing.Size(102, 40);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(102, 40);
             this.layoutControlItem11.Name = "layoutControlItem11";
@@ -1004,7 +1006,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblCodigoDeVenta.Control = this.txtCodigoVenta;
             this.lblCodigoDeVenta.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblCodigoDeVenta.CustomizationFormText = "Nombre:";
-            this.lblCodigoDeVenta.Location = new System.Drawing.Point(0, 41);
+            this.lblCodigoDeVenta.Location = new System.Drawing.Point(0, 43);
             this.lblCodigoDeVenta.Name = "lblCodigoDeVenta";
             this.lblCodigoDeVenta.Size = new System.Drawing.Size(321, 26);
             this.lblCodigoDeVenta.Text = "Codigo de Venta:";
@@ -1013,7 +1015,7 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(321, 41);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(321, 43);
             this.emptySpaceItem4.Name = "item1";
             this.emptySpaceItem4.Size = new System.Drawing.Size(45, 26);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -1023,7 +1025,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblCategoria.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.AppearanceItemCaption.Options.UseFont = true;
             this.lblCategoria.Control = this.sbxCategoria;
-            this.lblCategoria.Location = new System.Drawing.Point(366, 41);
+            this.lblCategoria.Location = new System.Drawing.Point(366, 43);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(276, 26);
             this.lblCategoria.Text = "Categoria";
@@ -1034,15 +1036,15 @@ namespace SisVentaDevExpress.Formularios
             this.emptySpaceItem13.AllowHotTrack = false;
             this.emptySpaceItem13.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem13.Name = "emptySpaceItem13";
-            this.emptySpaceItem13.Size = new System.Drawing.Size(642, 15);
+            this.emptySpaceItem13.Size = new System.Drawing.Size(642, 17);
             this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 67);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 69);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(642, 16);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(642, 18);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lblPresentacion
@@ -1050,7 +1052,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblPresentacion.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPresentacion.AppearanceItemCaption.Options.UseFont = true;
             this.lblPresentacion.Control = this.sbxPresentacion;
-            this.lblPresentacion.Location = new System.Drawing.Point(366, 83);
+            this.lblPresentacion.Location = new System.Drawing.Point(366, 87);
             this.lblPresentacion.Name = "lblPresentacion";
             this.lblPresentacion.Size = new System.Drawing.Size(276, 26);
             this.lblPresentacion.Text = "Presentacion";
@@ -1059,7 +1061,7 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(321, 83);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(321, 87);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
             this.emptySpaceItem9.Size = new System.Drawing.Size(45, 26);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -1067,7 +1069,7 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem10
             // 
             this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(366, 174);
+            this.emptySpaceItem10.Location = new System.Drawing.Point(366, 198);
             this.emptySpaceItem10.Name = "emptySpaceItem10";
             this.emptySpaceItem10.Size = new System.Drawing.Size(276, 40);
             this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -1079,7 +1081,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem8});
             this.layoutControlGroup2.Name = "Root";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(692, 298);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(692, 325);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem8
@@ -1087,7 +1089,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem8.Control = this.groupBox1;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(672, 278);
+            this.layoutControlItem8.Size = new System.Drawing.Size(672, 305);
             this.layoutControlItem8.Text = "GrupBoxCategoria";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
@@ -1095,9 +1097,9 @@ namespace SisVentaDevExpress.Formularios
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(167, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 48);
+            this.pictureBox1.Size = new System.Drawing.Size(149, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -1106,9 +1108,9 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.lbl_Articulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Articulos.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_Articulos.Location = new System.Drawing.Point(12, 12);
+            this.lbl_Articulos.Location = new System.Drawing.Point(165, 12);
             this.lbl_Articulos.Name = "lbl_Articulos";
-            this.lbl_Articulos.Size = new System.Drawing.Size(151, 48);
+            this.lbl_Articulos.Size = new System.Drawing.Size(137, 67);
             this.lbl_Articulos.TabIndex = 4;
             this.lbl_Articulos.Text = "Articulos";
             this.lbl_Articulos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1120,8 +1122,8 @@ namespace SisVentaDevExpress.Formularios
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.emptySpaceItem2,
             this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.layoutControlItem2});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(730, 433);
             this.Root.TextVisible = false;
@@ -1129,21 +1131,21 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(259, 0);
-            this.emptySpaceItem2.MinSize = new System.Drawing.Size(104, 24);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(294, 0);
+            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(416, 71);
+            this.emptySpaceItem2.MinSize = new System.Drawing.Size(416, 71);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(451, 52);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(416, 71);
             this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.lbl_Articulos;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.MaxSize = new System.Drawing.Size(155, 52);
-            this.layoutControlItem1.MinSize = new System.Drawing.Size(155, 52);
+            this.layoutControlItem1.Location = new System.Drawing.Point(153, 0);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(24, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(155, 52);
+            this.layoutControlItem1.Size = new System.Drawing.Size(141, 71);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
@@ -1151,11 +1153,10 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.pictureBox1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(155, 0);
-            this.layoutControlItem2.MaxSize = new System.Drawing.Size(104, 52);
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(104, 52);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(104, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(104, 52);
+            this.layoutControlItem2.Size = new System.Drawing.Size(153, 71);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -1163,9 +1164,9 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.tabControl1;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 71);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(710, 361);
+            this.layoutControlItem12.Size = new System.Drawing.Size(710, 342);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 

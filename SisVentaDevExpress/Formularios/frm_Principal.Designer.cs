@@ -38,7 +38,6 @@ namespace SisVentaDevExpress.Formularios
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.xpCollectionAcceso = new DevExpress.Xpo.XPCollection(this.components);
             this.MenuSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bolverAlLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,10 +54,13 @@ namespace SisVentaDevExpress.Formularios
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.trabajadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuConsultas = new System.Windows.Forms.ToolStripMenuItem();
+            this.respaldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restauracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.existeciasDeArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compraNecesariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuVer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,12 +76,14 @@ namespace SisVentaDevExpress.Formularios
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.restauracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.respaldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.respaldoRestauracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copiaDeSeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restauracionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.xpCollectionAcceso = new DevExpress.Xpo.XPCollection(this.components);
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xpCollectionAcceso)).BeginInit();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCollectionAcceso)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip
@@ -127,10 +131,6 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            // 
-            // xpCollectionAcceso
-            // 
-            this.xpCollectionAcceso.ObjectType = typeof(SisVentaDevExpress.Ventas.Trabajador);
             // 
             // MenuSistema
             // 
@@ -261,19 +261,34 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.trabajadoresToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trabajadoresToolStripMenuItem.Image")));
             this.trabajadoresToolStripMenuItem.Name = "trabajadoresToolStripMenuItem";
-            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.trabajadoresToolStripMenuItem.Text = "Trabajadores";
             this.trabajadoresToolStripMenuItem.Click += new System.EventHandler(this.trabajadoresToolStripMenuItem_Click);
             // 
-            // MenuConsultas
+            // respaldoToolStripMenuItem
             // 
-            this.MenuConsultas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.respaldoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("respaldoToolStripMenuItem.Image")));
+            this.respaldoToolStripMenuItem.Name = "respaldoToolStripMenuItem";
+            this.respaldoToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.respaldoToolStripMenuItem.Text = "Respaldo";
+            // 
+            // restauracionToolStripMenuItem
+            // 
+            this.restauracionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("restauracionToolStripMenuItem.Image")));
+            this.restauracionToolStripMenuItem.Name = "restauracionToolStripMenuItem";
+            this.restauracionToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.restauracionToolStripMenuItem.Text = "Restauracion";
+            // 
+            // MenuReportes
+            // 
+            this.MenuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ventaPorFechasToolStripMenuItem,
             this.comprasPorFechasToolStripMenuItem,
-            this.existeciasDeArticulosToolStripMenuItem});
-            this.MenuConsultas.Name = "MenuConsultas";
-            this.MenuConsultas.Size = new System.Drawing.Size(65, 20);
-            this.MenuConsultas.Text = "Reportes";
+            this.existeciasDeArticulosToolStripMenuItem,
+            this.compraNecesariasToolStripMenuItem});
+            this.MenuReportes.Name = "MenuReportes";
+            this.MenuReportes.Size = new System.Drawing.Size(65, 20);
+            this.MenuReportes.Text = "Reportes";
             // 
             // ventaPorFechasToolStripMenuItem
             // 
@@ -291,8 +306,15 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.existeciasDeArticulosToolStripMenuItem.Name = "existeciasDeArticulosToolStripMenuItem";
             this.existeciasDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.existeciasDeArticulosToolStripMenuItem.Text = "Reporte Articulos";
+            this.existeciasDeArticulosToolStripMenuItem.Text = "Reporte de Articulos";
             this.existeciasDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.existeciasDeArticulosToolStripMenuItem_Click);
+            // 
+            // compraNecesariasToolStripMenuItem
+            // 
+            this.compraNecesariasToolStripMenuItem.Name = "compraNecesariasToolStripMenuItem";
+            this.compraNecesariasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.compraNecesariasToolStripMenuItem.Text = "Compra Necesarias";
+            this.compraNecesariasToolStripMenuItem.Click += new System.EventHandler(this.compraNecesariasToolStripMenuItem_Click);
             // 
             // MenuVer
             // 
@@ -339,42 +361,42 @@ namespace SisVentaDevExpress.Formularios
             // newWindowToolStripMenuItem
             // 
             this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.newWindowToolStripMenuItem.Text = "&Nueva ventana";
             this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.cascadeToolStripMenuItem.Text = "&Cascada";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.tileVerticalToolStripMenuItem.Text = "Mosaico &vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Mosaico &horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.closeAllToolStripMenuItem.Text = "C&errar todo";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.arrangeIconsToolStripMenuItem.Text = "&Organizar iconos";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
@@ -415,10 +437,11 @@ namespace SisVentaDevExpress.Formularios
             this.MenuCompra,
             this.MenuVentas,
             this.MenuMantenimiento,
-            this.MenuConsultas,
+            this.MenuReportes,
             this.MenuVer,
             this.MenuVentasnas,
-            this.helpMenu});
+            this.helpMenu,
+            this.respaldoRestauracionToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.MenuVentasnas;
             this.menuStrip.Name = "menuStrip";
@@ -426,24 +449,39 @@ namespace SisVentaDevExpress.Formularios
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
-            // restauracionToolStripMenuItem
+            // respaldoRestauracionToolStripMenuItem
             // 
-            this.restauracionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("restauracionToolStripMenuItem.Image")));
-            this.restauracionToolStripMenuItem.Name = "restauracionToolStripMenuItem";
-            this.restauracionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.restauracionToolStripMenuItem.Text = "Restauracion";
+            this.respaldoRestauracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copiaDeSeguridadToolStripMenuItem,
+            this.restauracionToolStripMenuItem1});
+            this.respaldoRestauracionToolStripMenuItem.Name = "respaldoRestauracionToolStripMenuItem";
+            this.respaldoRestauracionToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
+            this.respaldoRestauracionToolStripMenuItem.Text = "Respaldo / Restauracion";
             // 
-            // respaldoToolStripMenuItem
+            // copiaDeSeguridadToolStripMenuItem
             // 
-            this.respaldoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("respaldoToolStripMenuItem.Image")));
-            this.respaldoToolStripMenuItem.Name = "respaldoToolStripMenuItem";
-            this.respaldoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.respaldoToolStripMenuItem.Text = "Respaldo";
+            this.copiaDeSeguridadToolStripMenuItem.Name = "copiaDeSeguridadToolStripMenuItem";
+            this.copiaDeSeguridadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copiaDeSeguridadToolStripMenuItem.Text = "Copia de Seguridad";
+            this.copiaDeSeguridadToolStripMenuItem.Click += new System.EventHandler(this.copiaDeSeguridadToolStripMenuItem_Click);
+            // 
+            // restauracionToolStripMenuItem1
+            // 
+            this.restauracionToolStripMenuItem1.Name = "restauracionToolStripMenuItem1";
+            this.restauracionToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.restauracionToolStripMenuItem1.Text = "Restauracion";
+            this.restauracionToolStripMenuItem1.Click += new System.EventHandler(this.restauracionToolStripMenuItem1_Click);
+            // 
+            // xpCollectionAcceso
+            // 
+            this.xpCollectionAcceso.ObjectType = typeof(SisVentaDevExpress.Ventas.Trabajador);
             // 
             // frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 453);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
@@ -458,9 +496,9 @@ namespace SisVentaDevExpress.Formularios
             this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xpCollectionAcceso)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCollectionAcceso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,7 +531,7 @@ namespace SisVentaDevExpress.Formularios
         private System.Windows.Forms.ToolStripMenuItem trabajadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem respaldoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restauracionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MenuConsultas;
+        private System.Windows.Forms.ToolStripMenuItem MenuReportes;
         private System.Windows.Forms.ToolStripMenuItem ventaPorFechasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasPorFechasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem existeciasDeArticulosToolStripMenuItem;
@@ -512,6 +550,10 @@ namespace SisVentaDevExpress.Formularios
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem compraNecesariasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem respaldoRestauracionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copiaDeSeguridadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restauracionToolStripMenuItem1;
     }
 }
 

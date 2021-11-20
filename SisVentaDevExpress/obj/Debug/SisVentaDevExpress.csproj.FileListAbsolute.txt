@@ -220,3 +220,8 @@ C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDev
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\AppLotificadora.Formularios.frmrestore.resources
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Reportes.frmReporteArticulos.resources
 C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Reportes.ReporteArticulo.resources
+C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Reportes.frmOrdenCompra.resources
+C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Reportes.reporteOrdenDeCompra.resources
+C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\bin\Debug\aa-ER\SisVentaDevExpress.resources.dll
+C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\SisVentaDevExpress.Formularios.frm_Ingresos.aa-ER.resources
+C:\Users\Norlando Flores\Desktop\Defensa Norlando\SisVentaDevExpress\SisVentaDevExpress\obj\Debug\aa-ER\SisVentaDevExpress.resources.dll

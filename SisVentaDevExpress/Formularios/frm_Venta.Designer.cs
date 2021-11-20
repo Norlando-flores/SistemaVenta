@@ -62,7 +62,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -155,7 +154,6 @@ namespace SisVentaDevExpress.Formularios
             this.lblFechaVenta = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.xpCollection1 = new DevExpress.Xpo.XPCollection(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTituloIngresos = new System.Windows.Forms.Label();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -163,6 +161,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.xpCollection1 = new DevExpress.Xpo.XPCollection(this.components);
             this.unitOfWorkDetalleIngreso = new DevExpress.Xpo.UnitOfWork(this.components);
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcon = new System.Windows.Forms.ErrorProvider(this.components);
@@ -184,7 +183,6 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -246,13 +244,13 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.lblFechaVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkDetalleIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcon)).BeginInit();
             this.SuspendLayout();
@@ -389,10 +387,10 @@ namespace SisVentaDevExpress.Formularios
             // gridControl2
             // 
             this.gridControl2.DataSource = this.xpCollectionVenta;
-            this.gridControl2.Location = new System.Drawing.Point(12, 66);
+            this.gridControl2.Location = new System.Drawing.Point(12, 52);
             this.gridControl2.MainView = this.dataListado;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(873, 333);
+            this.gridControl2.Size = new System.Drawing.Size(873, 347);
             this.gridControl2.TabIndex = 6;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dataListado});
@@ -405,10 +403,129 @@ namespace SisVentaDevExpress.Formularios
             // 
             // dataListado
             // 
-            this.dataListado.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dataListado.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(2)))));
+            this.dataListado.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.dataListado.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.dataListado.Appearance.ColumnFilterButtonActive.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.dataListado.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.dataListado.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Blue;
+            this.dataListado.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.dataListado.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.dataListado.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.dataListado.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.dataListado.Appearance.Empty.Options.UseBackColor = true;
+            this.dataListado.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.dataListado.Appearance.EvenRow.BackColor2 = System.Drawing.Color.GhostWhite;
+            this.dataListado.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.EvenRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.dataListado.Appearance.EvenRow.Options.UseBackColor = true;
+            this.dataListado.Appearance.EvenRow.Options.UseForeColor = true;
+            this.dataListado.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.dataListado.Appearance.FilterCloseButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            this.dataListado.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.dataListado.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.FilterCloseButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.dataListado.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.dataListado.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.dataListado.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.dataListado.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(80)))), ((int)(((byte)(135)))));
+            this.dataListado.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.dataListado.Appearance.FilterPanel.ForeColor = System.Drawing.Color.White;
+            this.dataListado.Appearance.FilterPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.dataListado.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.dataListado.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.dataListado.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.dataListado.Appearance.FixedLine.Options.UseBackColor = true;
+            this.dataListado.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.dataListado.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.dataListado.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.dataListado.Appearance.FocusedRow.BackColor = System.Drawing.Color.SteelBlue;
+            this.dataListado.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.SteelBlue;
+            this.dataListado.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListado.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+            this.dataListado.Appearance.FocusedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.dataListado.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.dataListado.Appearance.FocusedRow.Options.UseFont = true;
+            this.dataListado.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.dataListado.Appearance.FooterPanel.BackColor = System.Drawing.Color.Silver;
+            this.dataListado.Appearance.FooterPanel.BorderColor = System.Drawing.Color.Silver;
+            this.dataListado.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListado.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.dataListado.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.dataListado.Appearance.FooterPanel.Options.UseFont = true;
+            this.dataListado.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.dataListado.Appearance.GroupButton.BackColor = System.Drawing.Color.Silver;
+            this.dataListado.Appearance.GroupButton.BorderColor = System.Drawing.Color.Silver;
+            this.dataListado.Appearance.GroupButton.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.GroupButton.Options.UseBackColor = true;
+            this.dataListado.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.dataListado.Appearance.GroupButton.Options.UseForeColor = true;
+            this.dataListado.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.dataListado.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.dataListado.Appearance.GroupFooter.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListado.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.dataListado.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.dataListado.Appearance.GroupFooter.Options.UseFont = true;
+            this.dataListado.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.dataListado.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(110)))), ((int)(((byte)(165)))));
+            this.dataListado.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.dataListado.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.dataListado.Appearance.GroupPanel.ForeColor = System.Drawing.Color.White;
+            this.dataListado.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.dataListado.Appearance.GroupPanel.Options.UseFont = true;
+            this.dataListado.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.dataListado.Appearance.GroupRow.BackColor = System.Drawing.Color.LightGray;
+            this.dataListado.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListado.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.GroupRow.Options.UseBackColor = true;
             this.dataListado.Appearance.GroupRow.Options.UseFont = true;
-            this.dataListado.Appearance.HideSelectionRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.dataListado.Appearance.SelectedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.dataListado.Appearance.GroupRow.Options.UseForeColor = true;
+            this.dataListado.Appearance.HeaderPanel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataListado.Appearance.HeaderPanel.BackColor2 = System.Drawing.SystemColors.InactiveCaption;
+            this.dataListado.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.Silver;
+            this.dataListado.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListado.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.dataListado.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.dataListado.Appearance.HeaderPanel.Options.UseFont = true;
+            this.dataListado.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.dataListado.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.Gray;
+            this.dataListado.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.dataListado.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.dataListado.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.dataListado.Appearance.HorzLine.BackColor = System.Drawing.Color.Silver;
+            this.dataListado.Appearance.HorzLine.Options.UseBackColor = true;
+            this.dataListado.Appearance.OddRow.BackColor = System.Drawing.Color.White;
+            this.dataListado.Appearance.OddRow.BackColor2 = System.Drawing.Color.White;
+            this.dataListado.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.OddRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.dataListado.Appearance.OddRow.Options.UseBackColor = true;
+            this.dataListado.Appearance.OddRow.Options.UseForeColor = true;
+            this.dataListado.Appearance.Preview.BackColor = System.Drawing.Color.White;
+            this.dataListado.Appearance.Preview.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListado.Appearance.Preview.ForeColor = System.Drawing.Color.Navy;
+            this.dataListado.Appearance.Preview.Options.UseBackColor = true;
+            this.dataListado.Appearance.Preview.Options.UseFont = true;
+            this.dataListado.Appearance.Preview.Options.UseForeColor = true;
+            this.dataListado.Appearance.Row.BackColor = System.Drawing.Color.LightGray;
+            this.dataListado.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListado.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.Appearance.Row.Options.UseBackColor = true;
+            this.dataListado.Appearance.Row.Options.UseFont = true;
+            this.dataListado.Appearance.Row.Options.UseForeColor = true;
+            this.dataListado.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
+            this.dataListado.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.dataListado.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.dataListado.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(138)))));
+            this.dataListado.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
+            this.dataListado.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.dataListado.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.dataListado.Appearance.VertLine.BackColor = System.Drawing.Color.Silver;
+            this.dataListado.Appearance.VertLine.Options.UseBackColor = true;
             this.dataListado.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colFechaVenta,
             this.colTrabajador,
@@ -424,6 +541,10 @@ namespace SisVentaDevExpress.Formularios
             this.dataListado.OptionsBehavior.Editable = false;
             this.dataListado.OptionsFind.AlwaysVisible = true;
             this.dataListado.OptionsSelection.MultiSelect = true;
+            this.dataListado.OptionsView.EnableAppearanceEvenRow = true;
+            this.dataListado.OptionsView.EnableAppearanceOddRow = true;
+            this.dataListado.OptionsView.ShowGroupPanel = false;
+            this.dataListado.PaintStyleName = "Flat";
             // 
             // colFechaVenta
             // 
@@ -589,7 +710,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem8,
             this.emptySpaceItem8,
             this.layoutControlItem13,
-            this.emptySpaceItem3,
             this.emptySpaceItem1,
             this.layoutControlItem20});
             this.layoutControlGroup1.Name = "Root";
@@ -599,9 +719,9 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.gridControl2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(877, 337);
+            this.layoutControlItem4.Size = new System.Drawing.Size(877, 351);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -672,14 +792,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 40);
-            this.emptySpaceItem3.Name = "emptySpaceItem1";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(877, 14);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
             // 
@@ -879,6 +991,132 @@ namespace SisVentaDevExpress.Formularios
             // 
             // dataListadoDetalle
             // 
+            this.dataListadoDetalle.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Silver;
+            this.dataListadoDetalle.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.dataListadoDetalle.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Silver;
+            this.dataListadoDetalle.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Gray;
+            this.dataListadoDetalle.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.dataListadoDetalle.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.dataListadoDetalle.Appearance.ColumnFilterButtonActive.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.dataListadoDetalle.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.dataListadoDetalle.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Blue;
+            this.dataListadoDetalle.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.dataListadoDetalle.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.dataListadoDetalle.Appearance.Empty.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.dataListadoDetalle.Appearance.EvenRow.BackColor2 = System.Drawing.Color.GhostWhite;
+            this.dataListadoDetalle.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.EvenRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.dataListadoDetalle.Appearance.EvenRow.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.EvenRow.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.dataListadoDetalle.Appearance.FilterCloseButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            this.dataListadoDetalle.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.dataListadoDetalle.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.FilterCloseButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.dataListadoDetalle.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.dataListadoDetalle.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(80)))), ((int)(((byte)(135)))));
+            this.dataListadoDetalle.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.dataListadoDetalle.Appearance.FilterPanel.ForeColor = System.Drawing.Color.White;
+            this.dataListadoDetalle.Appearance.FilterPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.dataListadoDetalle.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.dataListadoDetalle.Appearance.FixedLine.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.dataListadoDetalle.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.FocusedRow.BackColor = System.Drawing.Color.Navy;
+            this.dataListadoDetalle.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(178)))));
+            this.dataListadoDetalle.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+            this.dataListadoDetalle.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.FooterPanel.BackColor = System.Drawing.Color.Silver;
+            this.dataListadoDetalle.Appearance.FooterPanel.BorderColor = System.Drawing.Color.Silver;
+            this.dataListadoDetalle.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListadoDetalle.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.dataListadoDetalle.Appearance.FooterPanel.Options.UseFont = true;
+            this.dataListadoDetalle.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.GroupButton.BackColor = System.Drawing.Color.Silver;
+            this.dataListadoDetalle.Appearance.GroupButton.BorderColor = System.Drawing.Color.Silver;
+            this.dataListadoDetalle.Appearance.GroupButton.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.GroupButton.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.dataListadoDetalle.Appearance.GroupButton.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.dataListadoDetalle.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.dataListadoDetalle.Appearance.GroupFooter.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListadoDetalle.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.dataListadoDetalle.Appearance.GroupFooter.Options.UseFont = true;
+            this.dataListadoDetalle.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(110)))), ((int)(((byte)(165)))));
+            this.dataListadoDetalle.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.dataListadoDetalle.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.dataListadoDetalle.Appearance.GroupPanel.ForeColor = System.Drawing.Color.White;
+            this.dataListadoDetalle.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.GroupPanel.Options.UseFont = true;
+            this.dataListadoDetalle.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.GroupRow.BackColor = System.Drawing.Color.LightGray;
+            this.dataListadoDetalle.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListadoDetalle.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.GroupRow.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.GroupRow.Options.UseFont = true;
+            this.dataListadoDetalle.Appearance.GroupRow.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.HeaderPanel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataListadoDetalle.Appearance.HeaderPanel.BackColor2 = System.Drawing.SystemColors.InactiveCaption;
+            this.dataListadoDetalle.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.Silver;
+            this.dataListadoDetalle.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListadoDetalle.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.dataListadoDetalle.Appearance.HeaderPanel.Options.UseFont = true;
+            this.dataListadoDetalle.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.Gray;
+            this.dataListadoDetalle.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.dataListadoDetalle.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.HorzLine.BackColor = System.Drawing.Color.Silver;
+            this.dataListadoDetalle.Appearance.HorzLine.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.OddRow.BackColor = System.Drawing.Color.White;
+            this.dataListadoDetalle.Appearance.OddRow.BackColor2 = System.Drawing.Color.White;
+            this.dataListadoDetalle.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.OddRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.dataListadoDetalle.Appearance.OddRow.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.OddRow.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.Preview.BackColor = System.Drawing.Color.White;
+            this.dataListadoDetalle.Appearance.Preview.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListadoDetalle.Appearance.Preview.ForeColor = System.Drawing.Color.Navy;
+            this.dataListadoDetalle.Appearance.Preview.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.Preview.Options.UseFont = true;
+            this.dataListadoDetalle.Appearance.Preview.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.Row.BackColor = System.Drawing.Color.SteelBlue;
+            this.dataListadoDetalle.Appearance.Row.BackColor2 = System.Drawing.Color.SteelBlue;
+            this.dataListadoDetalle.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataListadoDetalle.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.dataListadoDetalle.Appearance.Row.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.dataListadoDetalle.Appearance.Row.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.Row.Options.UseFont = true;
+            this.dataListadoDetalle.Appearance.Row.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
+            this.dataListadoDetalle.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.dataListadoDetalle.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(138)))));
+            this.dataListadoDetalle.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
+            this.dataListadoDetalle.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.dataListadoDetalle.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.dataListadoDetalle.Appearance.VertLine.BackColor = System.Drawing.Color.Silver;
+            this.dataListadoDetalle.Appearance.VertLine.Options.UseBackColor = true;
             this.dataListadoDetalle.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colCodigo,
             this.colArtuculoDetalle,
@@ -891,7 +1129,12 @@ namespace SisVentaDevExpress.Formularios
             this.dataListadoDetalle.GridControl = this.gridControlDetalleVenta;
             this.dataListadoDetalle.Name = "dataListadoDetalle";
             this.dataListadoDetalle.OptionsBehavior.Editable = false;
+            this.dataListadoDetalle.OptionsFind.AlwaysVisible = true;
+            this.dataListadoDetalle.OptionsView.EnableAppearanceEvenRow = true;
+            this.dataListadoDetalle.OptionsView.EnableAppearanceOddRow = true;
             this.dataListadoDetalle.OptionsView.ShowFooter = true;
+            this.dataListadoDetalle.OptionsView.ShowGroupPanel = false;
+            this.dataListadoDetalle.PaintStyleName = "Flat";
             // 
             // colCodigo
             // 
@@ -1062,10 +1305,10 @@ namespace SisVentaDevExpress.Formularios
             // txtDescuento
             // 
             this.txtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescuento.Location = new System.Drawing.Point(672, 62);
+            this.txtDescuento.Location = new System.Drawing.Point(684, 62);
             this.txtDescuento.Mask = "9999999999";
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(100, 22);
+            this.txtDescuento.Size = new System.Drawing.Size(104, 22);
             this.txtDescuento.TabIndex = 17;
             this.txtDescuento.ValidatingType = typeof(int);
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
@@ -1073,10 +1316,10 @@ namespace SisVentaDevExpress.Formularios
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(479, 62);
+            this.txtCantidad.Location = new System.Drawing.Point(486, 62);
             this.txtCantidad.Mask = "9999999999";
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 22);
+            this.txtCantidad.Size = new System.Drawing.Size(105, 22);
             this.txtCantidad.TabIndex = 16;
             this.txtCantidad.ValidatingType = typeof(int);
             this.txtCantidad.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCantidad_MaskInputRejected);
@@ -1088,7 +1331,7 @@ namespace SisVentaDevExpress.Formularios
             this.txtPrescioTotal.Location = new System.Drawing.Point(98, 88);
             this.txtPrescioTotal.Name = "txtPrescioTotal";
             this.txtPrescioTotal.ReadOnly = true;
-            this.txtPrescioTotal.Size = new System.Drawing.Size(86, 20);
+            this.txtPrescioTotal.Size = new System.Drawing.Size(90, 20);
             this.txtPrescioTotal.TabIndex = 15;
             this.txtPrescioTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1105,7 +1348,7 @@ namespace SisVentaDevExpress.Formularios
             this.sbArticulo.Properties.DisplayMember = "Nombre";
             this.sbArticulo.Properties.PopupView = this.gridviewArticulo;
             this.sbArticulo.Properties.ValueMember = "IdArticulos";
-            this.sbArticulo.Size = new System.Drawing.Size(699, 22);
+            this.sbArticulo.Size = new System.Drawing.Size(715, 22);
             this.sbArticulo.StyleController = this.layoutControl5;
             this.sbArticulo.TabIndex = 14;
             this.sbArticulo.EditValueChanged += new System.EventHandler(this.sbArticulo_EditValueChanged);
@@ -1244,28 +1487,28 @@ namespace SisVentaDevExpress.Formularios
             // txtIdDetalle
             // 
             this.txtIdDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdDetalle.Location = new System.Drawing.Point(348, 12);
+            this.txtIdDetalle.Location = new System.Drawing.Point(355, 12);
             this.txtIdDetalle.Name = "txtIdDetalle";
-            this.txtIdDetalle.Size = new System.Drawing.Size(460, 20);
+            this.txtIdDetalle.Size = new System.Drawing.Size(470, 20);
             this.txtIdDetalle.TabIndex = 13;
             this.txtIdDetalle.Visible = false;
             // 
             // txtstockActual
             // 
             this.txtstockActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstockActual.Location = new System.Drawing.Point(283, 62);
+            this.txtstockActual.Location = new System.Drawing.Point(287, 62);
             this.txtstockActual.Name = "txtstockActual";
             this.txtstockActual.ReadOnly = true;
-            this.txtstockActual.Size = new System.Drawing.Size(49, 20);
+            this.txtstockActual.Size = new System.Drawing.Size(52, 20);
             this.txtstockActual.TabIndex = 12;
             this.txtstockActual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnQuitar
             // 
             this.btnQuitar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.ImageOptions.Image")));
-            this.btnQuitar.Location = new System.Drawing.Point(786, 62);
+            this.btnQuitar.Location = new System.Drawing.Point(802, 62);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(22, 22);
+            this.btnQuitar.Size = new System.Drawing.Size(23, 22);
             this.btnQuitar.StyleController = this.layoutControl5;
             this.btnQuitar.TabIndex = 9;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
@@ -1273,9 +1516,9 @@ namespace SisVentaDevExpress.Formularios
             // btnAgregar1
             // 
             this.btnAgregar1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar1.ImageOptions.Image")));
-            this.btnAgregar1.Location = new System.Drawing.Point(786, 36);
+            this.btnAgregar1.Location = new System.Drawing.Point(802, 36);
             this.btnAgregar1.Name = "btnAgregar1";
-            this.btnAgregar1.Size = new System.Drawing.Size(22, 22);
+            this.btnAgregar1.Size = new System.Drawing.Size(23, 22);
             this.btnAgregar1.StyleController = this.layoutControl5;
             this.btnAgregar1.TabIndex = 8;
             this.btnAgregar1.Click += new System.EventHandler(this.btnAgregar1_Click);
@@ -1285,7 +1528,7 @@ namespace SisVentaDevExpress.Formularios
             this.txtIdDetalleVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdDetalleVenta.Location = new System.Drawing.Point(125, 12);
             this.txtIdDetalleVenta.Name = "txtIdDetalleVenta";
-            this.txtIdDetalleVenta.Size = new System.Drawing.Size(219, 20);
+            this.txtIdDetalleVenta.Size = new System.Drawing.Size(226, 20);
             this.txtIdDetalleVenta.TabIndex = 4;
             this.txtIdDetalleVenta.Visible = false;
             // 
@@ -1295,7 +1538,7 @@ namespace SisVentaDevExpress.Formularios
             this.txtPrecioVenta.Location = new System.Drawing.Point(116, 62);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.ReadOnly = true;
-            this.txtPrecioVenta.Size = new System.Drawing.Size(65, 20);
+            this.txtPrecioVenta.Size = new System.Drawing.Size(69, 20);
             this.txtPrecioVenta.TabIndex = 4;
             this.txtPrecioVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1321,7 +1564,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblcantidadSolisitada,
             this.lblDescuento1});
             this.layoutControlGroup4.Name = "Root";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(820, 130);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(837, 130);
             this.layoutControlGroup4.TextVisible = false;
             // 
             // lblDetalleIngreso
@@ -1331,7 +1574,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblDetalleIngreso.Control = this.txtIdDetalleVenta;
             this.lblDetalleIngreso.Location = new System.Drawing.Point(0, 0);
             this.lblDetalleIngreso.Name = "lblDetalleIngreso";
-            this.lblDetalleIngreso.Size = new System.Drawing.Size(336, 24);
+            this.lblDetalleIngreso.Size = new System.Drawing.Size(343, 24);
             this.lblDetalleIngreso.Text = "Id Detalle Venta:";
             this.lblDetalleIngreso.TextSize = new System.Drawing.Size(110, 16);
             this.lblDetalleIngreso.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
@@ -1339,18 +1582,18 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem18
             // 
             this.layoutControlItem18.Control = this.btnAgregar1;
-            this.layoutControlItem18.Location = new System.Drawing.Point(774, 24);
+            this.layoutControlItem18.Location = new System.Drawing.Point(790, 24);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(26, 26);
+            this.layoutControlItem18.Size = new System.Drawing.Size(27, 26);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem18.TextVisible = false;
             // 
             // layoutControlItem21
             // 
             this.layoutControlItem21.Control = this.txtIdDetalle;
-            this.layoutControlItem21.Location = new System.Drawing.Point(336, 0);
+            this.layoutControlItem21.Location = new System.Drawing.Point(343, 0);
             this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(464, 24);
+            this.layoutControlItem21.Size = new System.Drawing.Size(474, 24);
             this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem21.TextVisible = false;
             this.layoutControlItem21.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
@@ -1362,7 +1605,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblArticulo.Control = this.sbArticulo;
             this.lblArticulo.Location = new System.Drawing.Point(0, 24);
             this.lblArticulo.Name = "lblArticulo";
-            this.lblArticulo.Size = new System.Drawing.Size(764, 26);
+            this.lblArticulo.Size = new System.Drawing.Size(780, 26);
             this.lblArticulo.Text = "Articulo:";
             this.lblArticulo.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblArticulo.TextSize = new System.Drawing.Size(56, 16);
@@ -1373,15 +1616,15 @@ namespace SisVentaDevExpress.Formularios
             this.emptySpaceItem11.AllowHotTrack = false;
             this.emptySpaceItem11.Location = new System.Drawing.Point(0, 100);
             this.emptySpaceItem11.Name = "emptySpaceItem11";
-            this.emptySpaceItem11.Size = new System.Drawing.Size(800, 10);
+            this.emptySpaceItem11.Size = new System.Drawing.Size(817, 10);
             this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem13
             // 
             this.emptySpaceItem13.AllowHotTrack = false;
-            this.emptySpaceItem13.Location = new System.Drawing.Point(176, 76);
+            this.emptySpaceItem13.Location = new System.Drawing.Point(180, 76);
             this.emptySpaceItem13.Name = "emptySpaceItem13";
-            this.emptySpaceItem13.Size = new System.Drawing.Size(624, 24);
+            this.emptySpaceItem13.Size = new System.Drawing.Size(637, 24);
             this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lblPrecioVenta
@@ -1393,7 +1636,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblPrecioVenta.CustomizationFormText = "Id Detalle Ingresos:";
             this.lblPrecioVenta.Location = new System.Drawing.Point(0, 50);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
-            this.lblPrecioVenta.Size = new System.Drawing.Size(173, 26);
+            this.lblPrecioVenta.Size = new System.Drawing.Size(177, 26);
             this.lblPrecioVenta.Text = "Precio Unitario:";
             this.lblPrecioVenta.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblPrecioVenta.TextSize = new System.Drawing.Size(99, 16);
@@ -1402,7 +1645,7 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(324, 50);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(331, 50);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(10, 26);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -1412,9 +1655,9 @@ namespace SisVentaDevExpress.Formularios
             this.lblExistencia.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExistencia.AppearanceItemCaption.Options.UseFont = true;
             this.lblExistencia.Control = this.txtstockActual;
-            this.lblExistencia.Location = new System.Drawing.Point(197, 50);
+            this.lblExistencia.Location = new System.Drawing.Point(201, 50);
             this.lblExistencia.Name = "lblExistencia";
-            this.lblExistencia.Size = new System.Drawing.Size(127, 26);
+            this.lblExistencia.Size = new System.Drawing.Size(130, 26);
             this.lblExistencia.Text = "Existencia:";
             this.lblExistencia.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblExistencia.TextSize = new System.Drawing.Size(69, 16);
@@ -1427,7 +1670,7 @@ namespace SisVentaDevExpress.Formularios
             this.lblPrecioTotal.Control = this.txtPrescioTotal;
             this.lblPrecioTotal.Location = new System.Drawing.Point(0, 76);
             this.lblPrecioTotal.Name = "lblPrecioTotal";
-            this.lblPrecioTotal.Size = new System.Drawing.Size(176, 24);
+            this.lblPrecioTotal.Size = new System.Drawing.Size(180, 24);
             this.lblPrecioTotal.Text = "Precio Total:";
             this.lblPrecioTotal.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblPrecioTotal.TextSize = new System.Drawing.Size(81, 16);
@@ -1436,7 +1679,7 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem14
             // 
             this.emptySpaceItem14.AllowHotTrack = false;
-            this.emptySpaceItem14.Location = new System.Drawing.Point(571, 50);
+            this.emptySpaceItem14.Location = new System.Drawing.Point(583, 50);
             this.emptySpaceItem14.Name = "emptySpaceItem14";
             this.emptySpaceItem14.Size = new System.Drawing.Size(10, 26);
             this.emptySpaceItem14.TextSize = new System.Drawing.Size(0, 0);
@@ -1444,7 +1687,7 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem15
             // 
             this.emptySpaceItem15.AllowHotTrack = false;
-            this.emptySpaceItem15.Location = new System.Drawing.Point(173, 50);
+            this.emptySpaceItem15.Location = new System.Drawing.Point(177, 50);
             this.emptySpaceItem15.Name = "emptySpaceItem15";
             this.emptySpaceItem15.Size = new System.Drawing.Size(24, 26);
             this.emptySpaceItem15.TextSize = new System.Drawing.Size(0, 0);
@@ -1452,16 +1695,16 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem19
             // 
             this.layoutControlItem19.Control = this.btnQuitar;
-            this.layoutControlItem19.Location = new System.Drawing.Point(774, 50);
+            this.layoutControlItem19.Location = new System.Drawing.Point(790, 50);
             this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(26, 26);
+            this.layoutControlItem19.Size = new System.Drawing.Size(27, 26);
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem19.TextVisible = false;
             // 
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(764, 24);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(780, 24);
             this.emptySpaceItem9.MaxSize = new System.Drawing.Size(10, 52);
             this.emptySpaceItem9.MinSize = new System.Drawing.Size(10, 52);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
@@ -1474,9 +1717,9 @@ namespace SisVentaDevExpress.Formularios
             this.lblcantidadSolisitada.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcantidadSolisitada.AppearanceItemCaption.Options.UseFont = true;
             this.lblcantidadSolisitada.Control = this.txtCantidad;
-            this.lblcantidadSolisitada.Location = new System.Drawing.Point(334, 50);
+            this.lblcantidadSolisitada.Location = new System.Drawing.Point(341, 50);
             this.lblcantidadSolisitada.Name = "lblcantidadSolisitada";
-            this.lblcantidadSolisitada.Size = new System.Drawing.Size(237, 26);
+            this.lblcantidadSolisitada.Size = new System.Drawing.Size(242, 26);
             this.lblcantidadSolisitada.Text = "Cantidad Solicitada:";
             this.lblcantidadSolisitada.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblcantidadSolisitada.TextSize = new System.Drawing.Size(128, 16);
@@ -1487,9 +1730,9 @@ namespace SisVentaDevExpress.Formularios
             this.lblDescuento1.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescuento1.AppearanceItemCaption.Options.UseFont = true;
             this.lblDescuento1.Control = this.txtDescuento;
-            this.lblDescuento1.Location = new System.Drawing.Point(581, 50);
+            this.lblDescuento1.Location = new System.Drawing.Point(593, 50);
             this.lblDescuento1.Name = "lblDescuento1";
-            this.lblDescuento1.Size = new System.Drawing.Size(183, 26);
+            this.lblDescuento1.Size = new System.Drawing.Size(187, 26);
             this.lblDescuento1.Text = "Descuento:";
             this.lblDescuento1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblDescuento1.TextSize = new System.Drawing.Size(74, 16);
@@ -1828,10 +2071,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // xpCollection1
-            // 
-            this.xpCollection1.ObjectType = typeof(SisVentaDevExpress.Ventas.Venta);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(144, 12);
@@ -1906,6 +2145,10 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
+            // xpCollection1
+            // 
+            this.xpCollection1.ObjectType = typeof(SisVentaDevExpress.Ventas.Venta);
+            // 
             // errorIcon
             // 
             this.errorIcon.ContainerControl = this;
@@ -1937,7 +2180,6 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -1999,13 +2241,13 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.lblFechaVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkDetalleIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcon)).EndInit();
             this.ResumeLayout(false);
@@ -2040,7 +2282,6 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
         private System.Windows.Forms.TabPage tabPage2;

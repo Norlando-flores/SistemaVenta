@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SisVentaDevExpress.Reportes;
+using System.Data.SqlClient;
 
 namespace SisVentaDevExpress.Formularios
 {
@@ -172,16 +173,17 @@ namespace SisVentaDevExpress.Formularios
             acceso = DatosDeAcceso.acceso;
             foreach (Trabajador trabajador in xpCollectionAcceso)
             {
-                if (acceso=="Administrador")
+                if (acceso == "Administrador")
                 {
                     this.MenuAlmacen.Enabled = true;
                     this.MenuCompra.Enabled = true;
                     this.MenuVentas.Enabled = true;
                     this.MenuMantenimiento.Enabled = true;
-                    this.MenuConsultas.Enabled = true;
-                   // this.MenuHerramientas.Enabled = true;
+                    this.MenuReportes.Enabled = true;
+                    respaldoRestauracionToolStripMenuItem.Enabled = true;
+                    // this.MenuHerramientas.Enabled = true;
                     //this.tsCompras.Enabled = true;
-                   // this.tsVentas.Enabled = true;
+                    // this.tsVentas.Enabled = true;
                 }
                 else if (acceso == "Vendedor")
                 {
@@ -189,10 +191,13 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuCompra.Enabled = false;
                     this.MenuVentas.Enabled = true;
                     this.MenuMantenimiento.Enabled = false;
-                    this.MenuConsultas.Enabled = true;
-                   // this.MenuHerramientas.Enabled = true;
+                    this.MenuReportes.Enabled = true;
+                    this.existeciasDeArticulosToolStripMenuItem.Enabled = false;
+                    this.compraNecesariasToolStripMenuItem.Enabled = false;
+                    this.respaldoRestauracionToolStripMenuItem.Enabled = false;
+                    // this.MenuHerramientas.Enabled = true;
                     //this.tsCompras.Enabled = false;
-                   // this.tsVentas.Enabled = true;
+                    // this.tsVentas.Enabled = true;
                 }
                 else if (acceso == "Almasenero")
                 {
@@ -200,7 +205,10 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuCompra.Enabled = true;
                     this.MenuVentas.Enabled = false;
                     this.MenuMantenimiento.Enabled = false;
-                    this.MenuConsultas.Enabled = true;
+                    this.MenuReportes.Enabled = true;
+                    this.compraNecesariasToolStripMenuItem.Enabled = true;
+                    this.existeciasDeArticulosToolStripMenuItem.Enabled = false;
+                    this.respaldoRestauracionToolStripMenuItem.Enabled = false;
                     //this.MenuHerramientas.Enabled = true;
                     //this.tsCompras.Enabled = true;
                     //this.tsVentas.Enabled = false;
@@ -211,9 +219,12 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuCompra.Enabled = false;
                     this.MenuVentas.Enabled = false;
                     this.MenuMantenimiento.Enabled = false;
-                    this.MenuConsultas.Enabled = false;
+                    this.MenuReportes.Enabled = false;
+                    this.compraNecesariasToolStripMenuItem.Enabled = false;
+                    this.existeciasDeArticulosToolStripMenuItem.Enabled = false;
+                    this.respaldoRestauracionToolStripMenuItem.Enabled = false;
                     //this.MenuHerramientas.Enabled = false;
-                   // this.tsCompras.Enabled = false;
+                    // this.tsCompras.Enabled = false;
                     //this.tsVentas.Enabled = false;
                 }
             }
@@ -257,8 +268,110 @@ namespace SisVentaDevExpress.Formularios
             formularioArticulo.Show();
             formularioArticulo.WindowState = FormWindowState.Maximized;
         }
+
+        private void compraNecesariasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrdenCompra comprasNecesarias = new frmOrdenCompra();
+            //formularioArticulo.MdiParent = this;
+            comprasNecesarias.Show();
+            comprasNecesarias.WindowState = FormWindowState.Maximized;
+        }
+
+        private void copiaDeSeguridadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = "Realizando respaldo de Base de datos ";
+            save.Filter = "Respaldo SQL|*.bak";
+            save.FileName = "Respaldo-" + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString();
+
+            if (save.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+            
+            respaldo(save.FileName);
+            MessageBox.Show("Respaldo realizado correctamente");
+        }
+        private void respaldo(string ruta)
+        {
+
+
+            //string nombre = "Respaldo-" + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString();
+
+            string constring = "Data Source=NORLANDO_FLORES\\SQLEXPRESS;Initial Catalog=Ventas;Integrated Security=True";
+            string comando_consulta = $"BACKUP DATABASE [Ventas] TO  DISK = N'{ruta}' WITH NOFORMAT, NOINIT,  NAME = N'Ventas-Completa Base de datos Copia de seguridad', SKIP, NOREWIND, NOUNLOAD,  STATS = 10";
+            //string file = ruta;
+
+            SqlConnection conn = new SqlConnection(constring);
+
+            SqlCommand cmd = new SqlCommand(comando_consulta, conn);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Si desea hacer otra copia de seguridad cierre el formulario e intente nuevamente ");
+                return ;
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+                
+            }
+        }
+        private void restauracion(string ruta)
+        {
+
+
+            //string nombre = "Respaldo-" + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString();
+
+            string constring = "Data Source=NORLANDO_FLORES\\SQLEXPRESS;Initial Catalog=Ventas;Integrated Security=True";
+            string comando_consulta = $"USE[master] ALTER DATABASE[Ventas] SET SINGLE_USER WITH ROLLBACK IMMEDIATE RESTORE DATABASE[Ventas] FROM DISK = N'{ruta}' WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 5 ALTER DATABASE[Ventas] SET MULTI_USER";
+            //string file = ruta;
+
+            SqlConnection conn = new SqlConnection(constring);
+
+            SqlCommand cmd = new SqlCommand(comando_consulta, conn);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Si desea restaurar cierre el formulario e intente nuevamente");
+                return;
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+
+            }
+        }
+
+        private void restauracionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = "Realizando respaldo de Base de datos ";
+            save.Filter = "Respaldo SQL|*.bak";
+            save.FileName = "Respaldo-" + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString();
+
+            if (save.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            restauracion(save.FileName);
+            MessageBox.Show("Restauracion realizada correctamente");
+        }
     }
 }
+
+
 
 
 

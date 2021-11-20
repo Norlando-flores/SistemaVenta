@@ -390,7 +390,7 @@ namespace SisVentaDevExpress.Formularios
                         venta.Serie = txtSerie.Text;
                         venta.Correlativo = txtCorrelativo.Text;
                         venta.SubTotal = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
-                        venta.TotalPagar = (Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) + ((Convert.ToDecimal(colTotal.SummaryItem.SummaryValue)) * (decimal.Parse(txtIGV.Text) / 100)));// Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
+                        venta.TotalPagar = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) + (Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) * decimal.Parse(txtIGV.Text) / 100);// Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
                         venta.Save();
                         unitOfWorkVentas.CommitChanges();
                         xpCollectionVenta.Reload();
@@ -441,7 +441,8 @@ namespace SisVentaDevExpress.Formularios
             venta.Tipo_Comprobante = cbComprobante.Text;
             venta.Serie = txtSerie.Text;
             venta.Correlativo = txtCorrelativo.Text;
-            venta.TotalPagar = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
+            venta.SubTotal = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
+            venta.TotalPagar = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) + (Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) * decimal.Parse(txtIGV.Text) / 100);
             venta.Save();
             unitOfWorkVentas.CommitChanges();
             xpCollectionVenta.Reload();

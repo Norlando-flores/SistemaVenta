@@ -207,26 +207,26 @@ namespace SisVentaDevExpress.Reportes
             // xrTableCell15
             // 
             this.xrTableCell15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[IdArticulo].[PrecioVenta]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Cantidad]")});
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
             this.xrTableCell15.Text = "xrTableCell15";
-            this.xrTableCell15.TextFormatString = "{0:C$ 0.00}";
-            this.xrTableCell15.Weight = 0.95367358165400762D;
+            this.xrTableCell15.Weight = 0.78700556270777655D;
             // 
             // xrTableCell16
             // 
             this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Cantidad]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Precio_Venta]")});
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";
             this.xrTableCell16.Text = "xrTableCell16";
-            this.xrTableCell16.Weight = 0.64355353299804452D;
+            this.xrTableCell16.TextFormatString = "{0:C$ 0.00}";
+            this.xrTableCell16.Weight = 0.81022155194427559D;
             // 
             // xrTableCell17
             // 
             this.xrTableCell17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Descuento]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "([Precio_Venta]*[Cantidad])*[Descuento]/100")});
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
             this.xrTableCell17.Text = "xrTableCell17";
@@ -470,15 +470,15 @@ namespace SisVentaDevExpress.Reportes
             // 
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
-            this.xrTableCell6.Text = "Precio Unitario";
-            this.xrTableCell6.Weight = 1.0952249856790104D;
+            this.xrTableCell6.Text = "Cantidad";
+            this.xrTableCell6.Weight = 0.90381943947548D;
             // 
             // xrTableCell9
             // 
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
-            this.xrTableCell9.Text = "Cantidad";
-            this.xrTableCell9.Weight = 0.73907392775695924D;
+            this.xrTableCell9.Text = "Precio Unitario";
+            this.xrTableCell9.Weight = 0.93047947396048958D;
             // 
             // xrTableCell7
             // 
@@ -688,7 +688,7 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell21.Name = "xrTableCell21";
             this.xrTableCell21.StylePriority.UseFont = false;
             this.xrTableCell21.StylePriority.UseTextAlignment = false;
-            this.xrTableCell21.Text = "Total:";
+            this.xrTableCell21.Text = "SubTotal:";
             this.xrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell21.Weight = 0.72497060800811286D;
             // 
@@ -733,7 +733,7 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell19.Name = "xrTableCell19";
             this.xrTableCell19.StylePriority.UseFont = false;
             this.xrTableCell19.StylePriority.UseTextAlignment = false;
-            this.xrTableCell19.Text = "Total a Pagar:";
+            this.xrTableCell19.Text = "Total :";
             this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell19.Weight = 1.007665088106283D;
             // 
