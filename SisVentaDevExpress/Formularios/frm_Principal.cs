@@ -72,16 +72,6 @@ namespace SisVentaDevExpress.Formularios
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
-
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
@@ -175,43 +165,31 @@ namespace SisVentaDevExpress.Formularios
             {
                 if (acceso == "Administrador")
                 {
-                    this.MenuAlmacen.Enabled = true;
-                    this.MenuCompra.Enabled = true;
+                    this.MenuAlmacen.Visible = true;
+                    this.MenuCompra.Visible = true;
                     this.MenuVentas.Enabled = true;
-                    this.MenuMantenimiento.Enabled = true;
-                    this.MenuReportes.Enabled = true;
-                    respaldoRestauracionToolStripMenuItem.Enabled = true;
-                    // this.MenuHerramientas.Enabled = true;
-                    //this.tsCompras.Enabled = true;
-                    // this.tsVentas.Enabled = true;
+                    this.MenuMantenimiento.Visible = true;
+                    this.MenuReportes.Visible = true;
                 }
                 else if (acceso == "Vendedor")
                 {
-                    this.MenuAlmacen.Enabled = false;
-                    this.MenuCompra.Enabled = false;
-                    this.MenuVentas.Enabled = true;
-                    this.MenuMantenimiento.Enabled = false;
-                    this.MenuReportes.Enabled = true;
-                    this.existeciasDeArticulosToolStripMenuItem.Enabled = false;
-                    this.compraNecesariasToolStripMenuItem.Enabled = false;
-                    this.respaldoRestauracionToolStripMenuItem.Enabled = false;
-                    // this.MenuHerramientas.Enabled = true;
-                    //this.tsCompras.Enabled = false;
-                    // this.tsVentas.Enabled = true;
+                    this.MenuAlmacen.Visible = false;
+                    this.MenuCompra.Visible = false;
+                    this.MenuVentas.Visible = true;
+                    this.MenuMantenimiento.Visible = false;
+                    this.MenuReportes.Visible = true;
+                    this.existeciasDeArticulosToolStripMenuItem.Visible = false;
+                    this.compraNecesariasToolStripMenuItem.Visible = false;
                 }
                 else if (acceso == "Almasenero")
                 {
-                    this.MenuAlmacen.Enabled = true;
-                    this.MenuCompra.Enabled = true;
-                    this.MenuVentas.Enabled = false;
-                    this.MenuMantenimiento.Enabled = false;
-                    this.MenuReportes.Enabled = true;
-                    this.compraNecesariasToolStripMenuItem.Enabled = true;
-                    this.existeciasDeArticulosToolStripMenuItem.Enabled = false;
-                    this.respaldoRestauracionToolStripMenuItem.Enabled = false;
-                    //this.MenuHerramientas.Enabled = true;
-                    //this.tsCompras.Enabled = true;
-                    //this.tsVentas.Enabled = false;
+                    this.MenuAlmacen.Visible = true;
+                    this.MenuCompra.Visible = true;
+                    this.MenuVentas.Visible = false;
+                    this.MenuMantenimiento.Visible = false;
+                    this.MenuReportes.Visible = true;
+                    this.compraNecesariasToolStripMenuItem.Visible = true;
+                    this.existeciasDeArticulosToolStripMenuItem.Visible = false;
                 }
                 else
                 {
@@ -222,10 +200,6 @@ namespace SisVentaDevExpress.Formularios
                     this.MenuReportes.Enabled = false;
                     this.compraNecesariasToolStripMenuItem.Enabled = false;
                     this.existeciasDeArticulosToolStripMenuItem.Enabled = false;
-                    this.respaldoRestauracionToolStripMenuItem.Enabled = false;
-                    //this.MenuHerramientas.Enabled = false;
-                    // this.tsCompras.Enabled = false;
-                    //this.tsVentas.Enabled = false;
                 }
             }
         }

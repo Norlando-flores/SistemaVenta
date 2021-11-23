@@ -28,7 +28,7 @@ namespace SisVentaDevExpress.Formularios
             xpCollectionIngreso.Reload();
             this.ttMensaje.SetToolTip(this.sbProveedor, "Seleccione Proveedor");
             this.ttMensaje.SetToolTip(this.txtSerie, "Ingrese la serie del comprobante");
-            this.ttMensaje.SetToolTip(this.txtCorrelativo, "Ingrese el numero del comprobante");
+            this.ttMensaje.SetToolTip(this.txtNDocumento, "Ingrese el numero del comprobante");
             this.ttMensaje.SetToolTip(this.txtStockInicial, "Ingrese la cantidad de compra");
             this.ttMensaje.SetToolTip(this.sbArticulo, "Seleccione Articulo de compra");
         }
@@ -44,8 +44,8 @@ namespace SisVentaDevExpress.Formularios
         {
             this.txtidIngresos.Text = string.Empty;
             this.txtSerie.Text = string.Empty;
-            this.txtCorrelativo.Text = string.Empty;
-            this.txtIGV.Text = string.Empty;
+            this.txtNDocumento.Text = string.Empty;
+            this.txtIVA.Text = string.Empty;
             this.cbComprobante.Text = "TICKET";
             this.sbTrabajador.Text = string.Empty;
             this.sbProveedor.Text = string.Empty;
@@ -65,8 +65,8 @@ namespace SisVentaDevExpress.Formularios
             
             this.txtidIngresos.ReadOnly = !valor;
             this.txtSerie.ReadOnly = !valor;
-            this.txtCorrelativo.ReadOnly = !valor;
-            this.txtIGV.ReadOnly = !valor;
+            this.txtNDocumento.ReadOnly = !valor;
+            this.txtIVA.ReadOnly = !valor;
             this.sbTrabajador.ReadOnly = !valor;
             this.sbProveedor.ReadOnly = !valor;
             this.cbComprobante.Enabled = valor;
@@ -265,19 +265,19 @@ namespace SisVentaDevExpress.Formularios
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
                     errorIcon.SetError(sbProveedor, "Seleccione el Proveedor");
                 }
-                else if (this.txtIGV.Text == string.Empty)
+                else if (this.txtIVA.Text == string.Empty)
                 {
-                    this.txtIGV.Focus();
+                    this.txtIVA.Focus();
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtIGV, "Ingrese Impuesto");
+                    errorIcon.SetError(txtIVA, "Ingrese Impuesto");
                 }
-                else if (this.txtCorrelativo.Text == string.Empty)
+                else if (this.txtNDocumento.Text == string.Empty)
                 {
-                    this.txtCorrelativo.Focus();
+                    this.txtNDocumento.Focus();
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtCorrelativo, "Ingrese Correlativo");
+                    errorIcon.SetError(txtNDocumento, "Ingrese Correlativo");
                 }
 
                 else if (this.txtSerie.Text == string.Empty)
@@ -296,14 +296,16 @@ namespace SisVentaDevExpress.Formularios
                         Trabajador trabajador = (Trabajador)gridView1.GetFocusedRow();
                         Proveedor i = (Proveedor)searchLookUpEdit2View.GetFocusedRow();
                         
-                        ingreso.IGV = Convert.ToDecimal(txtIGV.Text);
+                        ingreso.IVA = Convert.ToDecimal(txtIVA.Text);
 
                         ingreso.IdTrabajador = trabajador;
                         ingreso.IdProveedor = i;
                         ingreso.Fecha_Ingreso = dtFechaIngreso.Value;
-                        ingreso.Correlativo = txtCorrelativo.Text;
+                        ingreso.NDocumento = txtNDocumento.Text;
                         ingreso.Serie = txtSerie.Text;
                         ingreso.Tipo_Comprobante = cbComprobante.Text;
+                        ingreso.Sub_total= Convert.ToDecimal(colsubtotal.SummaryItem.SummaryValue);
+                        ingreso.Total_Invercion= Convert.ToDecimal(colsubtotal.SummaryItem.SummaryValue) + decimal.Parse(txtIVA.Text);
                         ingreso.Save();
                         unitOfWorkIngreso.CommitChanges();
                         xpCollectionIngreso.Reload();
@@ -339,7 +341,7 @@ namespace SisVentaDevExpress.Formularios
                 {
                     this.sbArticulo.Focus();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtIGV, "Seleccione el Articulo");
+                    errorIcon.SetError(txtIVA, "Seleccione el Articulo");
                 }
                 else if (this.txtStockInicial.Text == string.Empty)
                 {
@@ -505,10 +507,10 @@ namespace SisVentaDevExpress.Formularios
             this.sbTrabajador.Text= (ingreso_editar.IdTrabajador).IdTrabajador.ToString();
             this.sbProveedor.Text= (ingreso_editar.IdProveedor).IdProveedor.ToString();
             this.dtFechaIngreso.Value = ingreso_editar.Fecha_Ingreso;
-            this.txtIGV.Text = ingreso_editar.IGV.ToString();
+            this.txtIVA.Text = ingreso_editar.IVA.ToString();
             this.cbComprobante.Text = ingreso_editar.Tipo_Comprobante.ToString();
             this.txtSerie.Text = ingreso_editar.Serie.ToString();
-            this.txtCorrelativo.Text = ingreso_editar.Correlativo.ToString();
+            this.txtNDocumento.Text = ingreso_editar.NDocumento.ToString();
             gridControlDetalleIngreso.DataSource = ingreso_editar.Detalle_Ingresos;
             this.sbTrabajador.Focus();
             this.btnAgregar2.Text = "Actualizar";
@@ -535,11 +537,12 @@ namespace SisVentaDevExpress.Formularios
             }
               
             ingreso.Fecha_Ingreso = dtFechaIngreso.Value;
-            ingreso.IGV = Convert.ToDecimal(txtIGV.Text);
-            ingreso.Correlativo = txtCorrelativo.Text;
+            ingreso.IVA = Convert.ToDecimal(txtIVA.Text);
+            ingreso.NDocumento = txtNDocumento.Text;
             ingreso.Serie = txtSerie.Text;
             ingreso.Tipo_Comprobante = cbComprobante.Text;
-
+            ingreso.Sub_total = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
+            ingreso.Total_Invercion = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) + decimal.Parse(txtIVA.Text);
             ingreso.Save();
             unitOfWorkIngreso.CommitChanges();
             xpCollectionIngreso.Reload();
@@ -579,51 +582,15 @@ namespace SisVentaDevExpress.Formularios
             this.Close();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            Articulo detalle1 = (Articulo)searchLookUpEdit1View.GetFocusedRow();
-            Detalle_Ingreso detalle2 = (Detalle_Ingreso)dataListadoDetalle.GetFocusedRow();
-            //int a1 = detalle1.Existencia + int.Parse(txtStockInicial.Text);
-            ////Calculo de precio
-            //decimal a2 = detalle1.Existencia * detalle1.PrecioVenta;
-            //decimal b2 = Convert.ToDecimal(txtStockInicial.Text) * Convert.ToDecimal(txtPrecioVenta.Text);
-            //decimal c2 = (a2 + b2) / a2;
-            //MensajeOk($"Articulo {a2.ToString()}");
-            //MensajeOk($"Formulario {b2.ToString()}");
-            //MensajeOk($"existencia {a2.ToString()}");
-            //MensajeOk($"calculo {c2.ToString()}");
-
-           
-            int ExistenciaAnterior = detalle1.Existencia - detalle2.Stock_inicial;
-            decimal costoTotalExistencia = detalle1.Existencia * detalle1.PrecioVenta;
-            decimal costoTotalSegungaCompra2 = Convert.ToDecimal(txtStockInicial.Text) * Convert.ToDecimal(txtPrecioVenta.Text);
-            decimal costoTotalSegungaCompra = detalle2.Stock_inicial * detalle2.Precio_Venta;
-            decimal costoTotalPrimeraCompra = (costoTotalExistencia - costoTotalSegungaCompra); 
-            decimal precioVentaAnterior = (costoTotalPrimeraCompra) / ExistenciaAnterior;
-            decimal costoTotalSegunda2Compra = costoTotalPrimeraCompra + costoTotalSegungaCompra2;
-            int NuevaExistencia = ExistenciaAnterior + Convert.ToInt32(txtStockInicial.Text);
-            decimal nuevoprecio = (costoTotalPrimeraCompra + costoTotalSegungaCompra2)/ NuevaExistencia;
-
-            MensajeOk($" precio Venta Anterior {precioVentaAnterior}");
-            MensajeOk($"Mi primera Existencia {ExistenciaAnterior}");
-            MensajeOk($" venta total de mi primer ingreso {costoTotalPrimeraCompra}");
-
-            MensajeOk($" venta total de mi segundo ingreso {costoTotalSegungaCompra2}");
-            MensajeOk($"la suma de mi primer ingreso y segundo {costoTotalSegunda2Compra}");
-            MensajeOk($"Nueva existencia {NuevaExistencia}");
-            MensajeOk($"Nuevo Precio {nuevoprecio}");
-
-        }
-
         private void txtPrecioCompra_TextChanged(object sender, EventArgs e)
         {
-            if (txtPrecioCompra.Text == string.Empty)
+            if (txtPrecioCompra.Text == "0")
             {
                 txtPrecioVenta.Text = "0";
             }
             else
             {
-                txtPrecioVenta.Text = (int.Parse(txtPrecioCompra.Text) + (((int.Parse(txtPrecioCompra.Text) * 25) / 100))).ToString();
+                txtPrecioVenta.Text = (decimal.Parse(txtPrecioCompra.Text) + (((decimal.Parse(txtPrecioCompra.Text) * 25) / 100))).ToString();
             }
         }
     }
