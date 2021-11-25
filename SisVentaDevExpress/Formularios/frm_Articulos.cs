@@ -152,6 +152,7 @@ namespace SisVentaDevExpress.Formularios
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                     tabControl1.SelectedIndex = 0;
                 }
             }
@@ -163,16 +164,24 @@ namespace SisVentaDevExpress.Formularios
         }
         private void btnEditar1_Click(object sender, EventArgs e)
         {
-            articulo_editar = (Articulo)dataListado.GetFocusedRow();
-            this.txtCodigo.Text = articulo_editar.IdArticulos.ToString();
-            this.txtCodigoVenta.Text = articulo_editar.Codigo.ToString();
-            this.txtNombre.Text = articulo_editar.Nombre.ToString();
-            this.txtDescripcion.Text = articulo_editar.Descripcion.ToString();
-            this.sbxCategoria.Text= (articulo_editar.IdCategoria).IdCategoria.ToString();
-            this.sbxPresentacion.Text = (articulo_editar.IdPresentacion).IdPresentacion.ToString();
-            tabControl1.SelectedIndex = 1;
-            this.txtCodigoVenta.Focus();
-            this.Habilitar(true);
+            Articulo articulo = (Articulo)dataListado.GetFocusedRow();
+            if (articulo == null)
+            {
+                MensajeError("Seleccione Articulo a Editar");
+            }
+            else
+            {
+                articulo_editar = (Articulo)dataListado.GetFocusedRow();
+                this.txtCodigo.Text = articulo_editar.IdArticulos.ToString();
+                this.txtCodigoVenta.Text = articulo_editar.Codigo.ToString();
+                this.txtNombre.Text = articulo_editar.Nombre.ToString();
+                this.txtDescripcion.Text = articulo_editar.Descripcion.ToString();
+                this.sbxCategoria.Text = (articulo_editar.IdCategoria).IdCategoria.ToString();
+                this.sbxPresentacion.Text = (articulo_editar.IdPresentacion).IdPresentacion.ToString();
+                tabControl1.SelectedIndex = 1;
+                this.txtCodigoVenta.Focus();
+                this.Habilitar(true);
+            }
         }
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
@@ -187,11 +196,21 @@ namespace SisVentaDevExpress.Formularios
                 else
                 {
                     Articulo articulo = articulo_editar;
+                    Categoria categoria = (Categoria)searchLookUpEdit1View.GetFocusedRow();
+                    if (categoria != null)
+                    {
+                        articulo.IdCategoria = (Categoria)searchLookUpEdit1View.GetFocusedRow();
+                    }
+                    Presentacion precentacion = (Presentacion)searchLookUpEdit2View.GetFocusedRow();
+                    if (categoria != null)
+                    {
+                        articulo.IdPresentacion = (Presentacion)searchLookUpEdit2View.GetFocusedRow();
+                    }
+
+
                     articulo.Codigo = txtCodigoVenta.Text.ToString();
                     articulo.Nombre = txtNombre.Text.ToString();
                     articulo.Descripcion = txtDescripcion.Text.ToString();
-                    articulo.IdCategoria = (Categoria)searchLookUpEdit1View.GetFocusedRow();
-                    articulo.IdPresentacion = (Presentacion)searchLookUpEdit2View.GetFocusedRow();
                     
                     articulo.Save();
                     unitOfWorkArticulos.CommitChanges();
@@ -244,11 +263,18 @@ namespace SisVentaDevExpress.Formularios
                 if (opcion == DialogResult.OK)
                 {
                     Articulo articulo = (Articulo)dataListado.GetFocusedRow();
-                    articulo.Delete();
-                    unitOfWorkArticulos.CommitChanges();
-                    xpCollectionArticulos.Reload();
-                    this.MensajeOk("Se elimino Correctamente el rejistro");
-                    this.Mostrar();
+                    if (articulo == null)
+                    {
+                        MensajeError("Seleccione Articulo a eliminar");
+                    }
+                    else
+                    {
+                        articulo.Delete();
+                        unitOfWorkArticulos.CommitChanges();
+                        xpCollectionArticulos.Reload();
+                        this.MensajeOk("Se elimino Correctamente el rejistro");
+                        this.Mostrar();
+                    }
                 }
             }
             catch (Exception ex)

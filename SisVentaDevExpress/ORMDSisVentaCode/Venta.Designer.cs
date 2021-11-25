@@ -64,19 +64,6 @@ namespace SisVentaDevExpress.Ventas
             get { return fSerie; }
             set { SetPropertyValue<string>(nameof(Serie), ref fSerie, value); }
         }
-        string fCorrelativo;
-        [Size(10)]
-        public string Correlativo
-        {
-            get { return fCorrelativo; }
-            set { SetPropertyValue<string>(nameof(Correlativo), ref fCorrelativo, value); }
-        }
-        decimal fIGV;
-        public decimal IGV
-        {
-            get { return fIGV; }
-            set { SetPropertyValue<decimal>(nameof(IGV), ref fIGV, value); }
-        }
         decimal fTotalPagar;
         [Persistent(@"Total Pagar")]
         public decimal TotalPagar
@@ -89,6 +76,19 @@ namespace SisVentaDevExpress.Ventas
         {
             get { return fSubTotal; }
             set { SetPropertyValue<decimal>(nameof(SubTotal), ref fSubTotal, value); }
+        }
+        string fNDocumento;
+        [Size(15)]
+        public string NDocumento
+        {
+            get { return fNDocumento; }
+            set { SetPropertyValue<string>(nameof(NDocumento), ref fNDocumento, value); }
+        }
+        decimal fIVA;
+        public decimal IVA
+        {
+            get { return fIVA; }
+            set { SetPropertyValue<decimal>(nameof(IVA), ref fIVA, value); }
         }
         [Association(@"Detalle_ventaReferencesVenta")]
         public XPCollection<Detalle_venta> Detalle_ventas { get { return GetCollection<Detalle_venta>(nameof(Detalle_ventas)); } }

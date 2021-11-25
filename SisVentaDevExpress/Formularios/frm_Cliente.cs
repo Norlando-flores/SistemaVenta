@@ -112,11 +112,19 @@ namespace SisVentaDevExpress.Formularios
                 if (opcion == DialogResult.OK)
                 {
                     Cliente cliente = (Cliente)dataListado.GetFocusedRow();
-                    cliente.Delete();
-                    unitOfWorkCliente.CommitChanges();
-                    xpCollectionCliente.Reload();
-                    this.MensajeOk("Se elimino Correctamente el rejistro");
-                    this.Mostrar();
+                    if (cliente == null)
+                    {
+                        MensajeError("Seleccione Cliente a Eliminar");
+                    }
+                    else
+                    {
+
+                        cliente.Delete();
+                        unitOfWorkCliente.CommitChanges();
+                        xpCollectionCliente.Reload();
+                        this.MensajeOk("Se elimino Correctamente el rejistro");
+                        this.Mostrar();
+                    }
                 }
             }
             catch (Exception ex)
@@ -129,6 +137,12 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            //txtTelefono.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            //txtTelefono.Properties.Mask.EditMask = "(000)0000-0000";
+
+            //txtNumeroDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            //txtNumeroDocumento.Properties.Mask.EditMask = "000-000000-0000A";
+
             this.IsNuevo = true;
             this.IsEditar = false;
             this.Botones();
@@ -146,14 +160,14 @@ namespace SisVentaDevExpress.Formularios
                 {
                     this.txtNombre.Focus();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtNombre, "Ingrese un valor");
+                    errorIcon.SetError(txtNombre, "Ingrese Nombre");
                 }
                 else if (this.txtApellido.Text == string.Empty)
                 {
                     this.txtApellido.Focus();
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtApellido, "Ingrese un valor");
+                    errorIcon.SetError(txtApellido, "Ingrese Apellido");
                 }
 
                 else if (this.cbSexo.Text == string.Empty)
@@ -161,43 +175,22 @@ namespace SisVentaDevExpress.Formularios
                     this.cbSexo.Focus();
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(cbSexo, "Seleccione un valor");
+                    errorIcon.SetError(cbSexo, "Seleccione Sexo");
                 }
-                else if (this.cbTipoDocumento.Text == string.Empty)
-                {
-                    this.cbTipoDocumento.Focus();
-                    errorIcon.Clear();
-                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(cbTipoDocumento, "Seleccione un valor");
-                }
-
-                else if (this.txtNumeroDocumento.Text == string.Empty)
-                {
-                    this.txtNumeroDocumento.Focus();
-                    errorIcon.Clear();
-                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtNumeroDocumento, "Ingrese un Dato");
-                }
-                else if (this.txtDireccion.Text == string.Empty)
-                {
-                    this.txtDireccion.Focus();
-                    errorIcon.Clear();
-                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtDireccion, "Ingrese la direccion");
-                }
-                else if (this.txtTelefono.Text == string.Empty)
-                {
-                    this.txtTelefono.Focus();
-                    errorIcon.Clear();
-                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtTelefono, "Ingrese numero de telefono");
-                }
+                
 
                 else
                 {
                     if (this.IsNuevo)
                     {
                         Cliente cliente = new Cliente(unitOfWorkCliente);
+                        //if (this.txtTelefono.Text == "(___)____-____")
+                        //{
+                        //    txtTelefono.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+                        //    txtTelefono.Properties.Mask.EditMask = "";
+                            //cliente.Telefono = txtTelefono.Text;
+                        //}
+                        
                         cliente.Nombre = txtNombre.Text;
                         cliente.Apellido = txtApellido.Text;
                         cliente.Sexo = cbSexo.Text.ToString();
@@ -218,6 +211,7 @@ namespace SisVentaDevExpress.Formularios
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                     tabControl1.SelectedIndex = 0;
                 }
             }
@@ -241,33 +235,69 @@ namespace SisVentaDevExpress.Formularios
 
         private void cbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbTipoDocumento.Text == "Cedula")
+            if (cbTipoDocumento.Text == "Pasaporte")
             {
-                txtNumeroDocumento.Mask = "000-000000-0000A";
+                txtNumeroDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+                txtNumeroDocumento.Properties.Mask.EditMask = "";
+                this.txtNumeroDocumento.Focus();
+            }
+            else if (cbTipoDocumento.Text == "")
+            {
+                txtNumeroDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+                txtNumeroDocumento.Properties.Mask.EditMask = "";
                 this.txtNumeroDocumento.Focus();
             }
             else
             {
-                txtNumeroDocumento.Mask = "";
+                txtNumeroDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+                txtNumeroDocumento.Properties.Mask.EditMask = "000-000000-0000A";
             }
         }
 
         private void btnEditar1_Click(object sender, EventArgs e)
         {
-            Cliente_editar = (Cliente)dataListado.GetFocusedRow();
-            this.txtidCliente.Text = Cliente_editar.IdCliente.ToString();
-            this.txtNombre.Text = Cliente_editar.Nombre.ToString();
-            this.txtApellido.Text = Cliente_editar.Apellido.ToString();
-            this.cbSexo.Text = Cliente_editar.Sexo.ToString();
-            this.dtFechaNacimiento.Value = Cliente_editar.Fecha_Nacimiento;
-            this.cbTipoDocumento.Text = Cliente_editar.Tipo_Documento.ToString();
-            this.txtNumeroDocumento.Text = Cliente_editar.Num_Documento.ToString();
-            this.txtDireccion.Text = Cliente_editar.Direccion.ToString();
-            this.txtTelefono.Text = Cliente_editar.Telefono.ToString();
-            this.txtCorreo.Text = Cliente_editar.Email.ToString();
-            tabControl1.SelectedIndex = 1;
-            this.txtNombre.Focus();
-            this.Habilitar(true);
+            Cliente cliente = (Cliente)dataListado.GetFocusedRow();
+            if (cliente == null)
+            {
+                MensajeError("Seleccione Cliente a Editar");
+            }
+            else
+            {
+                if (txtTelefono.Text==string.Empty)
+                {
+                    txtTelefono.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+                    txtTelefono.Properties.Mask.EditMask = "(000)0000-0000";
+                }
+                else if (cbTipoDocumento.Text == string.Empty)
+                {
+                    txtNumeroDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+                    txtNumeroDocumento.Properties.Mask.EditMask = "";
+                }
+                else if (cbTipoDocumento.Text == "Cedula")
+                {
+                    txtNumeroDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+                    txtNumeroDocumento.Properties.Mask.EditMask = "000-000000-0000A";
+                }
+                else if (cbTipoDocumento.Text == "Pasaporte")
+                {
+                    txtNumeroDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+                    txtNumeroDocumento.Properties.Mask.EditMask = "";
+                }
+                Cliente_editar = (Cliente)dataListado.GetFocusedRow();
+                this.txtidCliente.Text = Cliente_editar.IdCliente.ToString();
+                this.txtNombre.Text = Cliente_editar.Nombre.ToString();
+                this.txtApellido.Text = Cliente_editar.Apellido.ToString();
+                this.cbSexo.Text = Cliente_editar.Sexo.ToString();
+                this.dtFechaNacimiento.Value = Cliente_editar.Fecha_Nacimiento;
+                this.cbTipoDocumento.Text = Cliente_editar.Tipo_Documento.ToString();
+                this.txtNumeroDocumento.Text = Cliente_editar.Num_Documento.ToString();
+                this.txtDireccion.Text = Cliente_editar.Direccion.ToString();
+                this.txtTelefono.Text = Cliente_editar.Telefono.ToString();
+                this.txtCorreo.Text = Cliente_editar.Email.ToString();
+                tabControl1.SelectedIndex = 1;
+                this.txtNombre.Focus();
+                this.Habilitar(true);
+            }
         }
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
@@ -275,34 +305,54 @@ namespace SisVentaDevExpress.Formularios
             try
             {
 
-                if (this.txtNombre.Text == string.Empty || this.txtApellido.Text == string.Empty|| this.cbSexo.Text == string.Empty || this.cbTipoDocumento.Text == string.Empty || this.txtNumeroDocumento.Text == string.Empty)
+                if (this.txtNombre.Text == string.Empty)
                 {
-                    MensajeError("Seleccione el dato a modificar");
-                    tabControl1.SelectedIndex = 0;
+                    this.txtNombre.Focus();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtNombre, "Ingrese Nombre");
+                }
+                else if (this.txtApellido.Text == string.Empty)
+                {
+                    this.txtApellido.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtApellido, "Ingrese Apellido");
+                }
+
+                else if (this.cbSexo.Text == string.Empty)
+                {
+                    this.cbSexo.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(cbSexo, "Seleccione Sexo");
                 }
                 else
                 {
                     Cliente cliente = Cliente_editar;
-                    cliente.Nombre = txtNombre.Text;
-                    cliente.Apellido = txtApellido.Text;
-                    cliente.Sexo = cbSexo.Text;
-                    cliente.Fecha_Nacimiento = dtFechaNacimiento.Value;
-                    cliente.Tipo_Documento = cbTipoDocumento.Text;
-                    cliente.Num_Documento = txtNumeroDocumento.Text;
-                    cliente.Direccion = txtDireccion.Text;
-                    cliente.Telefono = txtTelefono.Text;
-                    cliente.Email = txtCorreo.Text;
-                    cliente.Save();
-                    unitOfWorkCliente.CommitChanges();
-                    xpCollectionCliente.Reload();
+                    
+                        cliente.Nombre = txtNombre.Text;
+                        cliente.Apellido = txtApellido.Text;
+                        cliente.Sexo = cbSexo.Text;
+                        cliente.Fecha_Nacimiento = dtFechaNacimiento.Value;
+                        cliente.Tipo_Documento = cbTipoDocumento.Text;
+                        cliente.Num_Documento = txtNumeroDocumento.Text;
+                        cliente.Direccion = txtDireccion.Text;
+                        cliente.Telefono = txtTelefono.Text;
+                        cliente.Email = txtCorreo.Text;
+                        cliente.Save();
+                        unitOfWorkCliente.CommitChanges();
+                        xpCollectionCliente.Reload();
+                    
                     Limpiar();
                     this.MensajeOk("Se a Actualizo el Rejistro de Forma Correcta");
                     this.Habilitar(false);
+                    errorIcon.Clear();
                     tabControl1.SelectedIndex = 0;
                     this.IsNuevo = false;
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+
                 }
             }
             catch (Exception ex)

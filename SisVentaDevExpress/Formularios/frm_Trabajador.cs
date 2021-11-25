@@ -16,7 +16,6 @@ namespace SisVentaDevExpress.Formularios
             this.ttMensaje.SetToolTip(this.txtNombre, "Ingrese Nombre del cliente");
             this.ttMensaje.SetToolTip(this.txtApellido, "Ingrese los Apellidos del cliente");
             this.ttMensaje.SetToolTip(this.cbSexo, "Seleccione el sexo del cliente");
-            this.ttMensaje.SetToolTip(this.dtFechaNacimiento, "Ingrese fecha de nacimiento del cliete");
             this.ttMensaje.SetToolTip(this.cbAcceso, "Seleccione tipo de Acceso");
             this.ttMensaje.SetToolTip(this.txtCedula, "Ingrese numero de cedula");
             this.ttMensaje.SetToolTip(this.txtDireccion, "Ingrese la direccion");
@@ -55,7 +54,6 @@ namespace SisVentaDevExpress.Formularios
             this.txtApellido.ReadOnly = !valor;
             this.txtDireccion.ReadOnly = !valor;
             this.cbSexo.Enabled = valor;
-            this.dtFechaNacimiento.Enabled = valor;
             this.cbAcceso.Enabled = valor;
             this.txtCedula.ReadOnly = !valor;
             this.txtTelefono.ReadOnly = !valor;
@@ -113,11 +111,19 @@ namespace SisVentaDevExpress.Formularios
                 if (opcion == DialogResult.OK)
                 {
                     Trabajador trabajador = (Trabajador)dataListado.GetFocusedRow();
-                    trabajador.Delete();
-                    unitOfWorkTrabajadores.CommitChanges();
-                    xpCollectiontrabajadores.Reload();
-                    this.MensajeOk("Se elimino Correctamente el registro");
-                    this.Mostrar();
+                    Trabajador presentacion = (Trabajador)dataListado.GetFocusedRow();
+                    if (presentacion == null)
+                    {
+                        MensajeError("Seleccione Trabajador a Editar");
+                    }
+                    else
+                    {
+                        trabajador.Delete();
+                        unitOfWorkTrabajadores.CommitChanges();
+                        xpCollectiontrabajadores.Reload();
+                        this.MensajeOk("Se elimino Correctamente el registro");
+                        this.Mostrar();
+                    }
                 }
             }
             catch (Exception ex)
@@ -141,22 +147,29 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnEditar1_Click(object sender, EventArgs e)
         {
-            trabajador_editar = (Trabajador)dataListado.GetFocusedRow();
-            this.txtidTrabajador.Text = trabajador_editar.IdTrabajador.ToString();
-            this.txtNombre.Text = trabajador_editar.Nombre.ToString();
-            this.txtApellido.Text = trabajador_editar.Apellidos.ToString();
-            this.cbSexo.Text = trabajador_editar.Sexo.ToString();
-            this.dtFechaNacimiento.Value = trabajador_editar.Fecha_Nacimiento;
-            this.cbAcceso.Text = trabajador_editar.Acceso.ToString();
-            this.txtCedula.Text = trabajador_editar.Cedula.ToString();
-            this.txtDireccion.Text = trabajador_editar.Direccion.ToString();
-            this.txtTelefono.Text = trabajador_editar.Telefono.ToString();
-            this.txtCorreo.Text = trabajador_editar.Email.ToString();
-            this.txtUsuario.Text = trabajador_editar.Usuario.ToString();
-            this.txtContraseña.Text = trabajador_editar.Contraseña.ToString();
-            tabControl1.SelectedIndex = 1;
-            this.txtNombre.Focus();
-            this.Habilitar(true);
+            Trabajador presentacion = (Trabajador)dataListado.GetFocusedRow();
+            if (presentacion == null)
+            {
+                MensajeError("Seleccione Trabajador a Editar");
+            }
+            else
+            {
+                trabajador_editar = (Trabajador)dataListado.GetFocusedRow();
+                this.txtidTrabajador.Text = trabajador_editar.IdTrabajador.ToString();
+                this.txtNombre.Text = trabajador_editar.Nombre.ToString();
+                this.txtApellido.Text = trabajador_editar.Apellidos.ToString();
+                this.cbSexo.Text = trabajador_editar.Sexo.ToString();
+                this.cbAcceso.Text = trabajador_editar.Acceso.ToString();
+                this.txtCedula.Text = trabajador_editar.Cedula.ToString();
+                this.txtDireccion.Text = trabajador_editar.Direccion.ToString();
+                this.txtTelefono.Text = trabajador_editar.Telefono.ToString();
+                this.txtCorreo.Text = trabajador_editar.Email.ToString();
+                this.txtUsuario.Text = trabajador_editar.Usuario.ToString();
+                this.txtContraseña.Text = trabajador_editar.Contraseña.ToString();
+                tabControl1.SelectedIndex = 1;
+                this.txtNombre.Focus();
+                this.Habilitar(true);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -252,7 +265,6 @@ namespace SisVentaDevExpress.Formularios
                         trabajador.Nombre = txtNombre.Text;
                         trabajador.Apellidos = txtApellido.Text;
                         trabajador.Sexo = cbSexo.Text.ToString();
-                        trabajador.Fecha_Nacimiento = dtFechaNacimiento.Value;
                         trabajador.Cedula = txtCedula.Text.ToString();
                         trabajador.Acceso = cbAcceso.Text.ToString();
                         trabajador.Direccion = txtDireccion.Text;
@@ -271,6 +283,7 @@ namespace SisVentaDevExpress.Formularios
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                     tabControl1.SelectedIndex = 0;
                 }
             }
@@ -285,11 +298,69 @@ namespace SisVentaDevExpress.Formularios
         {
             try
             {
-
-                if (this.txtNombre.Text == string.Empty || this.txtApellido.Text == string.Empty || this.cbSexo.Text == string.Empty || this.txtCedula.Text == string.Empty || this.cbAcceso.Text == string.Empty || this.txtUsuario.Text == string.Empty || this.txtContraseña.Text == string.Empty)
+                if (this.txtNombre.Text == string.Empty)
                 {
-                    MensajeError("Seleccione el dato a modificar");
-                    tabControl1.SelectedIndex = 0;
+                    this.txtNombre.Focus();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtNombre, "Ingrese Nombres");
+                }
+                else if (this.txtApellido.Text == string.Empty)
+                {
+                    this.txtApellido.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtApellido, "Ingrese Apellidos");
+                }
+
+                else if (this.cbSexo.Text == string.Empty)
+                {
+                    this.cbSexo.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(cbSexo, "Seleccione un valor");
+                }
+
+                else if (this.txtCedula.Text == string.Empty)
+                {
+                    this.txtCedula.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtCedula, "Ingrese numero de Cedula");
+                }
+                else if (this.cbAcceso.Text == string.Empty)
+                {
+                    this.cbAcceso.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(cbAcceso, "Seleccione tipo de acceso");
+                }
+                else if (this.txtDireccion.Text == string.Empty)
+                {
+                    this.txtDireccion.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtDireccion, "Ingrese la direccion");
+                }
+                else if (this.txtTelefono.Text == string.Empty)
+                {
+                    this.txtTelefono.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtTelefono, "Ingrese numero de telefono");
+                }
+                else if (this.txtUsuario.Text == string.Empty)
+                {
+                    this.txtUsuario.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtUsuario, "Ingrese Usuario");
+                }
+                else if (this.txtContraseña.Text == string.Empty)
+                {
+                    this.txtContraseña.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtContraseña, "Ingrese Contraseña");
                 }
                 else
                 {
@@ -297,7 +368,6 @@ namespace SisVentaDevExpress.Formularios
                     trabajador.Nombre = txtNombre.Text;
                     trabajador.Apellidos = txtApellido.Text;
                     trabajador.Sexo = cbSexo.Text;
-                    trabajador.Fecha_Nacimiento = dtFechaNacimiento.Value;
                     trabajador.Cedula = txtCedula.Text;
                     trabajador.Acceso = cbAcceso.Text;
                     trabajador.Direccion = txtDireccion.Text;
@@ -316,6 +386,7 @@ namespace SisVentaDevExpress.Formularios
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                 }
             }
             catch (Exception ex)
@@ -327,23 +398,18 @@ namespace SisVentaDevExpress.Formularios
 
         private void chboxMostrarContraseña_CheckedChanged(object sender, EventArgs e)
         {
-            
-            if (chboxMostrarContraseña.Checked==true)
+
+            if (chboxMostrarContraseña.Checked == true)
             {
-                if (this.txtContraseña.PasswordChar=='*')
+                if (this.txtContraseña.Properties.PasswordChar == '*')
                 {
-                    this.txtContraseña.PasswordChar = '\0';
+                    this.txtContraseña.Properties.PasswordChar = '\0';
                 }
             }
             else
             {
-                this.txtContraseña.PasswordChar = '*';
+                this.txtContraseña.Properties.PasswordChar = '*';
             }
-        }
-
-        private void txtContraseña_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

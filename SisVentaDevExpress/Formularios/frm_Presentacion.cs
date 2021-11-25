@@ -128,6 +128,7 @@ namespace SisVentaDevExpress
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                     tabControl1.SelectedIndex = 0;
                 }
             }
@@ -164,6 +165,7 @@ namespace SisVentaDevExpress
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                 }
             }
             catch (Exception ex)
@@ -175,13 +177,21 @@ namespace SisVentaDevExpress
 
         private void btnEditar1_Click(object sender, EventArgs e)
         {
-            presentacion_editar = (Presentacion)dataListado.GetFocusedRow();
-            txtCodigo.Text = presentacion_editar.IdPresentacion.ToString();
-            txtNombre.Text = presentacion_editar.Nombre.ToString();
-            txtDescripcion.Text = presentacion_editar.Descripcion.ToString();
-            tabControl1.SelectedIndex = 1;
-            this.txtNombre.Focus();
-            this.Habilitar(true);
+            Presentacion presentacion = (Presentacion)dataListado.GetFocusedRow();
+            if (presentacion == null)
+            {
+                MensajeError("Seleccione U/M a Editar");
+            }
+            else
+            {
+                presentacion_editar = (Presentacion)dataListado.GetFocusedRow();
+                txtCodigo.Text = presentacion_editar.IdPresentacion.ToString();
+                txtNombre.Text = presentacion_editar.Nombre.ToString();
+                txtDescripcion.Text = presentacion_editar.Descripcion.ToString();
+                tabControl1.SelectedIndex = 1;
+                this.txtNombre.Focus();
+                this.Habilitar(true);
+            }
         }
 
         private void btnEliminar1_Click(object sender, EventArgs e)
@@ -194,11 +204,19 @@ namespace SisVentaDevExpress
                 if (opcion == DialogResult.OK)
                 {
                     Presentacion presentacion = (Presentacion)dataListado.GetFocusedRow();
-                    presentacion.Delete();
-                    unitOfWorkPresentacion.CommitChanges();
-                    xpCollectionPresentacion.Reload();
-                    this.MensajeOk("Se elimino Correctamente el rejistro");
-                    this.Mostrar();
+                    if (presentacion == null)
+                    {
+                        MensajeError("Seleccione U/M a Eliminar");
+                    }
+                    else
+                    {
+                        
+                        presentacion.Delete();
+                        unitOfWorkPresentacion.CommitChanges();
+                        xpCollectionPresentacion.Reload();
+                        this.MensajeOk("Se elimino Correctamente el rejistro");
+                        this.Mostrar();
+                    }
                 }
             }
             catch (Exception ex)

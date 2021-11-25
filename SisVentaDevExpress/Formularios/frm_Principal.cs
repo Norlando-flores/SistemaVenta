@@ -110,7 +110,7 @@ namespace SisVentaDevExpress.Formularios
             frmCategoria formulario_Categoria = new frmCategoria();
             formulario_Categoria.MdiParent = this;
             formulario_Categoria.Show();
-            formulario_Categoria.WindowState = FormWindowState.Maximized;
+            //formulario_Categoria.WindowState = FormWindowState.Maximized;
         }
 
         private void presentacionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace SisVentaDevExpress.Formularios
             frm_Presentacion formulario_Presentacion = new frm_Presentacion();
             formulario_Presentacion.MdiParent = this;
             formulario_Presentacion.Show();
-            formulario_Presentacion.WindowState = FormWindowState.Maximized;
+            //formulario_Presentacion.WindowState = FormWindowState.Maximized;
         }
 
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace SisVentaDevExpress.Formularios
             frm_Articulos formulario_Articulos = new frm_Articulos();
             formulario_Articulos.MdiParent = this;
             formulario_Articulos.Show();
-            formulario_Articulos.WindowState = FormWindowState.Maximized;
+            //formulario_Articulos.WindowState = FormWindowState.Maximized;
         }
 
         private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace SisVentaDevExpress.Formularios
             frm_Proveedor formulario_Proveedor = new frm_Proveedor();
             formulario_Proveedor.MdiParent = this;
             formulario_Proveedor.Show();
-            formulario_Proveedor.WindowState = FormWindowState.Maximized;
+            //formulario_Proveedor.WindowState = FormWindowState.Maximized;
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,7 +142,7 @@ namespace SisVentaDevExpress.Formularios
             frm_Cliente formulario_Clientes = new frm_Cliente();
             formulario_Clientes.MdiParent = this;
             formulario_Clientes.Show();
-            formulario_Clientes.WindowState = FormWindowState.Maximized;
+            //formulario_Clientes.WindowState = FormWindowState.Maximized;
         }
 
         private void trabajadoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,7 +150,7 @@ namespace SisVentaDevExpress.Formularios
             frm_Trabajador formulario_Trabajador = new frm_Trabajador();
             formulario_Trabajador.MdiParent = this;
             formulario_Trabajador.Show();
-            formulario_Trabajador.WindowState = FormWindowState.Maximized;
+            //formulario_Trabajador.WindowState = FormWindowState.Maximized;
         }
 
         private void frm_Principal_Load(object sender, EventArgs e)
@@ -217,14 +217,6 @@ namespace SisVentaDevExpress.Formularios
             formulario_Ingreso.MdiParent = this;
             formulario_Ingreso.Show();
             formulario_Ingreso.WindowState = FormWindowState.Maximized;
-        }
-
-        private void detalleDeArticuloToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_DetalleIngreso formulario_Articulos = new frm_DetalleIngreso();
-            formulario_Articulos.MdiParent = this;
-            formulario_Articulos.Show();
-            formulario_Articulos.WindowState = FormWindowState.Maximized;
         }
 
         private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)

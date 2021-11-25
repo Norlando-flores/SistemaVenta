@@ -30,6 +30,7 @@ namespace SisVentaDevExpress.Formularios
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_acceso));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbMostrarContraseña = new System.Windows.Forms.CheckBox();
@@ -57,10 +58,11 @@ namespace SisVentaDevExpress.Formularios
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Blue;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(225, 31);
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(284, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 31);
             this.label1.TabIndex = 2;
@@ -68,6 +70,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.cbMostrarContraseña);
             this.groupBox1.Controls.Add(this.lblHora);
             this.groupBox1.Controls.Add(this.btnsSalir);
@@ -180,6 +183,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::SisVentaDevExpress.Properties.Resources.Acceso;
             this.pictureBox3.Location = new System.Drawing.Point(17, 111);
             this.pictureBox3.Name = "pictureBox3";
@@ -190,8 +194,9 @@ namespace SisVentaDevExpress.Formularios
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Blue;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 315);
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 314);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(800, 59);
             this.pictureBox2.TabIndex = 1;
@@ -199,7 +204,8 @@ namespace SisVentaDevExpress.Formularios
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(800, 96);
@@ -211,6 +217,8 @@ namespace SisVentaDevExpress.Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(760, 373);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.groupBox1);

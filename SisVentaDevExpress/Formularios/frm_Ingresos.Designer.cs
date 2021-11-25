@@ -67,7 +67,6 @@ namespace SisVentaDevExpress.Formularios
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
             this.txtIVA = new DevExpress.XtraEditors.TextEdit();
-            this.txtNDocumento = new DevExpress.XtraEditors.TextEdit();
             this.sbTrabajador = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.xpCollectionTrabajador = new DevExpress.Xpo.XPCollection(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -101,6 +100,7 @@ namespace SisVentaDevExpress.Formularios
             this.ColDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtIdDetalleIngreso = new System.Windows.Forms.TextBox();
             this.btnAgregar2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefescarArticulo = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lblDetalleIngreso = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem16 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -111,39 +111,41 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblPrecioVenta = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbComprobante = new System.Windows.Forms.ComboBox();
+            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.dtFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardarCambios = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
-            this.txtSerie = new System.Windows.Forms.MaskedTextBox();
             this.txtidIngresos = new System.Windows.Forms.TextBox();
+            this.cbComprobante = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtSerie = new DevExpress.XtraEditors.TextEdit();
+            this.txtNDocumento = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblTrabajador = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblComprobante = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblProveedor = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblFechaIngreso = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblSerie = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblidTrabajador = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.lblCorrelativo = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.lblIVA = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lblComprobante = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblSerie = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lblCorrelativo = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTituloIngresos = new System.Windows.Forms.Label();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.unitOfWorkDetalleIngreso = new DevExpress.Xpo.UnitOfWork(this.components);
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.btnAgregar1 = new DevExpress.XtraEditors.SimpleButton();
@@ -174,7 +176,6 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
             this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIVA.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbTrabajador.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionTrabajador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -203,31 +204,35 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblPrecioVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbComprobante.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSerie.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTrabajador)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblComprobante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProveedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFechaIngreso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblSerie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblidTrabajador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblCorrelativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblIVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblComprobante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblSerie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblCorrelativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkDetalleIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcon)).BeginInit();
             this.SuspendLayout();
@@ -235,7 +240,6 @@ namespace SisVentaDevExpress.Formularios
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.tabControl1);
-            this.layoutControl1.Controls.Add(this.pictureBox1);
             this.layoutControl1.Controls.Add(this.lblTituloIngresos);
             resources.ApplyResources(this.layoutControl1, "layoutControl1");
             this.layoutControl1.Name = "layoutControl1";
@@ -271,7 +275,8 @@ namespace SisVentaDevExpress.Formularios
             // 
             // lblTotal
             // 
-            this.lblTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             resources.ApplyResources(this.lblTotal, "lblTotal");
             this.lblTotal.Name = "lblTotal";
             // 
@@ -602,6 +607,8 @@ namespace SisVentaDevExpress.Formularios
             // 
             // layoutControlGroup1
             // 
+            this.layoutControlGroup1.BackgroundImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("layoutControlGroup1.BackgroundImageOptions.Image")));
+            this.layoutControlGroup1.BackgroundImageOptions.Visible = true;
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -614,7 +621,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem13,
             this.emptySpaceItem9});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(897, 429);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(897, 448);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
@@ -622,7 +629,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem4.Control = this.gridControl2;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(877, 345);
+            this.layoutControlItem4.Size = new System.Drawing.Size(877, 364);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -677,7 +684,7 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(247, 385);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(247, 404);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
             this.emptySpaceItem8.Size = new System.Drawing.Size(630, 24);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -685,7 +692,7 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.lblTotal;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 385);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 404);
             this.layoutControlItem13.MaxSize = new System.Drawing.Size(247, 24);
             this.layoutControlItem13.MinSize = new System.Drawing.Size(247, 24);
             this.layoutControlItem13.Name = "layoutControlItem13";
@@ -718,6 +725,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.layoutControl4);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
@@ -726,18 +734,18 @@ namespace SisVentaDevExpress.Formularios
             // layoutControl4
             // 
             this.layoutControl4.Controls.Add(this.txtIVA);
-            this.layoutControl4.Controls.Add(this.txtNDocumento);
             this.layoutControl4.Controls.Add(this.sbTrabajador);
             this.layoutControl4.Controls.Add(this.sbProveedor);
             this.layoutControl4.Controls.Add(this.gridControlDetalleIngreso);
             this.layoutControl4.Controls.Add(this.groupBox2);
-            this.layoutControl4.Controls.Add(this.cbComprobante);
             this.layoutControl4.Controls.Add(this.dtFechaIngreso);
             this.layoutControl4.Controls.Add(this.btnCancelar);
             this.layoutControl4.Controls.Add(this.btnGuardarCambios);
             this.layoutControl4.Controls.Add(this.btnGuardar);
-            this.layoutControl4.Controls.Add(this.txtSerie);
             this.layoutControl4.Controls.Add(this.txtidIngresos);
+            this.layoutControl4.Controls.Add(this.cbComprobante);
+            this.layoutControl4.Controls.Add(this.txtSerie);
+            this.layoutControl4.Controls.Add(this.txtNDocumento);
             resources.ApplyResources(this.layoutControl4, "layoutControl4");
             this.layoutControl4.Name = "layoutControl4";
             this.layoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 66, 650, 400);
@@ -747,27 +755,27 @@ namespace SisVentaDevExpress.Formularios
             // 
             resources.ApplyResources(this.txtIVA, "txtIVA");
             this.txtIVA.Name = "txtIVA";
+            this.txtIVA.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtIVA.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtIVA.Properties.Appearance.Font")));
+            this.txtIVA.Properties.Appearance.Options.UseBackColor = true;
             this.txtIVA.Properties.Appearance.Options.UseFont = true;
+            this.txtIVA.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtIVA.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtIVA.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txtIVA.Properties.Mask.EditMask = resources.GetString("txtIVA.Properties.Mask.EditMask");
             this.txtIVA.Properties.Mask.MaskType = ((DevExpress.XtraEditors.Mask.MaskType)(resources.GetObject("txtIVA.Properties.Mask.MaskType")));
+            this.txtIVA.Properties.Mask.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("txtIVA.Properties.Mask.UseMaskAsDisplayFormat")));
             this.txtIVA.StyleController = this.layoutControl4;
-            // 
-            // txtNDocumento
-            // 
-            resources.ApplyResources(this.txtNDocumento, "txtNDocumento");
-            this.txtNDocumento.Name = "txtNDocumento";
-            this.txtNDocumento.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtNDocumento.Properties.Appearance.Font")));
-            this.txtNDocumento.Properties.Appearance.Options.UseFont = true;
-            this.txtNDocumento.Properties.Mask.EditMask = resources.GetString("txtNDocumento.Properties.Mask.EditMask");
-            this.txtNDocumento.StyleController = this.layoutControl4;
             // 
             // sbTrabajador
             // 
             resources.ApplyResources(this.sbTrabajador, "sbTrabajador");
             this.sbTrabajador.Name = "sbTrabajador";
+            this.sbTrabajador.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.sbTrabajador.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("sbTrabajador.Properties.Appearance.Font")));
+            this.sbTrabajador.Properties.Appearance.Options.UseBackColor = true;
             this.sbTrabajador.Properties.Appearance.Options.UseFont = true;
+            this.sbTrabajador.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.sbTrabajador.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("sbTrabajador.Properties.Buttons"))))});
             this.sbTrabajador.Properties.DataSource = this.xpCollectionTrabajador;
@@ -807,8 +815,11 @@ namespace SisVentaDevExpress.Formularios
             // 
             resources.ApplyResources(this.sbProveedor, "sbProveedor");
             this.sbProveedor.Name = "sbProveedor";
+            this.sbProveedor.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.sbProveedor.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("sbProveedor.Properties.Appearance.Font")));
+            this.sbProveedor.Properties.Appearance.Options.UseBackColor = true;
             this.sbProveedor.Properties.Appearance.Options.UseFont = true;
+            this.sbProveedor.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.sbProveedor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("sbProveedor.Properties.Buttons"))))});
             this.sbProveedor.Properties.DataSource = this.xpCollectionProveedor;
@@ -1009,6 +1020,7 @@ namespace SisVentaDevExpress.Formularios
             this.dataListadoDetalle.Name = "dataListadoDetalle";
             this.dataListadoDetalle.OptionsBehavior.Editable = false;
             this.dataListadoDetalle.OptionsFind.AlwaysVisible = true;
+            this.dataListadoDetalle.OptionsMenu.EnableFooterMenu = false;
             this.dataListadoDetalle.OptionsView.EnableAppearanceEvenRow = true;
             this.dataListadoDetalle.OptionsView.EnableAppearanceOddRow = true;
             this.dataListadoDetalle.OptionsView.ShowFooter = true;
@@ -1131,6 +1143,7 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControl5.Controls.Add(this.sbArticulo);
             this.layoutControl5.Controls.Add(this.txtIdDetalleIngreso);
             this.layoutControl5.Controls.Add(this.btnAgregar2);
+            this.layoutControl5.Controls.Add(this.btnRefescarArticulo);
             resources.ApplyResources(this.layoutControl5, "layoutControl5");
             this.layoutControl5.Name = "layoutControl5";
             this.layoutControl5.Root = this.layoutControlGroup4;
@@ -1140,7 +1153,9 @@ namespace SisVentaDevExpress.Formularios
             resources.ApplyResources(this.txtPrecioVenta, "txtPrecioVenta");
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtPrecioVenta.Properties.Appearance.Font")));
+            this.txtPrecioVenta.Properties.Appearance.ForeColor = System.Drawing.Color.DarkGray;
             this.txtPrecioVenta.Properties.Appearance.Options.UseFont = true;
+            this.txtPrecioVenta.Properties.Appearance.Options.UseForeColor = true;
             this.txtPrecioVenta.Properties.Mask.EditMask = resources.GetString("txtPrecioVenta.Properties.Mask.EditMask");
             this.txtPrecioVenta.Properties.Mask.MaskType = ((DevExpress.XtraEditors.Mask.MaskType)(resources.GetObject("txtPrecioVenta.Properties.Mask.MaskType")));
             this.txtPrecioVenta.Properties.Mask.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("txtPrecioVenta.Properties.Mask.UseMaskAsDisplayFormat")));
@@ -1151,8 +1166,13 @@ namespace SisVentaDevExpress.Formularios
             // 
             resources.ApplyResources(this.txtPrecioCompra, "txtPrecioCompra");
             this.txtPrecioCompra.Name = "txtPrecioCompra";
+            this.txtPrecioCompra.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPrecioCompra.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtPrecioCompra.Properties.Appearance.Font")));
+            this.txtPrecioCompra.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtPrecioCompra.Properties.Appearance.Options.UseBackColor = true;
             this.txtPrecioCompra.Properties.Appearance.Options.UseFont = true;
+            this.txtPrecioCompra.Properties.Appearance.Options.UseForeColor = true;
+            this.txtPrecioCompra.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txtPrecioCompra.Properties.Mask.EditMask = resources.GetString("txtPrecioCompra.Properties.Mask.EditMask");
             this.txtPrecioCompra.Properties.Mask.MaskType = ((DevExpress.XtraEditors.Mask.MaskType)(resources.GetObject("txtPrecioCompra.Properties.Mask.MaskType")));
             this.txtPrecioCompra.Properties.Mask.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("txtPrecioCompra.Properties.Mask.UseMaskAsDisplayFormat")));
@@ -1163,8 +1183,13 @@ namespace SisVentaDevExpress.Formularios
             // 
             resources.ApplyResources(this.txtStockInicial, "txtStockInicial");
             this.txtStockInicial.Name = "txtStockInicial";
+            this.txtStockInicial.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtStockInicial.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtStockInicial.Properties.Appearance.Font")));
+            this.txtStockInicial.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtStockInicial.Properties.Appearance.Options.UseBackColor = true;
             this.txtStockInicial.Properties.Appearance.Options.UseFont = true;
+            this.txtStockInicial.Properties.Appearance.Options.UseForeColor = true;
+            this.txtStockInicial.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txtStockInicial.Properties.Mask.EditMask = resources.GetString("txtStockInicial.Properties.Mask.EditMask");
             this.txtStockInicial.Properties.Mask.MaskType = ((DevExpress.XtraEditors.Mask.MaskType)(resources.GetObject("txtStockInicial.Properties.Mask.MaskType")));
             this.txtStockInicial.Properties.Mask.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("txtStockInicial.Properties.Mask.UseMaskAsDisplayFormat")));
@@ -1184,12 +1209,15 @@ namespace SisVentaDevExpress.Formularios
             // 
             resources.ApplyResources(this.sbArticulo, "sbArticulo");
             this.sbArticulo.Name = "sbArticulo";
+            this.sbArticulo.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.sbArticulo.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("sbArticulo.Properties.Appearance.Font")));
+            this.sbArticulo.Properties.Appearance.Options.UseBackColor = true;
             this.sbArticulo.Properties.Appearance.Options.UseFont = true;
+            this.sbArticulo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.sbArticulo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("sbArticulo.Properties.Buttons"))))});
             this.sbArticulo.Properties.DataSource = this.xpCollectionArticulos;
-            this.sbArticulo.Properties.DisplayMember = "NombreCompleto";
+            this.sbArticulo.Properties.DisplayMember = "Nombre";
             this.sbArticulo.Properties.PopupView = this.searchLookUpEdit1View;
             this.sbArticulo.Properties.ValueMember = "IdArticulos";
             this.sbArticulo.StyleController = this.layoutControl5;
@@ -1281,6 +1309,16 @@ namespace SisVentaDevExpress.Formularios
             this.btnAgregar2.StyleController = this.layoutControl5;
             this.btnAgregar2.Click += new System.EventHandler(this.btnAgregar1_Click);
             // 
+            // btnRefescarArticulo
+            // 
+            this.btnRefescarArticulo.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("btnRefescarArticulo.Appearance.Font")));
+            this.btnRefescarArticulo.Appearance.Options.UseFont = true;
+            this.btnRefescarArticulo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRefescarArticulo.ImageOptions.Image")));
+            resources.ApplyResources(this.btnRefescarArticulo, "btnRefescarArticulo");
+            this.btnRefescarArticulo.Name = "btnRefescarArticulo";
+            this.btnRefescarArticulo.StyleController = this.layoutControl5;
+            this.btnRefescarArticulo.Click += new System.EventHandler(this.btnRefescarArticulo_Click);
+            // 
             // layoutControlGroup4
             // 
             this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -1294,9 +1332,11 @@ namespace SisVentaDevExpress.Formularios
             this.lblPrecioCompra,
             this.layoutControlItem18,
             this.layoutControlItem19,
-            this.lblPrecioVenta});
+            this.lblPrecioVenta,
+            this.layoutControlItem16,
+            this.emptySpaceItem3});
             this.layoutControlGroup4.Name = "Root";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(820, 96);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(820, 122);
             this.layoutControlGroup4.TextVisible = false;
             // 
             // lblDetalleIngreso
@@ -1316,20 +1356,20 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem16
             // 
             this.emptySpaceItem16.AllowHotTrack = false;
-            this.emptySpaceItem16.Location = new System.Drawing.Point(545, 24);
+            this.emptySpaceItem16.Location = new System.Drawing.Point(573, 50);
             this.emptySpaceItem16.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem16.Name = "emptySpaceItem16";
-            this.emptySpaceItem16.Size = new System.Drawing.Size(255, 26);
+            this.emptySpaceItem16.Size = new System.Drawing.Size(227, 24);
             this.emptySpaceItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem16.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(545, 50);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(573, 74);
             this.emptySpaceItem4.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(255, 26);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(227, 28);
             this.emptySpaceItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -1338,9 +1378,12 @@ namespace SisVentaDevExpress.Formularios
             this.lblStockInicial.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblStockInicial.AppearanceItemCaption.Font")));
             this.lblStockInicial.AppearanceItemCaption.Options.UseFont = true;
             this.lblStockInicial.Control = this.txtStockInicial;
-            this.lblStockInicial.Location = new System.Drawing.Point(0, 50);
+            this.lblStockInicial.Location = new System.Drawing.Point(0, 76);
+            this.lblStockInicial.MaxSize = new System.Drawing.Size(281, 26);
+            this.lblStockInicial.MinSize = new System.Drawing.Size(281, 26);
             this.lblStockInicial.Name = "lblStockInicial";
-            this.lblStockInicial.Size = new System.Drawing.Size(264, 26);
+            this.lblStockInicial.Size = new System.Drawing.Size(281, 26);
+            this.lblStockInicial.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.lblStockInicial, "lblStockInicial");
             this.lblStockInicial.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblStockInicial.TextSize = new System.Drawing.Size(62, 16);
@@ -1351,9 +1394,12 @@ namespace SisVentaDevExpress.Formularios
             this.lblArticulos.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblArticulos.AppearanceItemCaption.Font")));
             this.lblArticulos.AppearanceItemCaption.Options.UseFont = true;
             this.lblArticulos.Control = this.sbArticulo;
-            this.lblArticulos.Location = new System.Drawing.Point(0, 24);
+            this.lblArticulos.Location = new System.Drawing.Point(0, 50);
+            this.lblArticulos.MaxSize = new System.Drawing.Size(281, 26);
+            this.lblArticulos.MinSize = new System.Drawing.Size(281, 26);
             this.lblArticulos.Name = "lblArticulos";
-            this.lblArticulos.Size = new System.Drawing.Size(264, 26);
+            this.lblArticulos.Size = new System.Drawing.Size(281, 26);
+            this.lblArticulos.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.lblArticulos, "lblArticulos");
             this.lblArticulos.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblArticulos.TextSize = new System.Drawing.Size(56, 16);
@@ -1364,9 +1410,12 @@ namespace SisVentaDevExpress.Formularios
             this.lblPrecioCompra.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblPrecioCompra.AppearanceItemCaption.Font")));
             this.lblPrecioCompra.AppearanceItemCaption.Options.UseFont = true;
             this.lblPrecioCompra.Control = this.txtPrecioCompra;
-            this.lblPrecioCompra.Location = new System.Drawing.Point(264, 24);
+            this.lblPrecioCompra.Location = new System.Drawing.Point(281, 50);
+            this.lblPrecioCompra.MaxSize = new System.Drawing.Size(190, 26);
+            this.lblPrecioCompra.MinSize = new System.Drawing.Size(190, 26);
             this.lblPrecioCompra.Name = "lblPrecioCompra";
-            this.lblPrecioCompra.Size = new System.Drawing.Size(179, 26);
+            this.lblPrecioCompra.Size = new System.Drawing.Size(190, 26);
+            this.lblPrecioCompra.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.lblPrecioCompra, "lblPrecioCompra");
             this.lblPrecioCompra.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblPrecioCompra.TextSize = new System.Drawing.Size(98, 16);
@@ -1375,7 +1424,7 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem18
             // 
             this.layoutControlItem18.Control = this.btnAgregar2;
-            this.layoutControlItem18.Location = new System.Drawing.Point(443, 24);
+            this.layoutControlItem18.Location = new System.Drawing.Point(471, 50);
             this.layoutControlItem18.MaxSize = new System.Drawing.Size(102, 26);
             this.layoutControlItem18.MinSize = new System.Drawing.Size(102, 26);
             this.layoutControlItem18.Name = "layoutControlItem18";
@@ -1387,7 +1436,7 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem19
             // 
             this.layoutControlItem19.Control = this.btnQuitar;
-            this.layoutControlItem19.Location = new System.Drawing.Point(443, 50);
+            this.layoutControlItem19.Location = new System.Drawing.Point(471, 76);
             this.layoutControlItem19.MaxSize = new System.Drawing.Size(102, 26);
             this.layoutControlItem19.MinSize = new System.Drawing.Size(102, 26);
             this.layoutControlItem19.Name = "layoutControlItem19";
@@ -1401,29 +1450,43 @@ namespace SisVentaDevExpress.Formularios
             this.lblPrecioVenta.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblPrecioVenta.AppearanceItemCaption.Font")));
             this.lblPrecioVenta.AppearanceItemCaption.Options.UseFont = true;
             this.lblPrecioVenta.Control = this.txtPrecioVenta;
-            this.lblPrecioVenta.Location = new System.Drawing.Point(264, 50);
+            this.lblPrecioVenta.Location = new System.Drawing.Point(281, 76);
+            this.lblPrecioVenta.MaxSize = new System.Drawing.Size(190, 26);
+            this.lblPrecioVenta.MinSize = new System.Drawing.Size(190, 26);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
-            this.lblPrecioVenta.Size = new System.Drawing.Size(179, 26);
+            this.lblPrecioVenta.Size = new System.Drawing.Size(190, 26);
+            this.lblPrecioVenta.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lblPrecioVenta.Tag = "";
             resources.ApplyResources(this.lblPrecioVenta, "lblPrecioVenta");
             this.lblPrecioVenta.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.lblPrecioVenta.TextSize = new System.Drawing.Size(88, 16);
             this.lblPrecioVenta.TextToControlDistance = 5;
             // 
-            // cbComprobante
+            // layoutControlItem16
             // 
-            resources.ApplyResources(this.cbComprobante, "cbComprobante");
-            this.cbComprobante.FormattingEnabled = true;
-            this.cbComprobante.Items.AddRange(new object[] {
-            resources.GetString("cbComprobante.Items"),
-            resources.GetString("cbComprobante.Items1"),
-            resources.GetString("cbComprobante.Items2")});
-            this.cbComprobante.Name = "cbComprobante";
+            this.layoutControlItem16.Control = this.btnRefescarArticulo;
+            this.layoutControlItem16.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem16.MaxSize = new System.Drawing.Size(88, 26);
+            this.layoutControlItem16.MinSize = new System.Drawing.Size(88, 26);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(88, 26);
+            this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem16.TextVisible = false;
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(88, 24);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(712, 26);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // dtFechaIngreso
             // 
             resources.ApplyResources(this.dtFechaIngreso, "dtFechaIngreso");
             this.dtFechaIngreso.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtFechaIngreso.CalendarMonthBackground = System.Drawing.Color.White;
             this.dtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaIngreso.Name = "dtFechaIngreso";
             // 
@@ -1457,15 +1520,52 @@ namespace SisVentaDevExpress.Formularios
             this.btnGuardar.StyleController = this.layoutControl4;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtSerie
-            // 
-            resources.ApplyResources(this.txtSerie, "txtSerie");
-            this.txtSerie.Name = "txtSerie";
-            // 
             // txtidIngresos
             // 
             resources.ApplyResources(this.txtidIngresos, "txtidIngresos");
             this.txtidIngresos.Name = "txtidIngresos";
+            // 
+            // cbComprobante
+            // 
+            resources.ApplyResources(this.cbComprobante, "cbComprobante");
+            this.cbComprobante.Name = "cbComprobante";
+            this.cbComprobante.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbComprobante.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cbComprobante.Properties.Appearance.Font")));
+            this.cbComprobante.Properties.Appearance.Options.UseBackColor = true;
+            this.cbComprobante.Properties.Appearance.Options.UseFont = true;
+            this.cbComprobante.Properties.Appearance.Options.UseTextOptions = true;
+            this.cbComprobante.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cbComprobante.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.cbComprobante.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("cbComprobante.Properties.Buttons"))))});
+            this.cbComprobante.Properties.Items.AddRange(new object[] {
+            resources.GetString("cbComprobante.Properties.Items")});
+            this.cbComprobante.Properties.ReadOnly = true;
+            this.cbComprobante.StyleController = this.layoutControl4;
+            // 
+            // txtSerie
+            // 
+            resources.ApplyResources(this.txtSerie, "txtSerie");
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSerie.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtSerie.Properties.Appearance.Font")));
+            this.txtSerie.Properties.Appearance.Options.UseBackColor = true;
+            this.txtSerie.Properties.Appearance.Options.UseFont = true;
+            this.txtSerie.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.txtSerie.Properties.Mask.EditMask = resources.GetString("txtSerie.Properties.Mask.EditMask");
+            this.txtSerie.Properties.Mask.MaskType = ((DevExpress.XtraEditors.Mask.MaskType)(resources.GetObject("txtSerie.Properties.Mask.MaskType")));
+            this.txtSerie.StyleController = this.layoutControl4;
+            // 
+            // txtNDocumento
+            // 
+            resources.ApplyResources(this.txtNDocumento, "txtNDocumento");
+            this.txtNDocumento.Name = "txtNDocumento";
+            this.txtNDocumento.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNDocumento.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtNDocumento.Properties.Appearance.Font")));
+            this.txtNDocumento.Properties.Appearance.Options.UseBackColor = true;
+            this.txtNDocumento.Properties.Appearance.Options.UseFont = true;
+            this.txtNDocumento.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.txtNDocumento.StyleController = this.layoutControl4;
             // 
             // layoutControlGroup3
             // 
@@ -1477,17 +1577,18 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem3,
             this.layoutControlItem15,
             this.lblTrabajador,
-            this.lblComprobante,
             this.lblProveedor,
             this.lblFechaIngreso,
-            this.lblSerie,
             this.lblidTrabajador,
             this.layoutControlItem12,
             this.emptySpaceItem5,
-            this.lblCorrelativo,
             this.emptySpaceItem1,
             this.lblIVA,
-            this.emptySpaceItem10});
+            this.emptySpaceItem10,
+            this.lblComprobante,
+            this.lblSerie,
+            this.emptySpaceItem6,
+            this.lblCorrelativo});
             this.layoutControlGroup3.Name = "Root";
             this.layoutControlGroup3.Size = new System.Drawing.Size(867, 405);
             this.layoutControlGroup3.TextVisible = false;
@@ -1519,18 +1620,18 @@ namespace SisVentaDevExpress.Formularios
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.groupBox2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 78);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 80);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(847, 92);
+            this.layoutControlItem3.Size = new System.Drawing.Size(847, 105);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.gridControlDetalleIngreso;
-            this.layoutControlItem15.Location = new System.Drawing.Point(0, 170);
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 185);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(847, 175);
+            this.layoutControlItem15.Size = new System.Drawing.Size(847, 160);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
@@ -1547,20 +1648,6 @@ namespace SisVentaDevExpress.Formularios
             this.lblTrabajador.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.lblTrabajador, "lblTrabajador");
             this.lblTrabajador.TextSize = new System.Drawing.Size(96, 16);
-            // 
-            // lblComprobante
-            // 
-            this.lblComprobante.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblComprobante.AppearanceItemCaption.Font")));
-            this.lblComprobante.AppearanceItemCaption.Options.UseFont = true;
-            this.lblComprobante.Control = this.cbComprobante;
-            this.lblComprobante.Location = new System.Drawing.Point(0, 52);
-            this.lblComprobante.MaxSize = new System.Drawing.Size(297, 26);
-            this.lblComprobante.MinSize = new System.Drawing.Size(297, 26);
-            this.lblComprobante.Name = "lblComprobante";
-            this.lblComprobante.Size = new System.Drawing.Size(297, 26);
-            this.lblComprobante.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.lblComprobante, "lblComprobante");
-            this.lblComprobante.TextSize = new System.Drawing.Size(96, 16);
             // 
             // lblProveedor
             // 
@@ -1589,22 +1676,6 @@ namespace SisVentaDevExpress.Formularios
             this.lblFechaIngreso.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.lblFechaIngreso, "lblFechaIngreso");
             this.lblFechaIngreso.TextSize = new System.Drawing.Size(96, 16);
-            // 
-            // lblSerie
-            // 
-            this.lblSerie.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblSerie.AppearanceItemCaption.Font")));
-            this.lblSerie.AppearanceItemCaption.Options.UseFont = true;
-            this.lblSerie.Control = this.txtSerie;
-            this.lblSerie.Location = new System.Drawing.Point(297, 52);
-            this.lblSerie.MaxSize = new System.Drawing.Size(147, 26);
-            this.lblSerie.MinSize = new System.Drawing.Size(147, 26);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(147, 26);
-            this.lblSerie.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.lblSerie, "lblSerie");
-            this.lblSerie.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.lblSerie.TextSize = new System.Drawing.Size(38, 16);
-            this.lblSerie.TextToControlDistance = 5;
             // 
             // lblidTrabajador
             // 
@@ -1640,29 +1711,13 @@ namespace SisVentaDevExpress.Formularios
             this.emptySpaceItem5.Size = new System.Drawing.Size(472, 40);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // lblCorrelativo
-            // 
-            this.lblCorrelativo.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblCorrelativo.AppearanceItemCaption.Font")));
-            this.lblCorrelativo.AppearanceItemCaption.Options.UseFont = true;
-            this.lblCorrelativo.Control = this.txtNDocumento;
-            this.lblCorrelativo.Location = new System.Drawing.Point(444, 52);
-            this.lblCorrelativo.MaxSize = new System.Drawing.Size(204, 26);
-            this.lblCorrelativo.MinSize = new System.Drawing.Size(204, 26);
-            this.lblCorrelativo.Name = "lblCorrelativo";
-            this.lblCorrelativo.Size = new System.Drawing.Size(204, 26);
-            this.lblCorrelativo.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.lblCorrelativo, "lblCorrelativo");
-            this.lblCorrelativo.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.lblCorrelativo.TextSize = new System.Drawing.Size(97, 16);
-            this.lblCorrelativo.TextToControlDistance = 5;
-            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(648, 52);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(698, 52);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(199, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(149, 28);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -1692,8 +1747,57 @@ namespace SisVentaDevExpress.Formularios
             this.emptySpaceItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // lblComprobante
+            // 
+            this.lblComprobante.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblComprobante.AppearanceItemCaption.Font")));
+            this.lblComprobante.AppearanceItemCaption.Options.UseFont = true;
+            this.lblComprobante.Control = this.cbComprobante;
+            this.lblComprobante.Location = new System.Drawing.Point(0, 52);
+            this.lblComprobante.Name = "lblComprobante";
+            this.lblComprobante.Size = new System.Drawing.Size(297, 28);
+            resources.ApplyResources(this.lblComprobante, "lblComprobante");
+            this.lblComprobante.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.lblComprobante.TextSize = new System.Drawing.Size(92, 16);
+            this.lblComprobante.TextToControlDistance = 5;
+            // 
+            // lblSerie
+            // 
+            this.lblSerie.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblSerie.AppearanceItemCaption.Font")));
+            this.lblSerie.AppearanceItemCaption.Options.UseFont = true;
+            this.lblSerie.Control = this.txtSerie;
+            this.lblSerie.Location = new System.Drawing.Point(352, 52);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(173, 28);
+            resources.ApplyResources(this.lblSerie, "lblSerie");
+            this.lblSerie.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.lblSerie.TextSize = new System.Drawing.Size(38, 16);
+            this.lblSerie.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem6
+            // 
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.Location = new System.Drawing.Point(297, 52);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(55, 28);
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // lblCorrelativo
+            // 
+            this.lblCorrelativo.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("lblCorrelativo.AppearanceItemCaption.Font")));
+            this.lblCorrelativo.AppearanceItemCaption.Options.UseFont = true;
+            this.lblCorrelativo.Control = this.txtNDocumento;
+            this.lblCorrelativo.Location = new System.Drawing.Point(525, 52);
+            this.lblCorrelativo.Name = "lblCorrelativo";
+            this.lblCorrelativo.Size = new System.Drawing.Size(173, 28);
+            resources.ApplyResources(this.lblCorrelativo, "lblCorrelativo");
+            this.lblCorrelativo.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.lblCorrelativo.TextSize = new System.Drawing.Size(97, 16);
+            this.lblCorrelativo.TextToControlDistance = 5;
+            // 
             // layoutControlGroup2
             // 
+            this.layoutControlGroup2.BackgroundImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("layoutControlGroup2.BackgroundImageOptions.Image")));
+            this.layoutControlGroup2.BackgroundImageOptions.Visible = true;
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -1711,27 +1815,23 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
             // lblTituloIngresos
             // 
+            this.lblTituloIngresos.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lblTituloIngresos, "lblTituloIngresos");
             this.lblTituloIngresos.ForeColor = System.Drawing.Color.Blue;
             this.lblTituloIngresos.Name = "lblTituloIngresos";
             // 
             // Root
             // 
+            this.Root.BackgroundImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Root.BackgroundImageOptions.Image")));
+            this.Root.BackgroundImageOptions.Visible = true;
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem14,
             this.emptySpaceItem2,
-            this.layoutControlItem1,
-            this.layoutControlItem2});
+            this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(935, 554);
             this.Root.TextVisible = false;
@@ -1748,9 +1848,9 @@ namespace SisVentaDevExpress.Formularios
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(367, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(263, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(548, 50);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(652, 50);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -1765,18 +1865,6 @@ namespace SisVentaDevExpress.Formularios
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.pictureBox1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(263, 0);
-            this.layoutControlItem2.MaxSize = new System.Drawing.Size(104, 50);
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(104, 50);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(104, 50);
-            this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
             // btnAgregar1
             // 
             resources.ApplyResources(this.btnAgregar1, "btnAgregar1");
@@ -1790,6 +1878,7 @@ namespace SisVentaDevExpress.Formularios
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_Ingresos";
@@ -1820,7 +1909,6 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
             this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtIVA.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNDocumento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbTrabajador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpCollectionTrabajador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -1849,31 +1937,35 @@ namespace SisVentaDevExpress.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblPrecioVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbComprobante.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSerie.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNDocumento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTrabajador)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblComprobante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProveedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFechaIngreso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblSerie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblidTrabajador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblCorrelativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblIVA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblComprobante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblSerie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblCorrelativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkDetalleIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcon)).EndInit();
             this.ResumeLayout(false);
@@ -1885,10 +1977,8 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTituloIngresos;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
@@ -1911,21 +2001,17 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraLayout.LayoutControl layoutControl3;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraLayout.LayoutControl layoutControl4;
-        private System.Windows.Forms.ComboBox cbComprobante;
         private System.Windows.Forms.DateTimePicker dtFechaIngreso;
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraEditors.SimpleButton btnGuardarCambios;
         private DevExpress.XtraEditors.SimpleButton btnGuardar;
-        private System.Windows.Forms.MaskedTextBox txtSerie;
         private System.Windows.Forms.TextBox txtidIngresos;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem lblidTrabajador;
-        private DevExpress.XtraLayout.LayoutControlItem lblSerie;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem lblFechaIngreso;
-        private DevExpress.XtraLayout.LayoutControlItem lblComprobante;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
@@ -1993,11 +2079,19 @@ namespace SisVentaDevExpress.Formularios
         private DevExpress.XtraLayout.LayoutControlItem lblPrecioVenta;
         private DevExpress.XtraGrid.Columns.GridColumn colSubtotal1;
         private DevExpress.XtraGrid.Columns.GridColumn colTotal;
-        private DevExpress.XtraEditors.TextEdit txtNDocumento;
-        private DevExpress.XtraLayout.LayoutControlItem lblCorrelativo;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.TextEdit txtIVA;
         private DevExpress.XtraLayout.LayoutControlItem lblIVA;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
+        private DevExpress.XtraEditors.SimpleButton btnRefescarArticulo;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraEditors.ComboBoxEdit cbComprobante;
+        private DevExpress.XtraLayout.LayoutControlItem lblComprobante;
+        private DevExpress.XtraEditors.TextEdit txtSerie;
+        private DevExpress.XtraLayout.LayoutControlItem lblSerie;
+        private DevExpress.XtraEditors.TextEdit txtNDocumento;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
+        private DevExpress.XtraLayout.LayoutControlItem lblCorrelativo;
     }
 }

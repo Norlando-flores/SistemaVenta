@@ -46,11 +46,11 @@ namespace SisVentaDevExpress.Ventas
             get { return fPrecio_Venta; }
             set { SetPropertyValue<decimal>(nameof(Precio_Venta), ref fPrecio_Venta, value); }
         }
-        int fDescuento;
-        public int Descuento
+        decimal fDescuento;
+        public decimal Descuento
         {
             get { return fDescuento; }
-            set { SetPropertyValue<int>(nameof(Descuento), ref fDescuento, value); }
+            set { SetPropertyValue<decimal>(nameof(Descuento), ref fDescuento, value); }
         }
         decimal fTotal;
         public decimal Total
@@ -65,6 +65,24 @@ namespace SisVentaDevExpress.Ventas
         {
             get { return fIdArticulo; }
             set { SetPropertyValue<Articulo>(nameof(IdArticulo), ref fIdArticulo, value); }
+        }
+        decimal fSubTotal;
+        public decimal SubTotal
+        {
+            get { return fSubTotal; }
+            set { SetPropertyValue<decimal>(nameof(SubTotal), ref fSubTotal, value); }
+        }
+        decimal fIVA;
+        public decimal IVA
+        {
+            get { return fIVA; }
+            set { SetPropertyValue<decimal>(nameof(IVA), ref fIVA, value); }
+        }
+        int fDescuentoP;
+        public int DescuentoP
+        {
+            get { return fDescuentoP; }
+            set { SetPropertyValue<int>(nameof(DescuentoP), ref fDescuentoP, value); }
         }
     }
 

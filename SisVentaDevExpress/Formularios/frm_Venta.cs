@@ -68,7 +68,6 @@ namespace SisVentaDevExpress.Formularios
             this.sbTrabajador.Text = string.Empty;
             this.sbCliente.Text = string.Empty;
             this.dtFechaventa.Value = DateTime.Today;
-            this.txtIGV.Text = string.Empty;
             this.cbComprobante.Text = "FACTURA";
             this.txtSerie.Text = string.Empty;
             this.txtCorrelativo.Text = string.Empty; 
@@ -81,11 +80,12 @@ namespace SisVentaDevExpress.Formularios
             this.txtIdDetalleVenta.Text = string.Empty;
             this.txtIdDetalle.Text = string.Empty;
             this.sbArticulo.Text = string.Empty;
-            this.txtPrecioVenta.Text = string.Empty;
-            this.txtstockActual.Text = string.Empty;
-            this.txtCantidad.Text = string.Empty;
-            this.txtDescuento.Text = string.Empty;
-            this.txtPrescioTotal.Text = string.Empty;
+            this.txtPrecioVenta.Text = "0";
+            this.txtstockActual.Text = "0";
+            this.txtCantidad.Text = "0";
+            this.txtDescuento.Text = "0";
+            this.txtPrescioTotal.Text = "0";
+            this.txtIVA.Text = "0";
         }
         //Habilitar los controles del Formuario
         private void Habilitar(bool valor)
@@ -95,20 +95,15 @@ namespace SisVentaDevExpress.Formularios
             this.sbTrabajador.ReadOnly = !valor;
             this.sbCliente.ReadOnly = !valor;
             this.dtFechaventa.Enabled = valor;
-            this.txtIGV.ReadOnly = !valor;
             this.cbComprobante.Enabled = valor;
             this.txtSerie.ReadOnly = !valor;
-            this.txtCorrelativo.ReadOnly = !valor;
       
             //Bloquea los campo del detalle venta
             this.txtIdDetalleVenta.ReadOnly = !valor;
             this.txtIdDetalle.ReadOnly = !valor;
             this.sbArticulo.Enabled = valor;
-            //this.txtPrecioVenta.ReadOnly = !valor;
-            //this.txtstockActual.ReadOnly = !valor;
             this.txtCantidad.ReadOnly = !valor;
             this.txtDescuento.ReadOnly = !valor;
-            //this.txtPrescioTotal.ReadOnly = !valor;
 
         }
         //Habilitar los botones
@@ -199,19 +194,20 @@ namespace SisVentaDevExpress.Formularios
             }
 
         }
-        public void Calcular()
+
+            public void Calcular()
         {
 
             if (txtCantidad.Text.Trim().Length == 0 )
             {
-                txtDescuento.Text = string.Empty;
+                txtDescuento.Text = "0";
                 txtPrescioTotal.Text = "0";
                 return;
             }
             else if (txtDescuento.Text.Trim().Length == 0)
             {
                 double c = Convert.ToDouble(txtCantidad.Text);
-                double p = Convert.ToDouble(txtPrecioVenta.Text);                
+                double p = Convert.ToDouble(txtPrecioVenta.Text);
                 txtPrescioTotal.Text = (c * p).ToString();
                 return;
             }
@@ -231,7 +227,7 @@ namespace SisVentaDevExpress.Formularios
             if (this.IsNuevo)
             {
                 Articulo d = (Articulo)gridviewArticulo.GetFocusedRow();
-                txtstockActual.Text = Convert.ToString(d.Existencia);              
+                txtstockActual.Text = Convert.ToString(d.Existencia);
                 txtPrecioVenta.Text = Convert.ToString(d.PrecioVenta);
                 txtIdDetalle.Text = Convert.ToString(d.IdArticulos);
                 this.txtCantidad.ReadOnly = false;
@@ -241,13 +237,37 @@ namespace SisVentaDevExpress.Formularios
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
-        {          
-            Calcular();
+        {
+            if (txtCantidad.Text.Trim().Length == 0)
+            {
+                txtPrescioTotal.Text = "0";
+                return;
+            }
+            else
+            {
+                double c = Convert.ToDouble(txtCantidad.Text);
+                double p = Convert.ToDouble(txtPrecioVenta.Text);
+                double r = p * c;
+                txtPrescioTotal.Text = (r).ToString();
+            }
+            //Calcular();
         }
 
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
-            Calcular();
+            if (txtDescuento.Text.Trim().Length == 0)
+            {
+                txtCalculoDescuento.Text = "0";
+                return;
+            }
+            else
+            {
+                decimal c = Convert.ToDecimal(txtDescuento.Text);
+                decimal p = Convert.ToDecimal(txtPrescioTotal.Text);
+                decimal r = (p * c)/100;
+                txtCalculoDescuento.Text = (r).ToString();
+            }
+            //Calcular();
         }
 
         private void frm_Venta_Load(object sender, EventArgs e)
@@ -271,7 +291,7 @@ namespace SisVentaDevExpress.Formularios
                 venta = new Venta(unitOfWorkVentas);
 
                 gridControlDetalleVenta.DataSource = venta.Detalle_ventas;
-                
+                   
             }
             this.IsNuevo = true;
             this.IsEditar = false;
@@ -280,27 +300,36 @@ namespace SisVentaDevExpress.Formularios
             this.Habilitar(true);
             this.txtCantidad.ReadOnly = true;
             this.txtDescuento.ReadOnly = true;
+            this.btnAgregar1.Text = "Agregar";
             tabControl1.SelectedIndex = 1;
             this.sbTrabajador.Focus();
         }
         private void btnEditar1_Click(object sender, EventArgs e)
         {
-            venta_editar = (Venta)dataListado.GetFocusedRow();
-            this.txtidVenta.Text = venta_editar.IdVenta.ToString();
-            this.sbTrabajador.Text = (venta_editar.IdTrabajador).IdTrabajador.ToString();
-            this.sbCliente.Text = (venta_editar.IdCliente).IdCliente.ToString();
-            this.dtFechaventa.Value = venta_editar.Fecha;
-            this.txtIGV.Text = venta_editar.IGV.ToString();
-            this.cbComprobante.Text = venta_editar.Tipo_Comprobante.ToString();
-            this.txtSerie.Text = venta_editar.Serie.ToString();
-            this.txtCorrelativo.Text = venta_editar.Correlativo.ToString();
-            gridControlDetalleVenta.DataSource = venta_editar.Detalle_ventas;
-            this.sbTrabajador.Focus();
+            Venta venta = (Venta)dataListado.GetFocusedRow();
+            if (venta == null)
+            {
+                MensajeError("Seleccione Venta a Editar");
+            }
+            else
+            {
+                venta_editar = (Venta)dataListado.GetFocusedRow();
+                this.txtidVenta.Text = venta_editar.IdVenta.ToString();
+                this.sbTrabajador.Text = (venta_editar.IdTrabajador).IdTrabajador.ToString();
+                this.sbCliente.Text = (venta_editar.IdCliente).IdCliente.ToString();
+                this.dtFechaventa.Value = venta_editar.Fecha;
+                this.cbComprobante.Text = venta_editar.Tipo_Comprobante.ToString();
+                this.txtSerie.Text = venta_editar.Serie.ToString();
+                this.txtCorrelativo.Text = venta_editar.NDocumento.ToString();
+                gridControlDetalleVenta.DataSource = venta_editar.Detalle_ventas;
+                this.sbTrabajador.Focus();
 
-            this.IsNuevo = false;
-            this.IsEditar = true;
-            tabControl1.SelectedIndex = 1;
-            this.Habilitar(true);
+                this.IsNuevo = false;
+                this.IsEditar = true;
+                this.btnAgregar1.Text = "Actualizar";
+                tabControl1.SelectedIndex = 1;
+                this.Habilitar(true);
+            }
         }
 
         private void btnImprimir1_Click(object sender, EventArgs e)
@@ -317,18 +346,27 @@ namespace SisVentaDevExpress.Formularios
 
                 if (opcion == DialogResult.OK)
                 {
-                    Venta venta = (Venta)dataListado.GetFocusedRow();
-                    venta.Delete();
 
-                    unitOfWorkVentas.CommitChanges();
-                    xpCollectionVenta.Reload();
-                    MessageBox.Show("Se elimino correctamente el rejistro");
+                    Venta venta = (Venta)dataListado.GetFocusedRow();
+                    if (venta == null)
+                    {
+                        MensajeError("Seleccione la Venta a eliminar");
+                    }
+                    else
+                    {
+                        venta.Delete();
+
+                        unitOfWorkVentas.CommitChanges();
+                        xpCollectionVenta.Reload();
+                        MessageBox.Show("Se elimino correctamente el rejistro");
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("El dato esta Siendo Ocupado", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            xpCollectionVenta.Reload();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -348,13 +386,6 @@ namespace SisVentaDevExpress.Formularios
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
                     errorIcon.SetError(sbTrabajador, "Seleccione el Trabajador");
-                }
-                else if (this.txtIGV.Text == string.Empty)
-                {
-                    this.txtIGV.Focus();
-                    errorIcon.Clear();
-                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtIGV, "Ingrese Impuesto");
                 }
                 else if (this.txtCorrelativo.Text == string.Empty)
                 {
@@ -385,15 +416,16 @@ namespace SisVentaDevExpress.Formularios
                         venta.IdTrabajador = trabajador;
                         venta.IdCliente = cliente;
                         venta.Fecha = dtFechaventa.Value;
-                        venta.IGV = Convert.ToDecimal(txtIGV.Text);
                         venta.Tipo_Comprobante = cbComprobante.Text;
-                        venta.Serie = txtSerie.Text;
-                        venta.Correlativo = txtCorrelativo.Text;
-                        venta.SubTotal = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
-                        venta.TotalPagar = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) + (Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) * decimal.Parse(txtIGV.Text) / 100);// Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
+                        venta.Serie = txtSerie.Text.ToUpper();
+                        venta.NDocumento = txtCorrelativo.Text;
+                        venta.IVA = Convert.ToDecimal(colIVA2.SummaryItem.SummaryValue);
+                        venta.SubTotal= (Convert.ToDecimal(colSubTotal2.SummaryItem.SummaryValue) - Convert.ToDecimal(colDescuento2.SummaryItem.SummaryValue));
+                        venta.TotalPagar= Convert.ToDecimal(colTotal2.SummaryItem.SummaryValue);                        
                         venta.Save();
                         unitOfWorkVentas.CommitChanges();
                         xpCollectionVenta.Reload();
+                        xpCollectionNDocumento.Reload();
                         this.MensajeOk("Se a Guardado el Rejistro de Forma Correcta");
 
                         this.IsNuevo = true;
@@ -407,7 +439,7 @@ namespace SisVentaDevExpress.Formularios
                     this.IsNuevo = false;
                     this.IsEditar = false;
                     this.Botones();
-
+                    errorIcon.Clear();
                     tabControl1.SelectedIndex = 0;
                 }
             }
@@ -433,23 +465,23 @@ namespace SisVentaDevExpress.Formularios
                 venta.IdCliente = (Cliente)gridViewCliente.GetFocusedRow();
             }
 
-            //double p = Convert.ToDouble(colTotal.SummaryItem.SummaryValue);
-            //MensajeOk(p.ToString());
-
             venta.Fecha = dtFechaventa.Value;
-            venta.IGV = Convert.ToDecimal(txtIGV.Text);
             venta.Tipo_Comprobante = cbComprobante.Text;
-            venta.Serie = txtSerie.Text;
-            venta.Correlativo = txtCorrelativo.Text;
-            venta.SubTotal = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue);
-            venta.TotalPagar = Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) + (Convert.ToDecimal(colTotal.SummaryItem.SummaryValue) * decimal.Parse(txtIGV.Text) / 100);
+            venta.Serie = txtSerie.Text.ToUpper();
+            venta.NDocumento = txtCorrelativo.Text;
+            venta.IVA = Convert.ToDecimal(colIVA2.SummaryItem.SummaryValue);
+            venta.SubTotal = (Convert.ToDecimal(colSubTotal2.SummaryItem.SummaryValue) - Convert.ToDecimal(colDescuento2.SummaryItem.SummaryValue));
+            venta.TotalPagar = Convert.ToDecimal(colTotal2.SummaryItem.SummaryValue);
             venta.Save();
             unitOfWorkVentas.CommitChanges();
+            xpCollectionNDocumento.Reload();
             xpCollectionVenta.Reload();
+            
             Limpiar();
             this.MensajeOk("Se a Actualizo el Rejistro de Forma Correcta");
             this.Habilitar(false);
             tabControl1.SelectedIndex = 0;
+            xpCollectionTrabajador.Filter = CriteriaOperator.Parse("[Acceso] = ?", DatosDeAcceso.acceso);
             this.IsNuevo = false;
             this.IsEditar = false;
             this.Botones();
@@ -464,8 +496,10 @@ namespace SisVentaDevExpress.Formularios
             this.IsEditar = false;
             this.Habilitar(false);
             this.Limpiar();
+            this.LimpiarDetalles();         
             this.Mostrar();
             this.Botones();
+            errorIcon.Clear();
             tabControl1.SelectedIndex = 0;
         }
 
@@ -483,10 +517,10 @@ namespace SisVentaDevExpress.Formularios
 
                 else if (this.txtCantidad.Text == string.Empty)
                 {
-                    this.txtPrecioVenta.Focus();
+                    this.txtCantidad.Focus();
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtPrecioVenta, "Ingrese Cantidad");
+                    errorIcon.SetError(txtCantidad, "Ingrese Cantidad");
                 }
                 else if (this.txtDescuento.Text == string.Empty)
                 {
@@ -516,17 +550,20 @@ namespace SisVentaDevExpress.Formularios
                             detalleVenta.IdArticulo = (Articulo)gridviewArticulo.GetFocusedRow();
                             detalleVenta.Cantidad = Convert.ToInt32(txtCantidad.Text.Trim());
                             detalleVenta.Precio_Venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
-                            detalleVenta.Descuento = Convert.ToInt32(txtDescuento.Text.Trim());
-                            detalleVenta.Total = Convert.ToDecimal(txtPrescioTotal.Text.Trim());
+                            detalleVenta.Descuento = Convert.ToDecimal(txtCalculoDescuento.Text.Trim());
+                            detalleVenta.DescuentoP = Convert.ToInt32(txtDescuento.Text.Trim());
+                            detalleVenta.IVA= Convert.ToDecimal(txtIVA.Text.Trim());
+                            detalleVenta.SubTotal = Convert.ToDecimal(txtPrescioTotal.Text.Trim());
+                            detalleVenta.Total = (Convert.ToDecimal(txtPrescioTotal.Text) - Convert.ToDecimal(txtCalculoDescuento.Text)) + Convert.ToDecimal(txtIVA.Text);
                             detalleVenta.Save();
 
                             //unitOfWorkVentas.CommitChanges();
                             xpCollectionDetalleVenta.Reload();
                             venta.Detalle_ventas.Add(detalleVenta);
+                            checkEdit1.Checked = false;
                             this.MensajeOk("Articulo Adregado");
-
-
                             this.LimpiarDetalles();
+                            errorIcon.Clear();
                         }
                     }
                     else
@@ -545,8 +582,11 @@ namespace SisVentaDevExpress.Formularios
                             salidaactualizar();
                             detalle.Cantidad = Convert.ToInt32(txtCantidad.Text.Trim());
                             detalle.Precio_Venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
-                            detalle.Descuento = Convert.ToInt32(txtDescuento.Text.Trim());
-                            detalle.Total = Convert.ToDecimal(txtPrescioTotal.Text.Trim());
+                            detalle.Descuento = Convert.ToDecimal(txtCalculoDescuento.Text.Trim());
+                            detalle.DescuentoP = Convert.ToInt32(txtDescuento.Text.Trim());
+                            detalle.IVA = Convert.ToDecimal(txtIVA.Text.Trim());
+                            detalle.SubTotal = Convert.ToDecimal(txtPrescioTotal.Text.Trim());
+                            detalle.Total = (Convert.ToDecimal(txtPrescioTotal.Text) - Convert.ToDecimal(txtCalculoDescuento.Text)) + Convert.ToDecimal(txtIVA.Text);
 
                             detalle.Save();
                             
@@ -554,9 +594,10 @@ namespace SisVentaDevExpress.Formularios
                            // unitOfWorkVentas.CommitChanges();
                             xpCollectionDetalleVenta.Reload();
                             LimpiarDetalles();
-                            this.MensajeOk("Se a Actualizo el Rejistro de Forma Correcta");                            
-                            
+                            this.MensajeOk("Se a Actualizo el Rejistro de Forma Correcta");
+                            checkEdit1.Checked = false;
                             this.LimpiarDetalles();
+                            errorIcon.Clear();
                         }
                     }
                 }
@@ -570,7 +611,8 @@ namespace SisVentaDevExpress.Formularios
 
         private void gridControlDetalleVenta_DoubleClick(object sender, EventArgs e)
         {
-            
+           
+
             detalle_editar = (Detalle_venta)dataListadoDetalle.GetFocusedRow();
             this.sbArticulo.Text = (detalle_editar.IdArticulo).IdArticulos.ToString();
             venta_editar = (Venta)dataListado.GetFocusedRow();
@@ -579,15 +621,20 @@ namespace SisVentaDevExpress.Formularios
             this.txtPrecioVenta.Text = detalle_editar.Precio_Venta.ToString();
             this.txtstockActual.Text = detalle_editar.IdArticulo.Existencia.ToString();
             this.txtCantidad.Text = detalle_editar.Cantidad.ToString();
-            this.txtDescuento.Text = detalle_editar.Descuento.ToString();
-            this.txtPrescioTotal.Text = detalle_editar.Total.ToString();
+            this.txtDescuento.Text = detalle_editar.DescuentoP.ToString();
+            this.txtCalculoDescuento.Text = detalle_editar.Descuento.ToString();
+            this.txtPrescioTotal.Text = detalle_editar.SubTotal.ToString();
+
+            if (txtIVA.Text=="0,00")
+            {
+                checkEdit1.Checked = false;
+            }
+            else
+            {
+                checkEdit1.Checked = true;
+            }
             //salidaactualizar();
             this.sbArticulo.Focus();
-        }
-
-        private void txtCantidad_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -618,6 +665,7 @@ namespace SisVentaDevExpress.Formularios
                         di.Delete();
                         detalle_editar = (Detalle_venta)dataListadoDetalle.GetFocusedRow();
                         this.Mostrar();
+                        errorIcon.Clear();
                         xpCollectionArticulo.Reload();
 
                        
@@ -671,7 +719,68 @@ namespace SisVentaDevExpress.Formularios
             l.ShowDialog();
         }
 
-        private void gridControlDetalleVenta_Click(object sender, EventArgs e)
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkEdit1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEdit1.Checked == true)
+            {
+                txtIVA.Text = ((decimal.Parse(txtPrescioTotal.Text) * 15) / 100).ToString();
+            }
+            else
+            {
+                txtIVA.Text = "0";
+            }
+        }
+
+        private void txtSerie_EditValueChanged(object sender, EventArgs e)
+        {
+            xpCollectionNDocumento.Filter = CriteriaOperator.Parse("[Serie] = ?", txtSerie.Text);
+            if (this.IsNuevo)
+            {
+                if (xpCollectionNDocumento.Count < 9)
+            {
+                this.txtCorrelativo.Text = $"0000{Convert.ToInt32(xpCollectionNDocumento.Count) + 1}";
+            }
+            else if (xpCollectionNDocumento.Count < 99 )
+            {
+                this.txtCorrelativo.Text = $"000{Convert.ToInt32(xpCollectionNDocumento.Count) + 1}";
+            }
+            else if (xpCollectionNDocumento.Count < 999)
+            {
+                this.txtCorrelativo.Text = $"00{Convert.ToInt32(xpCollectionNDocumento.Count) + 1}";
+            }
+            else if (xpCollectionNDocumento.Count < 9999)
+            {
+                this.txtCorrelativo.Text = $"0{Convert.ToInt32(xpCollectionNDocumento.Count) + 1}";
+            }
+        }
+            if (this.IsEditar)
+            {
+                if (xpCollectionNDocumento.Count < 9)
+                {
+                    this.txtCorrelativo.Text = $"0000{Convert.ToInt32(xpCollectionNDocumento.Count)}";
+                }
+                else if (xpCollectionNDocumento.Count >= 10)
+                {
+                    this.txtCorrelativo.Text = $"000{Convert.ToInt32(xpCollectionNDocumento.Count)}";
+                }
+                else if (xpCollectionNDocumento.Count >= 100)
+                {
+                    this.txtCorrelativo.Text = $"00{Convert.ToInt32(xpCollectionNDocumento.Count)}";
+                }
+                else if (xpCollectionNDocumento.Count < 1000)
+                {
+                    this.txtCorrelativo.Text = $"0{Convert.ToInt32(xpCollectionNDocumento.Count)}";
+                }
+
+            }
+        }
+
+        private void txtIdDetalleVenta_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -97,6 +97,10 @@ namespace SisVentaDevExpress.Reportes
             this.pTipoComprovante = new DevExpress.XtraReports.Parameters.Parameter();
             this.pNumeroDocumento = new DevExpress.XtraReports.Parameters.Parameter();
             this.pFecha = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell25 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell26 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xpCollectionDetalleVenta = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -119,7 +123,7 @@ namespace SisVentaDevExpress.Reportes
             // 
             // xrPageInfo1
             // 
-            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(548.7301F, 0F);
+            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(722.9998F, 0F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPageInfo1.SizeF = new System.Drawing.SizeF(100F, 23F);
@@ -143,7 +147,7 @@ namespace SisVentaDevExpress.Reportes
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(650.0001F, 25F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(822.9999F, 25F);
             this.xrTable2.StylePriority.UseBorders = false;
             this.xrTable2.StylePriority.UseTextAlignment = false;
             this.xrTable2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -158,6 +162,8 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell15,
             this.xrTableCell16,
             this.xrTableCell17,
+            this.xrTableCell26,
+            this.xrTableCell13,
             this.xrTableCell18});
             this.xrTableRow2.Name = "xrTableRow2";
             this.xrTableRow2.Weight = 1D;
@@ -191,7 +197,7 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
             this.xrTableCell12.Text = "xrTableCell12";
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell12.Weight = 1.3488092870291351D;
+            this.xrTableCell12.Weight = 1.5361044185212587D;
             // 
             // xrTableCell14
             // 
@@ -202,7 +208,7 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell14.StylePriority.UseTextAlignment = false;
             this.xrTableCell14.Text = "xrTableCell14";
             this.xrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell14.Weight = 0.65208378377546627D;
+            this.xrTableCell14.Weight = 0.83637383904991314D;
             // 
             // xrTableCell15
             // 
@@ -211,7 +217,7 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
             this.xrTableCell15.Text = "xrTableCell15";
-            this.xrTableCell15.Weight = 0.78700556270777655D;
+            this.xrTableCell15.Weight = 0.86677973639634931D;
             // 
             // xrTableCell16
             // 
@@ -221,16 +227,16 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell16.Name = "xrTableCell16";
             this.xrTableCell16.Text = "xrTableCell16";
             this.xrTableCell16.TextFormatString = "{0:C$ 0.00}";
-            this.xrTableCell16.Weight = 0.81022155194427559D;
+            this.xrTableCell16.Weight = 1.193334683210864D;
             // 
             // xrTableCell17
             // 
             this.xrTableCell17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "([Precio_Venta]*[Cantidad])*[Descuento]/100")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Descuento]")});
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
             this.xrTableCell17.Text = "xrTableCell17";
-            this.xrTableCell17.Weight = 0.83447212793107572D;
+            this.xrTableCell17.Weight = 1.2306992081556314D;
             // 
             // xrTableCell18
             // 
@@ -240,7 +246,7 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.Text = "xrTableCell18";
             this.xrTableCell18.TextFormatString = "{0:C$ 0.00}";
-            this.xrTableCell18.Weight = 0.83447746850788485D;
+            this.xrTableCell18.Weight = 1.1644745520414221D;
             // 
             // ReportHeader
             // 
@@ -417,7 +423,7 @@ namespace SisVentaDevExpress.Reportes
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(648.7301F, 25F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(822.9999F, 25F);
             this.xrTable1.StylePriority.UseBackColor = false;
             this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseFont = false;
@@ -434,6 +440,8 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell6,
             this.xrTableCell9,
             this.xrTableCell7,
+            this.xrTableCell25,
+            this.xrTableCell4,
             this.xrTableCell8});
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.Weight = 1D;
@@ -457,42 +465,42 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Text = "Articulo";
-            this.xrTableCell3.Weight = 1.5490097704896115D;
+            this.xrTableCell3.Weight = 1.7591639269597652D;
             // 
             // xrTableCell5
             // 
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.Text = "U/M";
-            this.xrTableCell5.Weight = 0.74887075373258349D;
+            this.xrTableCell5.Weight = 0.95902375579228227D;
             // 
             // xrTableCell6
             // 
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.Text = "Cantidad";
-            this.xrTableCell6.Weight = 0.90381943947548D;
+            this.xrTableCell6.Weight = 0.99388582851254359D;
             // 
             // xrTableCell9
             // 
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.Text = "Precio Unitario";
-            this.xrTableCell9.Weight = 0.93047947396048958D;
+            this.xrTableCell9.Weight = 1.3683292186750438D;
             // 
             // xrTableCell7
             // 
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.Text = "Descuento";
-            this.xrTableCell7.Weight = 0.95833422064631169D;
+            this.xrTableCell7.Weight = 1.4111733804233579D;
             // 
             // xrTableCell8
             // 
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.Text = "Total";
-            this.xrTableCell8.Weight = 0.94374979422362237D;
+            this.xrTableCell8.Weight = 1.3352361062583618D;
             // 
             // xrLabel15
             // 
@@ -614,12 +622,12 @@ namespace SisVentaDevExpress.Reportes
             // 
             this.xrTable5.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable5.LocationFloat = new DevExpress.Utils.PointFloat(483.105F, 25F);
+            this.xrTable5.LocationFloat = new DevExpress.Utils.PointFloat(653.1251F, 25F);
             this.xrTable5.Name = "xrTable5";
             this.xrTable5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable5.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow5});
-            this.xrTable5.SizeF = new System.Drawing.SizeF(165.6251F, 25F);
+            this.xrTable5.SizeF = new System.Drawing.SizeF(169.8748F, 25F);
             this.xrTable5.StylePriority.UseBorders = false;
             // 
             // xrTableRow5
@@ -634,23 +642,21 @@ namespace SisVentaDevExpress.Reportes
             // 
             this.xrTableCell23.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell23.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[IdVenta].[IGV]")});
             this.xrTableCell23.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell23.Multiline = true;
             this.xrTableCell23.Name = "xrTableCell23";
             this.xrTableCell23.StylePriority.UseBorders = false;
             this.xrTableCell23.StylePriority.UseFont = false;
             this.xrTableCell23.StylePriority.UseTextAlignment = false;
-            this.xrTableCell23.Text = "IVA";
-            this.xrTableCell23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell23.Text = "I.V.A:";
+            this.xrTableCell23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrTableCell23.TextFormatString = "IVA({0}%)";
-            this.xrTableCell23.Weight = 1.5076385147752731D;
+            this.xrTableCell23.Weight = 1.3950913089398174D;
             // 
             // xrTableCell24
             // 
             this.xrTableCell24.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[IdVenta].[SubTotal]*[IdVenta].[IGV]/100")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[IdVenta].[IVA]")});
             this.xrTableCell24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell24.Multiline = true;
             this.xrTableCell24.Name = "xrTableCell24";
@@ -659,18 +665,18 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell24.Text = "xrTableCell20";
             this.xrTableCell24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell24.TextFormatString = "{0:C$ 0.00}";
-            this.xrTableCell24.Weight = 1.4846936862323523D;
+            this.xrTableCell24.Weight = 1.6740190132316568D;
             // 
             // xrTable4
             // 
             this.xrTable4.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(483.1051F, 0F);
+            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(653.1252F, 0F);
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow4});
-            this.xrTable4.SizeF = new System.Drawing.SizeF(166.895F, 25F);
+            this.xrTable4.SizeF = new System.Drawing.SizeF(169.8747F, 25F);
             this.xrTable4.StylePriority.UseBorders = false;
             // 
             // xrTableRow4
@@ -689,8 +695,8 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell21.StylePriority.UseFont = false;
             this.xrTableCell21.StylePriority.UseTextAlignment = false;
             this.xrTableCell21.Text = "SubTotal:";
-            this.xrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell21.Weight = 0.72497060800811286D;
+            this.xrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell21.Weight = 0.67085284806874934D;
             // 
             // xrTableCell22
             // 
@@ -704,18 +710,18 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell22.Text = "xrTableCell20";
             this.xrTableCell22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell22.TextFormatString = "{0:C$ 0.00}";
-            this.xrTableCell22.Weight = 0.72497532538357556D;
+            this.xrTableCell22.Weight = 0.80498015967695857D;
             // 
             // xrTable3
             // 
             this.xrTable3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(483.105F, 50F);
+            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(653.1249F, 50F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow3});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(166.8949F, 25F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(169.8749F, 25F);
             this.xrTable3.StylePriority.UseBorders = false;
             // 
             // xrTableRow3
@@ -734,8 +740,8 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell19.StylePriority.UseFont = false;
             this.xrTableCell19.StylePriority.UseTextAlignment = false;
             this.xrTableCell19.Text = "Total :";
-            this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell19.Weight = 1.007665088106283D;
+            this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell19.Weight = 0.93244586693934006D;
             // 
             // xrTableCell20
             // 
@@ -749,7 +755,7 @@ namespace SisVentaDevExpress.Reportes
             this.xrTableCell20.Text = "xrTableCell20";
             this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell20.TextFormatString = "{0:C$ 0.00}";
-            this.xrTableCell20.Weight = 1.0076683236882027D;
+            this.xrTableCell20.Weight = 1.118872377513795D;
             // 
             // pSerie
             // 
@@ -800,6 +806,37 @@ namespace SisVentaDevExpress.Reportes
             this.pFecha.Type = typeof(System.DateTime);
             this.pFecha.ValueInfo = "2021-10-22";
             // 
+            // xrTableCell4
+            // 
+            this.xrTableCell4.Multiline = true;
+            this.xrTableCell4.Name = "xrTableCell4";
+            this.xrTableCell4.Text = "I.V.A";
+            this.xrTableCell4.Weight = 1.1127549795797092D;
+            // 
+            // xrTableCell13
+            // 
+            this.xrTableCell13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[IVA]")});
+            this.xrTableCell13.Multiline = true;
+            this.xrTableCell13.Name = "xrTableCell13";
+            this.xrTableCell13.Text = "xrTableCell13";
+            this.xrTableCell13.Weight = 0.970445666283615D;
+            // 
+            // xrTableCell25
+            // 
+            this.xrTableCell25.Multiline = true;
+            this.xrTableCell25.Name = "xrTableCell25";
+            this.xrTableCell25.Text = "Sub Total";
+            this.xrTableCell25.Weight = 1.5043908152542886D;
+            // 
+            // xrTableCell26
+            // 
+            this.xrTableCell26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SubTotal]")});
+            this.xrTableCell26.Multiline = true;
+            this.xrTableCell26.Name = "xrTableCell26";
+            this.xrTableCell26.Weight = 1.3119955280729654D;
+            // 
             // xpCollectionDetalleVenta
             // 
             this.xpCollectionDetalleVenta.ObjectType = typeof(SisVentaDevExpress.Ventas.Detalle_venta);
@@ -817,6 +854,7 @@ namespace SisVentaDevExpress.Reportes
             this.xpCollectionDetalleVenta});
             this.DataSource = this.xpCollectionDetalleVenta;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Margins = new System.Drawing.Printing.Margins(12, 15, 100, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pSerie,
             this.pCorrelativo,
@@ -908,5 +946,9 @@ namespace SisVentaDevExpress.Reportes
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow4;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell21;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell22;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell26;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell13;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell25;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
     }
 }

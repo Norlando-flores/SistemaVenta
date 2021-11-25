@@ -117,8 +117,7 @@ namespace SisVentaDevExpress
                 {
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
                     errorIcon.SetError(txtNombre, "Ingrese un Nombre");
-                    
-                    
+                                        
                 }
                 else
                 {
@@ -138,6 +137,7 @@ namespace SisVentaDevExpress
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                     tabControl1.SelectedIndex = 0;
                 }
             }
@@ -155,8 +155,10 @@ namespace SisVentaDevExpress
 
                 if (this.txtNombre.Text == string.Empty)
                 {
-                    MensajeError("Seleccione el dato a modificar");
-                    tabControl1.SelectedIndex = 0;
+                    this.txtNombre.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtNombre, "Introdusca Categoria");
                 }
                 else
                 {
@@ -174,6 +176,7 @@ namespace SisVentaDevExpress
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                 }
             }
             catch (Exception ex)
@@ -185,13 +188,21 @@ namespace SisVentaDevExpress
 
         private void btnEditar1_Click(object sender, EventArgs e)
         {
-            categoria_editar = (Categoria)dataListado.GetFocusedRow();
-            txtCodigo.Text = categoria_editar.IdCategoria.ToString();
-            txtNombre.Text = categoria_editar.Nombre.ToString();
-            txtDescripcion.Text = categoria_editar.Descripcion.ToString();
-            tabControl1.SelectedIndex = 1;
-            this.txtNombre.Focus();
-            this.Habilitar(true);
+            Categoria categoria = (Categoria)dataListado.GetFocusedRow();
+            if (categoria == null)
+            {
+                MensajeError("Seleccione categoria a Editar");
+            }
+            else
+            {
+                categoria_editar = (Categoria)dataListado.GetFocusedRow();
+                txtCodigo.Text = categoria_editar.IdCategoria.ToString();
+                txtNombre.Text = categoria_editar.Nombre.ToString();
+                txtDescripcion.Text = categoria_editar.Descripcion.ToString();
+                tabControl1.SelectedIndex = 1;
+                this.txtNombre.Focus();
+                this.Habilitar(true);
+            }
         }
 
         private void btnEliminar1_Click(object sender, EventArgs e)
@@ -203,12 +214,19 @@ namespace SisVentaDevExpress
 
                 if (opcion == DialogResult.OK)
                 {
-                    Categoria cate = (Categoria)dataListado.GetFocusedRow();
-                    cate.Delete();
-                    unitOfWorkCategoria.CommitChanges();
-                    xpCCategoria.Reload();
-                    this.MensajeOk("Se elimino Correctamente el rejistro");
-                    this.Mostrar();
+                    Categoria categoria = (Categoria)dataListado.GetFocusedRow();
+                    if (categoria == null)
+                    {
+                        MensajeError("Seleccione Eliminar a Editar");
+                    }
+                    else
+                    {
+                        categoria.Delete();
+                        unitOfWorkCategoria.CommitChanges();
+                        xpCCategoria.Reload();
+                        this.MensajeOk("Se elimino Correctamente el rejistro");
+                        this.Mostrar();
+                    }
                 }
             }
             catch (Exception ex)

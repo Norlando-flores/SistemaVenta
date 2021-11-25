@@ -40,15 +40,15 @@ namespace SisVentaDevExpress.Formularios
             this.txtURL.Text = string.Empty;
             this.txtCorreo.Text = string.Empty;
             this.txtidProveedor.Text = string.Empty;
-            this.cbSectorComercial.Text = string.Empty;
-            this.cbTipoDocumento.Text = string.Empty;
+            this.txtSectorComercial.Text = string.Empty;
+            this.cbTipoDocumento.Text = "RUC";
         }
         //Habilitar los controles del Formuario
         private void Habilitar(bool valor)
         {
             this.txtRazonSocial.ReadOnly = !valor;
             this.txtDireccion.ReadOnly = !valor;
-            this.cbSectorComercial.Enabled = valor;
+            this.txtSectorComercial.Enabled = valor;
             this.cbTipoDocumento.Enabled = valor;
             this.txtNumeroDocumento.ReadOnly = !valor;
             this.txtTelefono.ReadOnly = !valor;
@@ -99,11 +99,15 @@ namespace SisVentaDevExpress.Formularios
         {
             if (cbTipoDocumento.Text == "Cedula")
             {
-                txtNumeroDocumento.Mask = "000-000000-0000A";
+                txtNumeroDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+                txtNumeroDocumento.Properties.Mask.EditMask = "000-000000-0000A";
+                txtNumeroDocumento.Focus();
             }
             else
             {
-                txtNumeroDocumento.Mask = "";
+                txtNumeroDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+                txtNumeroDocumento.Properties.Mask.EditMask = "";
+                txtNumeroDocumento.Focus();
             }
         }
 
@@ -117,11 +121,19 @@ namespace SisVentaDevExpress.Formularios
                 if (opcion == DialogResult.OK)
                 {
                     Proveedor proveedor = (Proveedor)dataListado.GetFocusedRow();
-                    proveedor.Delete();
-                    unitOfWorkProveedor.CommitChanges();
-                    xpCollectionProveedor.Reload();
-                    this.MensajeOk("Se elimino Correctamente el rejistro");
-                    this.Mostrar();
+                    if (proveedor == null)
+                    {
+                        MensajeError("Seleccione Proveedor a Eliminar");
+                    }
+                    else
+                    {
+                        //Proveedor proveedor = (Proveedor)dataListado.GetFocusedRow();
+                        proveedor.Delete();
+                        unitOfWorkProveedor.CommitChanges();
+                        xpCollectionProveedor.Reload();
+                        this.MensajeOk("Se elimino Correctamente el rejistro");
+                        this.Mostrar();
+                    }
                 }
             }
             catch (Exception ex)
@@ -151,14 +163,14 @@ namespace SisVentaDevExpress.Formularios
                 {
                     this.txtRazonSocial.Focus();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtRazonSocial, "Ingrese un valor");
+                    errorIcon.SetError(txtRazonSocial, "Ingrese la Razon Social");
                 }
-                else if (this.cbSectorComercial.Text == string.Empty)
+                else if (this.txtSectorComercial.Text == string.Empty)
                 {
-                    this.cbSectorComercial.Focus();
+                    this.txtSectorComercial.Focus();
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(cbSectorComercial, "Seleccioone un valor");
+                    errorIcon.SetError(txtSectorComercial, "Sector Comercial");
                 }
 
                 else if (this.cbTipoDocumento.Text == string.Empty)
@@ -166,7 +178,7 @@ namespace SisVentaDevExpress.Formularios
                     this.cbTipoDocumento.Focus();
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(cbTipoDocumento, "Seleccione un valor");
+                    errorIcon.SetError(cbTipoDocumento, "Seleccione Tipo de Documento");
                 }
 
                 else if (this.txtNumeroDocumento.Text == string.Empty)
@@ -174,7 +186,7 @@ namespace SisVentaDevExpress.Formularios
                     this.txtNumeroDocumento.Focus();
                     errorIcon.Clear();
                     MensajeError("Falta Ingresar algunos datos, seran Remarcados");
-                    errorIcon.SetError(txtNumeroDocumento, "Ingrese un Dato");
+                    errorIcon.SetError(txtNumeroDocumento, "Ingrese Numero de Documento");
                 }
                 else if (this.txtDireccion.Text == string.Empty)
                 {
@@ -197,7 +209,7 @@ namespace SisVentaDevExpress.Formularios
                     {
                         Proveedor proveedor = new Proveedor(unitOfWorkProveedor);
                         proveedor.Razon_Social = txtRazonSocial.Text;
-                        proveedor.Sector_Comercial = cbSectorComercial.Text.ToString();
+                        proveedor.Sector_Comercial = txtSectorComercial.Text.ToString();
                         proveedor.Tipo_Documento = cbTipoDocumento.Text.ToString();
                         proveedor.Num_Documento = txtNumeroDocumento.Text.ToString();
                         proveedor.Direccion = txtDireccion.Text;
@@ -215,6 +227,7 @@ namespace SisVentaDevExpress.Formularios
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                     tabControl1.SelectedIndex = 0;
                 }
             }
@@ -227,19 +240,27 @@ namespace SisVentaDevExpress.Formularios
 
         private void btnEditar1_Click(object sender, EventArgs e)
         {
-            proveedor_editar = (Proveedor)dataListado.GetFocusedRow();
-            this.txtidProveedor.Text = proveedor_editar.IdProveedor.ToString();
-            this.txtRazonSocial.Text = proveedor_editar.Razon_Social.ToString();
-            this.cbSectorComercial.Text = proveedor_editar.Sector_Comercial.ToString();
-            this.cbTipoDocumento.Text = proveedor_editar.Tipo_Documento.ToString();
-            this.txtNumeroDocumento.Text = proveedor_editar.Num_Documento.ToString();
-            this.txtDireccion.Text = proveedor_editar.Direccion.ToString();
-            this.txtTelefono.Text = proveedor_editar.Telefono.ToString();
-            this.txtCorreo.Text = proveedor_editar.Email.ToString();
-            this.txtURL.Text = proveedor_editar.URL.ToString();
-            tabControl1.SelectedIndex = 1;
-            this.txtRazonSocial.Focus();
-            this.Habilitar(true);
+            Proveedor presentacion = (Proveedor)dataListado.GetFocusedRow();
+            if (presentacion == null)
+            {
+                MensajeError("Seleccione Proveedor a Editar");
+            }
+            else
+            {
+                proveedor_editar = (Proveedor)dataListado.GetFocusedRow();
+                this.txtidProveedor.Text = proveedor_editar.IdProveedor.ToString();
+                this.txtRazonSocial.Text = proveedor_editar.Razon_Social.ToString();
+                this.txtSectorComercial.Text = proveedor_editar.Sector_Comercial.ToString();
+                this.cbTipoDocumento.Text = proveedor_editar.Tipo_Documento.ToString();
+                this.txtNumeroDocumento.Text = proveedor_editar.Num_Documento.ToString();
+                this.txtDireccion.Text = proveedor_editar.Direccion.ToString();
+                this.txtTelefono.Text = proveedor_editar.Telefono.ToString();
+                this.txtCorreo.Text = proveedor_editar.Email.ToString();
+                this.txtURL.Text = proveedor_editar.URL.ToString();
+                tabControl1.SelectedIndex = 1;
+                this.txtRazonSocial.Focus();
+                this.Habilitar(true);
+            }
         }
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
@@ -247,16 +268,48 @@ namespace SisVentaDevExpress.Formularios
             try
             {
 
-                if (this.txtRazonSocial.Text == string.Empty || this.cbSectorComercial.Text == string.Empty || this.cbTipoDocumento.Text == string.Empty || this.txtNumeroDocumento.Text == string.Empty)
+                if (this.txtRazonSocial.Text == string.Empty)
                 {
-                    MensajeError("Seleccione el dato a modificar");
-                    tabControl1.SelectedIndex = 0;
+                    this.txtRazonSocial.Focus();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtRazonSocial, "Ingrese la Razon Social");
                 }
+                else if (this.txtSectorComercial.Text == string.Empty)
+                {
+                    this.txtSectorComercial.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtSectorComercial, "Sector Comercial");
+                }
+
+                else if (this.cbTipoDocumento.Text == string.Empty)
+                {
+                    this.cbTipoDocumento.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(cbTipoDocumento, "Seleccione Tipo de Documento");
+                }
+
+                else if (this.txtNumeroDocumento.Text == string.Empty)
+                {
+                    this.txtNumeroDocumento.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtNumeroDocumento, "Ingrese Numero de Documento");
+                }
+                else if (this.txtTelefono.Text ==string.Empty )
+                {
+                    this.txtTelefono.Focus();
+                    errorIcon.Clear();
+                    MensajeError("Falta Ingresar algunos datos, seran Remarcados");
+                    errorIcon.SetError(txtTelefono, "Ingrese numero de telefono");
+                }
+
                 else
                 {
                     Proveedor proveedor = proveedor_editar;
                     proveedor.Razon_Social = txtRazonSocial.Text;
-                    proveedor.Sector_Comercial = cbSectorComercial.Text;
+                    proveedor.Sector_Comercial = txtSectorComercial.Text;
                     proveedor.Tipo_Documento = cbTipoDocumento.Text;
                     proveedor.Num_Documento = txtNumeroDocumento.Text;
                     proveedor.Direccion = txtDireccion.Text;
@@ -274,6 +327,7 @@ namespace SisVentaDevExpress.Formularios
                     this.IsEditar = false;
                     this.Botones();
                     this.Limpiar();
+                    errorIcon.Clear();
                 }
             }
             catch (Exception ex)

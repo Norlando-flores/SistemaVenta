@@ -48,12 +48,6 @@ namespace SisVentaDevExpress.Ventas
             get { return fSexo; }
             set { SetPropertyValue<string>(nameof(Sexo), ref fSexo, value); }
         }
-        DateTime fFecha_Nacimiento;
-        public DateTime Fecha_Nacimiento
-        {
-            get { return fFecha_Nacimiento; }
-            set { SetPropertyValue<DateTime>(nameof(Fecha_Nacimiento), ref fFecha_Nacimiento, value); }
-        }
         string fDireccion;
         public string Direccion
         {

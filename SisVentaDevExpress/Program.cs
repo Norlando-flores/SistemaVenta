@@ -1,4 +1,4 @@
-﻿using AppLotificadora.Formularios;
+﻿//using AppLotificadora.Formularios;
 using DevExpress.Xpo;
 using DevExpress.Xpo.DB;
 using SisVentaDevExpress.Formularios;
@@ -25,7 +25,7 @@ namespace SisVentaDevExpress
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_acceso());
+            Application.Run(new frm_Cliente());
         }
     }
 }

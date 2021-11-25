@@ -96,12 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\DatosDeAcceso.cs" />
-    <Compile Include="Formularios\frmrestore.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmrestore.designer.cs">
-      <DependentUpon>frmrestore.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\frmOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,12 +131,6 @@
     </Compile>
     <Compile Include="Formularios\frm_Cliente.Designer.cs">
       <DependentUpon>frm_Cliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frm_DetalleIngreso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frm_DetalleIngreso.Designer.cs">
-      <DependentUpon>frm_DetalleIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frm_Ingresos.cs">
       <SubType>Form</SubType>
@@ -251,9 +239,6 @@
     <Compile Include="Reportes\reporteVenta.Designer.cs">
       <DependentUpon>reporteVenta.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formularios\frmrestore.resx">
-      <DependentUpon>frmrestore.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Ingresos.aa-ER.resx">
       <DependentUpon>frm_Ingresos.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,9 +262,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Cliente.resx">
       <DependentUpon>frm_Cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frm_DetalleIngreso.resx">
-      <DependentUpon>frm_DetalleIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Ingresos.resx">
       <DependentUpon>frm_Ingresos.cs</DependentUpon>
